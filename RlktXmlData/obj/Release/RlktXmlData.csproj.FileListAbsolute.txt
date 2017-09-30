@@ -1,0 +1,4 @@
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\bin\Release\RlktXmlData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\bin\Release\RlktXmlData.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\obj\Release\RlktXmlData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\obj\Release\RlktXmlData.pdb

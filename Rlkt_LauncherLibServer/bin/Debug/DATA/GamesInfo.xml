@@ -1,0 +1,29 @@
+<Games xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <count>2</count>
+  <data>
+    <GamesData>
+	  <gameID>0</gameID>
+      <gameName>dragonnest</gameName>
+	  <gameDisplayName>Dragon Nest</gameDisplayName>
+      <gameExeFile>DNArcan.exe</gameExeFile>
+      <gameWndColor>#FFFF8B42</gameWndColor>
+	  <gameWndBgColor>#FF1F0D08</gameWndBgColor>
+      <gameWebsite>http://gayshit.net</gameWebsite>
+      <gameWebsiteReg>http://gayshit.net/register</gameWebsiteReg>
+      <maintenance>0</maintenance>
+	  <downloadFileUrl>http://dn.arcangames.com/download/config.txt</downloadFileUrl>
+    </GamesData>
+    <GamesData>
+	  <gameID>1</gameID>
+      <gameName>worldofwonders</gameName>
+	  <gameDisplayName>Word Of Wonders</gameDisplayName>
+      <gameExeFile>asd.exe</gameExeFile>
+      <gameWndColor>#FF1B23DC</gameWndColor>
+	  <gameWndBgColor>#FF0D0017</gameWndBgColor>
+      <gameWebsite>http://gayshit.net</gameWebsite>
+      <gameWebsiteReg>http://gayshit.net/register</gameWebsiteReg>
+      <maintenance>0</maintenance>
+	  <downloadFileUrl>http://wow.arcangames.com/download/config.txt</downloadFileUrl>
+    </GamesData>
+  </data>
+</Games>

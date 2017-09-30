@@ -1,0 +1,13 @@
+﻿<Window x:Class="LauncherApp.NotifyBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Topmost="True"
+        Title="NotifyBox" MinHeight="150" MinWidth="300" Background="{x:Null}" ResizeMode="NoResize" Width="300" ShowInTaskbar="False" Height="150">
+    <Grid>
+
+        <StackPanel x:Name="ListPanel" Background="#FFEA3C3C" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RememberMe>false</RememberMe>
+  <LaunchOnStart>false</LaunchOnStart>
+  <IconOnLaunch>false</IconOnLaunch>
+  <OnBackground>false</OnBackground>
+  <EnableBlocks>false</EnableBlocks>
+  <EnableSound>false</EnableSound>
+  <SoundVolume>0</SoundVolume>
+  <PlayingHideBlocks>false</PlayingHideBlocks>
+  <PlayingHideNewMessages>false</PlayingHideNewMessages>
+  <evOnlineFriends>false</evOnlineFriends>
+  <evOnlineFriendsSound>false</evOnlineFriendsSound>
+  <evOfflineFriends>false</evOfflineFriends>
+  <evOfflineFriendsSound>false</evOfflineFriendsSound>
+  <evFriendStartGame>false</evFriendStartGame>
+  <evFriendStartGameSound>false</evFriendStartGameSound>
+  <evIncoming>false</evIncoming>
+  <evIncomingMessageSound>false</evIncomingMessageSound>
+  <evNewMessageSound>false</evNewMessageSound>
+  <evChannelInvite>false</evChannelInvite>
+  <evChannelInviteSound>false</evChannelInviteSound>
+  <evChatLeaveOrJoin>false</evChatLeaveOrJoin>
+  <evChatLeaveOrJoinSound>false</evChatLeaveOrJoinSound>
+  <HideFirnedsID>false</HideFirnedsID>
+  <ShowFriendsPic>false</ShowFriendsPic>
+  <AlertNewMessage>false</AlertNewMessage>
+  <FilterbadWords>false</FilterbadWords>
+  <ShwnWhenTyping>false</ShwnWhenTyping>
+  <OutputDeviceVolume>0</OutputDeviceVolume>
+  <InputDeviceVolume>0</InputDeviceVolume>
+  <StartupShortcutIcon>false</StartupShortcutIcon>
+  <DesktopShortcutIcon>false</DesktopShortcutIcon>
+  <ScanGamesOnLaunch>false</ScanGamesOnLaunch>
+</data>

@@ -1,0 +1,9 @@
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\bin\Release\LauncherData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\bin\Release\LauncherData.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\bin\Release\RlktXmlData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\bin\Release\RlktXmlData.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\obj\Release\LauncherData.csprojResolveAssemblyReference.cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\obj\Release\LauncherData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\obj\Release\LauncherData.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\bin\Release\Enums.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\LauncherData\bin\Release\Enums.pdb

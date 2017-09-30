@@ -1,0 +1,51 @@
+﻿<UserControl
+             x:Class="LauncherApp.Styles.Controls.LoadingDots" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             x:Name="ControlElement" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" Width="80">
+    <UserControl.Resources>
+        <Storyboard RepeatBehavior="Forever" x:Key="mystoryboard" >
+            <DoubleAnimation Storyboard.TargetName="dotProgress1" BeginTime="0:0:0.1" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress1" BeginTime="0:0:0.2" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress2" BeginTime="0:0:0.2" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress2" BeginTime="0:0:0.3" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress3" BeginTime="0:0:0.3" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress3" BeginTime="0:0:0.4" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress4" BeginTime="0:0:0.4" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress4" BeginTime="0:0:0.4" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress5" BeginTime="0:0:0.4" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress5" BeginTime="0:0:0.6" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress6" BeginTime="0:0:0.6" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress6" BeginTime="0:0:0.7" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress7" BeginTime="0:0:0.7" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress7" BeginTime="0:0:0.8" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+
+            <DoubleAnimation Storyboard.TargetName="dotProgress8" BeginTime="0:0:0.8" Storyboard.TargetProperty="Opacity" From="0.4" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="dotProgress8" BeginTime="0:0:0.9" Storyboard.TargetProperty="Opacity" From="1" To="0.4"/>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid Width="{Binding ActualWidth, ElementName=ControlElement}">
+
+        <StackPanel x:Name="ControlPanel" Orientation="Horizontal" Height="14">
+            <fa:ImageAwesome Name="dotProgress1" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress2" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress3" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress4" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress5" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress6" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress7" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+            <fa:ImageAwesome Name="dotProgress8" Icon="Circle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="8" Width="8" Foreground="White" Margin="0,0,2,0" Opacity="0.4"></fa:ImageAwesome>
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

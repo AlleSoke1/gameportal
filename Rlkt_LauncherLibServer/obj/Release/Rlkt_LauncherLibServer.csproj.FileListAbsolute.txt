@@ -1,0 +1,15 @@
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Rlkt_LauncherLibServer.exe.config
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Rlkt_LauncherLibServer.exe
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Rlkt_LauncherLibServer.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\NetSockets.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Packets.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Packets.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\NetSockets.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\NetSockets.xml
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Release\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Release\Rlkt_LauncherLibServer.Properties.Resources.resources
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Release\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Release\Rlkt_LauncherLibServer.exe
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Release\Rlkt_LauncherLibServer.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Enums.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Release\Enums.pdb

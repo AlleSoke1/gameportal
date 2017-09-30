@@ -1,0 +1,36 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/" x:Name="ControlElement" x:Class="LauncherApp.Styles.Controls.NotifyBoxItem" 
+             mc:Ignorable="d" d:DesignWidth="300" BorderThickness="0" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="150" Width="300">
+    <Grid Width="{Binding ActualWidth, ElementName=ControlElement}"  Height="{Binding ActualHeight, ElementName=ControlElement}">
+
+        <StackPanel x:Name="TittlePanel" Orientation="Horizontal" Background="#FF2B2B2B">
+
+            <fa:ImageAwesome x:Name="MessageIcon" Icon="InfoCircle" HorizontalAlignment="Center" Width="39" Margin="15,0,10,0">
+                <fa:ImageAwesome.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFDA0029" Offset="0"/>
+                        <GradientStop Color="#FFB00123" Offset="1"/>
+                    </LinearGradientBrush>
+                </fa:ImageAwesome.Foreground>
+            </fa:ImageAwesome>
+
+            <StackPanel HorizontalAlignment="Center" Width="220" VerticalAlignment="Center" Margin="0,0,0,0" Height="150">
+                <Label x:Name="boxTitle" Content="{Binding Path=Title}" FontSize="16" FontWeight="Bold" Foreground="#FFE2E2E2" Margin="0,30,0,10" VerticalAlignment="Center" Padding="0" Background="{x:Null}"/>
+                <TextBlock x:Name="MessageText" TextWrapping="Wrap" Text="{Binding Path=Message}"  Padding="0" Foreground="#FFE0E0E0" Margin="0,0,0,3"  VerticalAlignment="Center"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Border BorderThickness="1">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="White" Opacity="0.15"/>
+            </Border.BorderBrush>
+        </Border>
+
+
+    </Grid>
+</UserControl>

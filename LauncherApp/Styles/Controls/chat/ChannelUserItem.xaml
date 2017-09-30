@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="LauncherApp.Styles.Controls.ChannelUserItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="170" BorderThickness="0,0,0,1" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+    <UserControl.BorderBrush>
+        <SolidColorBrush Color="White" Opacity="0.20"/>
+    </UserControl.BorderBrush>
+    <Grid MinWidth="170" MinHeight="30">
+
+        <WrapPanel Height="29" Width="170">
+            <fa:FontAwesome Icon="User" Width="20" Padding="0,8,0,0" Foreground="#FF2B2B2B" />
+            <Label Content="{Binding Path=UserName}" Foreground="#FFDADADA" Width="148" Padding="0,5,5,5" FontSize="14"></Label>
+        </WrapPanel>
+        
+    </Grid>
+</UserControl>

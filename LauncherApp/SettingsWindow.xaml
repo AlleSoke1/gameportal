@@ -1,0 +1,376 @@
+﻿<Window x:Name="SettingsWnd" x:Class="LauncherApp.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
+        FontFamily="{DynamicResource AppFontPath}"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Title="{DynamicResource wndSettings}" Height="600" Width="850" Background="#FF2B2B2B" BorderThickness="0" MinWidth="550" MinHeight="455" MouseDown="Window_MouseDown" ShowInTaskbar="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <ResourceDictionary Source="/Styles/Style.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+
+
+        <WrapPanel HorizontalAlignment="Right" Width="40" Margin="0,5,5,0" Height="22" VerticalAlignment="Top">
+
+            <cControls:HeaderButton x:Name="tCloseBtn" Width="40" Height="22" Icon="Close" BackgroundColor="#FFDA0029"  Click="tCloseBtn_Click"/>
+
+        </WrapPanel>
+
+        <Label x:Name="WindowTitle" Content="{DynamicResource wndSettings}" HorizontalAlignment="Left" Margin="24,23,0,0" VerticalAlignment="Top" Foreground="#FFECECEC" FontSize="18" Padding="0" FontWeight="Bold"/>
+
+        <DockPanel LastChildFill="False" Background="White" Height="1" Margin="1,59,1,0" Opacity="0.15" VerticalAlignment="Top"/>
+
+        <DockPanel LastChildFill="False" Background="White" Margin="203,0,1,54" Opacity="0.15" Height="1" VerticalAlignment="Bottom"/>
+
+        <DockPanel LastChildFill="False" Background="White" Opacity="0.15" Margin="202,60,0,0" HorizontalAlignment="Left" Width="1"/>
+
+
+        <Grid x:Name="DisplayWindow" Margin="202,60,1,55" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+            <ScrollViewer x:Name="settings_General" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" >
+
+                <Grid HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="626">
+
+                    <Label Content="{DynamicResource settingsTitleGeneral}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,17,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+                    <Label Content="{DynamicResource LangLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,56,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+
+                    <ComboBox x:Name="LanguageFlag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="43,82,0,0" Height="32" >
+                        <ComboBoxItem Content="English" IsSelected="True" Tag="en"/>
+                        <ComboBoxItem Content="العربية" Tag="ar"/>
+                    </ComboBox>
+
+                    <CheckBox x:Name="LaunchOnStartFlag" Content="{DynamicResource LaunchOnStartFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,140,10,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" Checked="LaunchOnStartFlag_Checked" Unchecked="LaunchOnStartFlag_Checked" Padding="0" />
+                    <CheckBox x:Name="LaunchAsIconFlag" Content="{DynamicResource LaunchAsIconFlag}" Style="{StaticResource myCheckboxStyle}" Margin="70,165,10,0" Height="20" Foreground="#FFB2B2B2" IsEnabled="False" VerticalAlignment="Top" />
+
+                    <Label Content="{DynamicResource onClosingFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,205,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ComboBox x:Name="onClosingFlag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="343" Margin="43,231,0,0" Height="32">
+                        <ComboBoxItem Content="{DynamicResource onClosingFlagMini}" IsSelected="True"/>
+                        <ComboBoxItem Content="{DynamicResource onClosingFlagExit}"/>
+                    </ComboBox>
+
+
+                    <Button x:Name="WindowResetFlag" Grid.Column="0" Style="{StaticResource TransBorderedButton}" Content="{DynamicResource WindowResetFlag}" Margin="43,365,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="170" Height="30" VerticalAlignment="Top">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.35"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Label ToolTip="{DynamicResource WindowResetFlagToolTip}" FontFamily="{DynamicResource IconsFont}" Content="&#xe718;"  HorizontalAlignment="Left" Margin="218,369,0,0" VerticalAlignment="Top" Foreground="#FFDA0029" FontWeight="Bold"/>
+                    <Label Content="{DynamicResource onPlayingFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,277,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ComboBox x:Name="onPlayingFlag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="343" Margin="43,303,0,0" Height="32">
+                        <ComboBoxItem Content="{DynamicResource onPlayingFlagKeepOpen}" Tag="1" IsSelected="True"/>
+                        <ComboBoxItem Content="{DynamicResource onPlayingFlagMiniTaskbar}"  Tag="2" />
+                        <ComboBoxItem Content="{DynamicResource onPlayingFlagMiniTray}"  Tag="3" />
+                        <ComboBoxItem Content="{DynamicResource onPlayingFlagExit}"  Tag="3" />
+                    </ComboBox>
+
+                </Grid>
+
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="settings_SoundsNotfiy" HorizontalScrollBarVisibility="Disabled"  VerticalScrollBarVisibility="Auto" Margin="0,8,0,0" Visibility="Hidden">
+
+                <Grid HorizontalAlignment="Left" Height="855" VerticalAlignment="Top" Width="626">
+
+                    <Label Content="{DynamicResource settingsTitleSounds}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="16,12,0,0" Foreground="#FFE2E2E2" FontSize="16" FontWeight="Bold"/>
+
+                    <CheckBox x:Name="EnableBlocksFlag" Content="{DynamicResource EnableBlocksFlag}" Style="{StaticResource myCheckboxStyle}" Margin="46,62,424,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.603,0.517" Checked="EnableBlocksFlag_Checked" Unchecked="EnableBlocksFlag_Checked" />
+
+                    <Label Content="{DynamicResource EnableBlocksFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,87,0,0" Foreground="#FFE2E2E2" Padding="0,5"/>
+                    <ComboBox x:Name="BlocksPositionFlag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="148" Margin="75,113,0,0" Height="32">
+                        <ComboBoxItem Content="{DynamicResource BlocksPositionFlagBr}" IsSelected="True"/>
+                        <ComboBoxItem Content="{DynamicResource BlocksPositionFlagBl}"/>
+                        <ComboBoxItem Content="{DynamicResource BlocksPositionFlagTr}"/>
+                        <ComboBoxItem Content="{DynamicResource BlocksPositionFlagTl}"/>
+                    </ComboBox>
+
+                    <CheckBox x:Name="EnableSoundFlag" Content="{DynamicResource EnableSoundFlag}" Style="{StaticResource myCheckboxStyle}" Margin="46,169,482,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" Checked="EnableSoundFlag_Checked" Unchecked="EnableSoundFlag_Checked" />
+                    <Label Content="{DynamicResource EnableSoundFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,194,0,0" Foreground="#FFE2E2E2" Padding="0,5"/>
+                    <ScrollBar x:Name="SoundVolumeFlag" HorizontalAlignment="Left" Margin="75,220,0,0" VerticalAlignment="Top" Height="24" Width="378" Maximum="100" Value="100" ViewportSize="1" LargeChange="0" Orientation="Horizontal" Scroll="SoundVolumeFlag_Scroll"/>
+
+
+                    <Label x:Name="VolumFlagLibl" Content="0" HorizontalAlignment="Right" Margin="0,194,173,0" VerticalAlignment="Top" Foreground="#FF616161" Padding="0,5"/>
+
+                    <StackPanel HorizontalAlignment="Left" Height="435" VerticalAlignment="Top" Width="600" Margin="16,392,0,-89">
+
+                        <StackPanel Height="180" Margin="0,0,0,20">
+
+                            <WrapPanel  Background="#FF141413" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,1" >
+                               
+                                <Label Content="{DynamicResource Panel1Title}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <Label Content="{DynamicResource DisplayBlocklibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
+                                <Label Content="{DynamicResource PlaySoundLibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,1" >
+                                <Label Content="{DynamicResource evOnlineFriends}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evOnlineFriendsToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evOnlineFriendsSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,1" >
+                                <Label Content="{DynamicResource evOfflineFriends}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evOfflineFriendsToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evOfflineFriendsSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,1" >
+                               
+                                <Label Content="{DynamicResource evFriendStartGame}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evFriendStartGameToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evFriendStartGameSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,-2" >
+                               
+                                <Label Content="{DynamicResource evIncomingFreindRequest}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evIncomingFreindRequestToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evIncomingFreindRequestSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                        </StackPanel>
+
+                        <StackPanel Height="106" Margin="0,0,0,20">
+
+                            <WrapPanel  Background="#FF141413" Grid.ColumnSpan="3" Height="35" Width="600" >
+                               
+                                <Label Content="{DynamicResource Panel2Title}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="225" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <Label Content="{DynamicResource DisplayBlocklibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
+                                <Label Content="{DynamicResource PlaySoundLibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" >
+                                <Label Content="{DynamicResource evIncomingMessage}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evIncomingMessageToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evIncomingMessageSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" >
+                                <Label Content="{DynamicResource evNewMessage}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evNewMessageSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="180,0,0,0" />
+                            </WrapPanel>
+
+                        </StackPanel>
+
+                        <StackPanel Height="106" Margin="0,0,0,20">
+
+                            <WrapPanel  Background="#FF141413" Grid.ColumnSpan="3" Height="35" Width="600" >
+                                <Label Content="{DynamicResource Panel3Title}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="225" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <Label Content="{DynamicResource DisplayBlocklibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
+                                <Label Content="{DynamicResource PlaySoundLibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" >
+                                <Label Content="{DynamicResource evChannelInvite}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evChannelInviteToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evChannelInviteSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                            <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" >
+                                <Label Content="{DynamicResource evChatLeaveOrJoin}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
+                                <CheckBox x:Name="evChatLeaveOrJoinToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                                <CheckBox x:Name="evChatLeaveOrJoinSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            </WrapPanel>
+
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <Label Content="{DynamicResource OnPlayingLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="46,273,0,0" Foreground="#FFE2E2E2" Padding="0,5"/>
+                    <CheckBox x:Name="PlayingHideBlocksFlag" Content="{DynamicResource PlayingHideBlocksFlag}" Style="{StaticResource myCheckboxStyle}" Margin="75,304,465,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+                    <CheckBox x:Name="PlayingHideNewMessagesFlag" Content="{DynamicResource PlayingHideNewMessagesFlag}" Style="{StaticResource myCheckboxStyle}" Margin="75,329,353,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+                    <CheckBox x:Name="PlayingMuteSoundsFlag" Content="{DynamicResource PlayingMuteSoundsFlag}" Style="{StaticResource myCheckboxStyle}" Margin="75,354,293,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" Width="258.1" />
+
+
+                </Grid>
+
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="settings_FriendsChat" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Visibility="Hidden">
+
+                <Grid HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="626">
+
+                    <Label Content="{DynamicResource settingsTitleFriends}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,17,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+                    <CheckBox x:Name="HideFirnedsIDFlag" Content="{DynamicResource HideFirnedsIDFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,51,455,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+                    <CheckBox x:Name="ShowFriendsPicFlag" Content="{DynamicResource ShowFriendsPicFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,76,359,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+
+                    <Label Content="{DynamicResource settingsTitleChat}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,128,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+                    <CheckBox x:Name="AlertNewMessageFlag" Content="{DynamicResource AlertNewMessageFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,162,281,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+                    <CheckBox x:Name="FilterbadWordsFlag" Content="{DynamicResource FilterbadWordsFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,187,383,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+                    <CheckBox x:Name="ShownWhenTypingFlag" Content="{DynamicResource ShownWhenTypingFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,212,378,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+
+                    <Button x:Name="ViewBlockList" Grid.Column="0" Style="{StaticResource TransBorderedButton}" Content="{DynamicResource ViewBlockList}" Margin="43,256,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="128" Height="30" VerticalAlignment="Top">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.35"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Label ToolTip="{DynamicResource ViewBlockListToolTip}" FontFamily="{DynamicResource IconsFont}" Content="&#xe718;"  HorizontalAlignment="Left" Margin="176,260,0,0" VerticalAlignment="Top" Foreground="#FFDA0029" FontWeight="Bold"/>
+
+                </Grid>
+
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="settings_VoiceCalls" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Visibility="Hidden">
+
+                <Grid HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="626">
+
+                    <Label Content="{DynamicResource settingsTitleSpekaers}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,17,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+
+                    <Label Content="{DynamicResource OutputDeviceFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,52,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ComboBox x:Name="OutputDeviceFlag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Margin="43,78,0,0" Height="32">
+                        <ComboBoxItem Content="SomeShit" IsSelected="True"/>
+                        <ComboBoxItem Content="SomeShit2"/>
+                    </ComboBox>
+                    <Label Content="{DynamicResource strVolume}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="336,52,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ScrollBar x:Name="OutputDeviceVolumeFlag" HorizontalAlignment="Left" Margin="336,81,0,0" VerticalAlignment="Top" Height="24" Width="280" Maximum="100" Value="100" ViewportSize="1" LargeChange="0" Orientation="Horizontal" Scroll="SoundVolumeFlag_Scroll"/>
+
+
+                    <Label Content="{DynamicResource settingsTitleMic}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,128,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+
+                    <Label Content="{DynamicResource InputDeviceFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,162,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ComboBox x:Name="InputDeviceFlag" HorizontalAlignment="Left" VerticalAlignment="Top" Width="280" Margin="43,188,0,0" Height="32">
+                        <ComboBoxItem Content="SomeShit" IsSelected="True"/>
+                        <ComboBoxItem Content="SomeShit2"/>
+                    </ComboBox>
+                    <Label Content="{DynamicResource strVolume}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="336,162,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ScrollBar x:Name="InputDeviceVolumeFlag" HorizontalAlignment="Left" Margin="336,191,0,0" VerticalAlignment="Top" Height="24" Width="280" Maximum="100" Value="100" ViewportSize="1" LargeChange="0" Orientation="Horizontal" Scroll="SoundVolumeFlag_Scroll"/>
+
+                    <Label Content="{DynamicResource TestMicBtnLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,244,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <ProgressBar HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="568" Margin="45,272,0,0" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FFDA0029" Background="#FF141413" Value="0.3">
+                        <ProgressBar.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ProgressBar.RenderTransform>
+                    </ProgressBar>
+
+                    <Button x:Name="TestMicBtn" Grid.Column="0" Style="{StaticResource TransBorderedButton}" Content="{DynamicResource TestMicBtn}"  Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="142" Height="30" VerticalAlignment="Bottom" Margin="43,0,0,126">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.345"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </Button.BorderBrush>
+                    </Button>
+
+                </Grid>
+
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="settings_GamesSettings" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Visibility="Hidden">
+
+                <Grid HorizontalAlignment="Left" Height="483" VerticalAlignment="Top" Width="626">
+
+                    <Label Content="{DynamicResource settingsTitleGamesInstall}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,17,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+                    <CheckBox x:Name="InstallStartupIconFlag" Content="{DynamicResource InstallStartupIconFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,51,222,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" Checked="StartupShortcutIconFlag_Checked" Unchecked="StartupShortcutIconFlag_Checked" />
+                    <CheckBox x:Name="InstallDesktopIconFlag" Content="{DynamicResource InstallDesktopIconFlag}" Style="{StaticResource myCheckboxStyle}" Margin="68,76,286,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+
+                    <Label Content="{DynamicResource DefaultInstallPathFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,117,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+
+                    <TextBox x:Name="DefaultInstallPathFlag" Height="30" Margin="43,148,262,0" TextWrapping="Wrap" VerticalAlignment="Top"  Foreground="#FFB2B2B2" Padding="5" Style="{StaticResource TransTextBox}" SelectionBrush="#FFD7153A" Text="C:\ArcanGames\" >
+                        <TextBox.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.25"/>
+                        </TextBox.Background>
+                        <TextBox.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </TextBox.BorderBrush>
+                    </TextBox>
+
+                    <Button x:Name="ChangeInstallPathBtn" Grid.Column="0" Style="{StaticResource TransBorderedButton}" Content="{DynamicResource strChange}" Margin="379,148,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="81" Height="30" VerticalAlignment="Top" Click="ChangeInstallPathBtn_Click">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.35"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </Button.BorderBrush>
+                    </Button>
+
+                    <Button x:Name="ScanForGamesBtn" Grid.Column="0" Style="{StaticResource TransBorderedButton}" Content="{DynamicResource ScanForGamesBtn}" Margin="43,216,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="121" Height="30" VerticalAlignment="Top">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.35"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </Button.BorderBrush>
+                    </Button>
+
+                    <CheckBox x:Name="ScanGamesOnLaunchFlag" Content="{DynamicResource ScanGamesOnLaunchFlag}" Style="{StaticResource myCheckboxStyle}" Margin="43,256,156,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" />
+
+                </Grid>
+
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="settings_AboutArcan" HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto" Visibility="Hidden">
+
+                <Grid HorizontalAlignment="Left" Height="1465" VerticalAlignment="Top" Width="626">
+
+                    <Label Content="{DynamicResource settingsTitleAppInfo}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,17,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+
+                    <Label x:Name="AppTitleLibl" Content="{DynamicResource AppTitleLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,51,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <Label x:Name="AppVersionLibl" Content="{DynamicResource AppVersionLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,77,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+                    <Label x:Name="AppCompanyLibl" Content="{DynamicResource AppCompanyLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,103,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+
+                    <Label Content="{DynamicResource settingsTitlePolicy}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,140,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+                    <Label x:Name="PolicyLibl" Content="{DynamicResource PolicyLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,159,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="43,190,0,-97" Height="1372" Width="573" Foreground="#FFBBBBBB" LineHeight="20"><Run Text="تلتزم أركان للالعاب الناشر والمطور العربي بالشرق الاوسط بحماية خصوصيتك وخلق علاقة قوية مع مستخدمينا."/><LineBreak/><Run Text="توضيح سياسة الخصوصية استخدام معلوماتك الشخصية التي يتم الحصول عليها عن طريق مواقعنا, سواء في www.arcangames.com او غيرها من المواقع المعتمدة منا. "/><LineBreak/><Run Text="بما في ذلك منتجاتنا وخدماتنا وعلى سبيل المثال الخدمات الخارجية التي نقدمها عبر موقعنا وغيرها من منصات الطرف الثالث, وسطح المكتب والتطبيقات المتنقلة( كل ما ذٌكر بالاعلى يشار اليه بإسم &quot;المنتجات والخدمات&quot;). "/><LineBreak/><Run Text="تستطيع أركان للالعاب الحصول على بياناتك الشخصية عن طريق ما ذكُر بالاعلى ولنا كامل الحقوق في استخدام بياناتك الشخصية في حال استخدمت خدماتنا او منتجاتنا بشكل خارج عن قوانين وقواعد أركان للالعاب."/><LineBreak/><Run Text="هام جداً: في حال ان لم توافق على سياسة الخصوصية مما قرائته او ستقراءه داخل هذه الصفحة, يرجى عدم استخدام خدماتنا او منتجاتنا بأي شكل من الاشكال. "/><LineBreak/><Run Text="المعلومات التي نجمعها"/><LineBreak/><Run/><LineBreak/><Run Text="نحن نقوم بالحصول على بيانات شخصية تخصك عند استخدام منتجاتنا او خدماتنا. بقراءة النصوص التالية ستساعدك على فهم انواع المعلومات التي نجمعها عنك. "/><LineBreak/><Run/><LineBreak/><Run FontWeight="Bold" FontSize="14" Text="1. المعلومات المباشرة"/><LineBreak/><Run/><LineBreak/><Run Text="عند استخدام خدماتنا و منتجاتنا. تقوم بتقديم معلومات شخصية مباشرة لنا وعلى سبيل المثال:"/><LineBreak/><Run Text="التسجيل و معلومات الملف الشخصي كـ: اسم المستخدم, كلمة المرور, معلومات اخرى خاصة بك كصورتك او عنوانك. وايضاً انت على علم بحصولنا على معلومات الدفع في حالة الشحن, أرقام بطاقات الائتمان الخاصة بك ومعلومات فواتير الدفع. المعلومات التي تشاركها علناً عبر خدماتنا او منتجاتنا, كالبيانات في المجتمع او الرسائل الخاصة, الدردشة ( يرجى الانتباه الى ان هذه المعلومات هي معلومات عامة, والتي لا تكون تحت بند السرية والخصوصية ونحن غير مسؤولين عن افصاحك عن هذه المعلومات)"/><LineBreak/><Run Text="ملعومات عن طريق الدعم الفني. معلوماتك عن طريق الاتصال بنا, قائمة الاصدقاء الخاصة بك."/><LineBreak/><Run Text="المعلومات التي تقدمها بنفسك من أجل المشاركة في الاحداث والفعاليات."/><LineBreak/><Run/><LineBreak/><Run FontWeight="Bold" FontSize="14" Text="2. معلومات تلقائية"/><LineBreak/><Run/><LineBreak/><Run Text="نقوم بجمع بعض المعلومات الغير حساسة من خلال الادوات الالكترونية التي تجعل خدماتنا ومنتجاتنا أكثر فائدة لمستخدمينا. بما في ذلك على سبيل المثال:"/><LineBreak/><Run Text="ملفات التعريب. نحن قد نستخدم الـCookies لتعقب مكانك في حالة مخالفة قوانينا الحساسة. والمعلومات الغير شخصية التي يتم جمعها عن طريق الاحصائيات والتصويتات والاسئلة والمتجر كـ( اسم المستخدم, صفحات تزورها, تطبيقات تستخدمها, مواقع تم الدخول لها عن طريق خدماتنا ومواقعنا, ومائل ذلك) استخدام بعض خدماتنا تؤدي الي حصولنا على بيانات مثل معظم خدمات الانترنت من هذه الخدمات ( بيانات البروتوكل (IP), بيانات المتصفح, مزود خدمة الانرنت, بيانت الجهاز, نشاط المستخدم) "/><LineBreak/><Run Text="يمكن جمع هذه المعلومات عند استخدام خدماتنا ومنتجاتنا وليس في كل الاوقات."/><LineBreak/><Run Text="يرجي العلم ان المعلومات التلقائية تساعدنا على تقديم خدمة أفضل لك والتي يمكنها تساعدنا على تقديم مساعدة أفضل لك بينما تكون معنا بياناتك."/><LineBreak/><Run Text="هذه المعلومات التلقائية تكون مؤقتة ومتغيرة "/><LineBreak/><Run/><LineBreak/><Run FontWeight="Bold" FontSize="14" Text="3. معلومات الطرف الثالث"/><LineBreak/><Run/><LineBreak/><Run Text="نعند استخدام اتصالات لخدماتنا من خلال طرف ثالث, مثل (مواقع التواصل الاجتماعي, مواقع الدفع, مواقع الخدمة) والتي تسمح لنا بالوصول الي معلومات شخصية تخصك حساسة او غيرها بما هو مسموح به في شروط الاستخدام وسياسة الخصوصية للطرف الثالث. "/><LineBreak/><Run Text="كيف نستخدم المعلومات التي نجمعها"/><LineBreak/><Run/><LineBreak/><Run Text="نحن قد نستخدم معلوماتك التي نجمعها من اجل مجموعة متنوعة من الأغراض, في المقام الاول لتشغيل وتحسين خدماتنا بشكل أفضل مثل ( الاتصال, الخدمات والمنتجات, المميزات الجديدة, سرعة العمل, الدعم التقني, التحليلات, الحماية, سلامة خدماتنا ومنتجاتنا,) باي شكل من اشكال الاتصال بنا. "/><LineBreak/><Run Text="نحن قد نستخدم بياناتك لارسال اشعارات كالدفع والاخبار والتي تكون قادر على ادارتها بواسطة خدماتنا ومنتجاتنا."/><LineBreak/><Run Text="وفي حالة مخالفة قواعد وقوانين أركان للالعاب يكون لنا كامل الحق في استخدام بياناتك بكافة الوسائل وقد يصل الامر الى استخدامها لمسائلتك القانونية."/><LineBreak/><Run/><LineBreak/><Run Text="تقاسم المعلومات مع الطرف الثالث"/><LineBreak/><Run/><LineBreak/><Run Text="لن نشارك معلوماتك الشخصية الا مع المعتمدين من الطرف الثالث,"/><LineBreak/><Run Text="وفي حال حدوث اي مشكلة يتم تحويلك الى الطرف الثالث لحل هذه المشكلة التي لا يد لنا فيها بأي شكل. انت تسخدم خدماتنا ومنتجاتنا ونحن غير مسؤولين عن اخطاء الطرف الثالث"/><LineBreak/><Run/><LineBreak/><Run Text="أمن معلوماتك الشخصية"/><LineBreak/><Run/><LineBreak/><Run Text="نحن ملتزمون بحماية بياناتك الشخصية في حال استخدام خدماتنا ومنتجاتنا وعدم مخالفة قواعدنا."/><LineBreak/><Run Text="ونحن نقوم بتنفيذ اجراءت امنية متوازنة لحماية معلوماتك الشخصية ونقوم بتحديث ادواتنا الالكترونية التي تخص حمايتك باستمرار. في حين نأخذ الاحتياطات الملزومة ضد الاختراقات الامنية لاي من مواقعنا او ألعابنا ليصبح امناً تماما."/><LineBreak/><Run Text="سنحثك دوماً بعدم التحدث او الافصاح عن معلوماتك الشخصية بأي شكل وايضاً نضع لكم التوجيهات الصحيحة لعمل حماية قوية بنفسك."/><LineBreak/><Run Text="في حال الافصاح بنفسك عن اي معلومات شخصية مهماً كانت اهميتها فنحن غير مسؤولين عن ذلك."/><LineBreak/><Run/><LineBreak/><Run Text="شروط العمر"/><LineBreak/><Run/><LineBreak/><Run Text="في حال كان سنك اقل من 13 عام فنحن غير مسؤولين عن بياناتك الشخصية ويفضل عدم ارسالها لانها ستهمل, اذا كنت تحت عمر 13 عام فيجب عليك تولية امورك لاحد اولياء الامور او الوصي القانوني."/><LineBreak/><Run/><LineBreak/><Run Text="تعديل سياسة الخصوصية"/><LineBreak/><Run/><LineBreak/><Run Text="قد نقوم بعمل تحديث دوري لتعديل سياسة الخصوصية وقد يؤدي ذلك الي تغييرات في انواع المعلومات التي نجمعها والخدمات والمنتجات التي نقدمها, في اي وقت من الاوقات وسنقوم باعلامك في حال حدوث اي تغير في هذه البيانات. "/><LineBreak/><Run Text="ومن المهم مراجعة سياسة الخصوصية باستمرار في حال استخدامك لخدماتنا ومنتجاتنا."/><LineBreak/></TextBlock>
+
+                </Grid>
+
+            </ScrollViewer>
+        </Grid>
+
+
+
+
+        <Button x:Name="saveBtn" Content="{DynamicResource strDone}" Style="{StaticResource RedButtonStyle}" Cursor="Hand" Margin="0,0,10,12" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80" Click="saveBtn_Click">
+         
+        </Button>
+
+        <Label x:Name="SavedLibl" Content="{DynamicResource savedLibl}" Margin="220,559,171,15" FontWeight="Bold" Foreground="#FF11BB09" Panel.ZIndex="1"/>
+
+        <Grid x:Name="LeftMenu" Margin="0,60,648,0" Background="#FF141413">
+
+            <WrapPanel x:Name="LeftMenuPanel" Margin="20,15,0,-1" Width="180">
+
+                <Button Tag="settings_General" FontFamily="{DynamicResource IconsFont}" Content="{DynamicResource settings_General}"  Height="29" BorderThickness="0" Style="{StaticResource TransButtonStyle}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Click="SwitchMenuItems" IsCancel="True" Width="180" Margin="0,0,0,5" />
+                <Button Tag="settings_SoundsNotfiy" FontFamily="{DynamicResource IconsFont}" Content="{DynamicResource settings_SoundsNotfiy}"  Height="29" BorderThickness="0" Style="{StaticResource TransButtonStyle}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Click="SwitchMenuItems" Width="180" Margin="0,0,0,5" />
+                <Button Tag="settings_FriendsChat" FontFamily="{DynamicResource IconsFont}" Content="{DynamicResource settings_FriendsChat}"  Height="29" BorderThickness="0" Style="{StaticResource TransButtonStyle}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Width="180" Margin="0,0,0,5" Click="SwitchMenuItems" />
+                <Button Tag="settings_VoiceCalls" FontFamily="{DynamicResource IconsFont}" Content="{DynamicResource settings_VoiceCalls}"  Height="29" BorderThickness="0" Style="{StaticResource TransButtonStyle}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Width="180" Margin="0,0,0,5" Click="SwitchMenuItems" />
+                <Button Tag="settings_GamesSettings" FontFamily="{DynamicResource IconsFont}" Content="{DynamicResource settings_GamesSettings}"  Height="29" BorderThickness="0" Style="{StaticResource TransButtonStyle}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Width="180" Margin="0,0,0,5" Click="SwitchMenuItems" />
+                <Button Tag="settings_AboutArcan" FontFamily="{DynamicResource IconsFont}" Content="{DynamicResource settings_AboutArcan}"  Height="29" BorderThickness="0" Style="{StaticResource TransButtonStyle}" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Width="180" Margin="0,0,0,5" Click="SwitchMenuItems" />
+
+            </WrapPanel>
+
+            <Button x:Name="resetBtn" Grid.Column="0" Style="{StaticResource TransBorderedButton}" Content="{DynamicResource resetBtn}" Margin="20,0,0,12" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="160" Height="30" VerticalAlignment="Bottom" Click="resetBtn_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.345"/>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                </Button.BorderBrush>
+            </Button>
+
+        </Grid>
+
+        <Border x:Name="wndBorder" BorderThickness="1" Panel.ZIndex="-1">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="White" Opacity="0.15"/>
+            </Border.BorderBrush>
+
+        </Border>
+        
+    </Grid>
+</Window>

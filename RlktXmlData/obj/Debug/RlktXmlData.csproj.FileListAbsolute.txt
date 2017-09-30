@@ -1,0 +1,9 @@
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\bin\Debug\RlktXmlData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\bin\Debug\RlktXmlData.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\obj\Debug\RlktXmlData.csprojResolveAssemblyReference.cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\obj\Debug\RlktXmlData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\RlktXmlData\obj\Debug\RlktXmlData.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\bin\Debug\RlktXmlData.dll
+D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\bin\Debug\RlktXmlData.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\obj\Debug\RlktXmlData.dll
+D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\obj\Debug\RlktXmlData.pdb

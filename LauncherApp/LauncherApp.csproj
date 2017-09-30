@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F744F415-9A34-4CC8-A7C8-BCB9B85B13D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LauncherApp</RootNamespace>
+    <AssemblyName>LauncherApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Awesomium.Core, Version=1.7.5.1, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214, processorArchitecture=x86">
+      <HintPath>..\..\..\client\Awesomium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Windows.Controls, Version=1.7.5.1, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86">
+      <HintPath>..\..\..\client\Awesomium.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.4195, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\v3\LauncherApp\bin\Debug\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="NetSockets">
+      <HintPath>..\NetSockets\Release\NetSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChannelInvite.xaml.cs">
+      <DependentUpon>ChannelInvite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChannelCreate.xaml.cs">
+      <DependentUpon>ChannelCreate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\SoundManager.cs" />
+    <Compile Include="Logic\ChatManager.cs" />
+    <Compile Include="Logic\NotificationsManager.cs" />
+    <Compile Include="Styles\Controls\chat\ChatMessageItem.xaml.cs">
+      <DependentUpon>ChatMessageItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChannelUserItem.xaml.cs">
+      <DependentUpon>ChannelUserItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChannelListItem.xaml.cs">
+      <DependentUpon>ChannelListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChannelList.xaml.cs">
+      <DependentUpon>ChannelList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\QuickUserStatus.xaml.cs">
+      <DependentUpon>QuickUserStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\LoadingDots.xaml.cs">
+      <DependentUpon>LoadingDots.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\CheckBox.xaml.cs">
+      <DependentUpon>CheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\Notifications\NotifyBoxItem.xaml.cs">
+      <DependentUpon>NotifyBoxItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\friend\FriendRequestListitem.xaml.cs">
+      <DependentUpon>FriendRequestListitem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\friend\FriendRequestList.xaml.cs">
+      <DependentUpon>FriendRequestList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\friend\FriendListItem.xaml.cs">
+      <DependentUpon>FriendListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\GameListItem.xaml.cs">
+      <DependentUpon>GameListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\friend\FriendList.xaml.cs">
+      <DependentUpon>FriendList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\DropMenu.xaml.cs">
+      <DependentUpon>DropMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\FastMessage.xaml.cs">
+      <DependentUpon>FastMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\HeaderButton.xaml.cs">
+      <DependentUpon>HeaderButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\ScanListItem.xaml.cs">
+      <DependentUpon>ScanListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyBox.xaml.cs">
+      <DependentUpon>NotifyBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AppsWindow.xaml.cs">
+      <DependentUpon>AppsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChannelWindow.xaml.cs">
+      <DependentUpon>ChannelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatWindow.xaml.cs">
+      <DependentUpon>ChatWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FriendAddWindow.xaml.cs">
+      <DependentUpon>FriendAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Game Data\Globals.cs" />
+    <Compile Include="ScanGames.xaml.cs">
+      <DependentUpon>ScanGames.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\DownloadManager.cs" />
+    <Compile Include="Logic\GameManager.cs" />
+    <Compile Include="Logic\LauncherFactory.cs" />
+    <Compile Include="Network\PacketHandler.cs" />
+    <Compile Include="Network\ServerConnection.cs" />
+    <Compile Include="NicknameWindow.xaml.cs">
+      <DependentUpon>NicknameWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InstallGame.xaml.cs">
+      <DependentUpon>InstallGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartupWindow.xaml.cs">
+      <DependentUpon>StartupWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AppsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChannelInvite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChannelWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChatWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ChannelCreate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FriendAddWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FriendsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScanGames.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FriendsWindow.xaml.cs">
+      <DependentUpon>FriendsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NicknameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\uistring\ar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="resources\uistring\en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InstallGame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StartupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChannelUserItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChannelListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChannelList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\QuickUserStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\LoadingDots.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChatMessageItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\Notifications\NotifyBoxItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\friend\FriendRequestListitem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\friend\FriendRequestList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\friend\FriendListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\GameListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\friend\FriendList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\DropMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\FastMessage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\HeaderButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ScanListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotifyBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Style.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="resources\fonts\Ubuntu-Regular.ttf" />
+    <Resource Include="resources\fonts\NeoSansArabic.ttf" />
+    <Resource Include="resources\fonts\themify.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\background\small_window_focus.png" />
+    <Resource Include="resources\images\background\small_window_focusout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\checkbox.png" />
+    <Resource Include="resources\images\checkbox_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\logo\worldofwonders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\background\big_window_focus.png" />
+    <Resource Include="resources\images\background\big_window_focusout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\logo\dragonnest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\background\gbtn_active.png" />
+    <Resource Include="resources\images\background\gbtn_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\logo\main_dragonnest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\background\video_dragonnest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\logo\main_worldofwonders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enums\Enums.csproj">
+      <Project>{de3a6b3d-2ac1-4a69-8b73-2d17316b9f78}</Project>
+      <Name>Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Functions\Functions.csproj">
+      <Project>{f8867150-64b2-4f52-9498-8296f72799df}</Project>
+      <Name>Functions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LauncherData\LauncherData.csproj">
+      <Project>{adff56e8-0ccc-40bf-b9d0-e28d45876027}</Project>
+      <Name>LauncherData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Packets\Packets.csproj">
+      <Project>{c9454669-6b91-437c-9dc8-b8a7e381ddfc}</Project>
+      <Name>Packets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\background\dragonnest.png" />
+    <Resource Include="resources\images\games\background\worldofwonders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\background\video_worldofwonders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\background\mid_window_focus.png" />
+    <Resource Include="resources\images\background\mid_window_focusout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\games\background\install\dragonnest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\avatar-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\emoji\01.png" />
+    <Resource Include="resources\images\emoji\02.png" />
+    <Resource Include="resources\images\emoji\03.png" />
+    <Resource Include="resources\images\emoji\04.png" />
+    <Resource Include="resources\images\emoji\05.png" />
+    <Resource Include="resources\images\emoji\06.png" />
+    <Resource Include="resources\images\emoji\07.png" />
+    <Resource Include="resources\images\emoji\08.png" />
+    <Resource Include="resources\images\emoji\09.png" />
+    <Resource Include="resources\images\emoji\10.png" />
+    <Resource Include="resources\images\emoji\11.png" />
+    <Resource Include="resources\images\emoji\12.png" />
+    <Resource Include="resources\images\emoji\13.png" />
+    <Resource Include="resources\images\emoji\14.png" />
+    <Resource Include="resources\images\emoji\15.png" />
+    <Resource Include="resources\images\emoji\16.png" />
+    <Resource Include="resources\images\emoji\17.png" />
+    <Resource Include="resources\images\emoji\18.png" />
+    <Resource Include="resources\images\emoji\19.png" />
+    <Resource Include="resources\images\emoji\20.png" />
+    <Resource Include="resources\images\emoji\21.png" />
+    <Resource Include="resources\images\emoji\22.png" />
+    <Resource Include="resources\images\emoji\23.png" />
+    <Resource Include="resources\images\emoji\24.png" />
+    <Resource Include="resources\images\emoji\25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\emoji\26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\avatar-group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\background\login-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\images\ag-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\sounds\0.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="resources\sounds\1.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

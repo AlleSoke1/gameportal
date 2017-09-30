@@ -1,0 +1,4 @@
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Enums\bin\Release\Enums.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Enums\bin\Release\Enums.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Enums\obj\Release\Enums.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Enums\obj\Release\Enums.pdb

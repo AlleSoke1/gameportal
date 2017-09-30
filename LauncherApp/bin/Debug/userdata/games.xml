@@ -1,0 +1,65 @@
+<GamesList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <count>2</count>
+  <data>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName>dragonnest</gameName>
+      <gameFolder>C:\arcangames\dragonnest</gameFolder>
+      <startupExeFile>file1.exe</startupExeFile>
+      <startCommand>/asdsad //sadsad</startCommand>
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+    <GameInfo>
+      <gameName />
+      <gameFolder />
+      <startupExeFile />
+      <startCommand />
+    </GameInfo>
+  </data>
+</GamesList>

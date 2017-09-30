@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetSockets</name>
+    </assembly>
+    <members>
+        <member name="T:NetSockets.NetBaseClient`1">
+            <summary>
+            Abstract generic base class providing core client functionality.
+            </summary>
+            <typeparam name="T">The type of data communicated.</typeparam>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.#ctor">
+            <summary>
+            Initializes a new instance of the NetBaseStream class.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.Connect(System.String,System.Int32)">
+            <summary>
+            Connects to the server on the specified host and port.
+            </summary>
+            <param name="host">The remote host name.</param>
+            <param name="port">The remote port number.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.TryConnect(System.String,System.Int32)">
+            <summary>
+            Connects to the server, returns a bool indicating whether the attempt failed or succeeded.
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.Disconnect">
+            <summary>
+            Disconnects from the server.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.Disconnect(NetSockets.NetStoppedReason)">
+            <summary>
+            Disconnects from the server.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.Send(`0)">
+            <summary>
+            Sends the provided data to the server.
+            </summary>
+            <param name="data">The data to be sent to the server.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.CreateStream(System.Net.Sockets.NetworkStream,System.Net.EndPoint)">
+            <summary>
+            Returns a new instance of an appropriate stream.
+            </summary>
+            <param name="ns">The network stream associated with the stream.</param>
+            <param name="ep">The end point associated with the stream.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.stream_OnReceived(System.Object,NetSockets.NetStreamReceivedEventArgs{`0})">
+            <summary>
+            Invoked when the internal stream receives data.
+            </summary>
+            <param name="stream"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:NetSockets.NetBaseClient`1.stream_OnStopped(System.Object,NetSockets.NetStreamStoppedEventArgs)">
+            <summary>
+            Invoked when the interal stream is stopped.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="E:NetSockets.NetBaseClient`1.OnReceived">
+            <summary>
+            Occurs when data has been received.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseClient`1.OnConnected">
+            <summary>
+            Occurs when the connection is established succesfully.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseClient`1.OnDisconnected">
+            <summary>
+            Occurs when the connection is closed by the client or server.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseClient`1.RemoteHost">
+            <summary>
+            Gets the remote host name.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseClient`1.RemotePort">
+            <summary>
+            Gets the remote port number.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseClient`1.IsConnected">
+            <summary>
+            Gets a value indicating whether the client is connected.
+            </summary>
+        </member>
+        <member name="T:NetSockets.NetEchoMode">
+            <summary>
+            Echo modes.
+            </summary>
+        </member>
+        <member name="T:NetSockets.NetBaseServer`1">
+            <summary>
+            Abstract generic base class providing core server functionality.
+            </summary>
+            <typeparam name="T">The type of data communicated.</typeparam>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.#ctor">
+            <summary>
+            Initializes a new instance of the NetBaseServer class.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.Start(System.Int32)">
+            <summary>
+            Starts the server on the specified port with no client limit, on the default address
+            </summary>
+            <param name="port">The listening port.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.Start(System.Int32,System.Int32)">
+            <summary>
+            Starts the server on the specified port and client limit, on the default address
+            </summary>
+            <param name="port">The listening port.</param>
+            <param name="maxClients">The maximum number of allowed clients.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.Start(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Starts the server on the specified port and address, with no client limit.
+            </summary>
+            <param name="address">The listening address.</param>
+            <param name="port">The listening port.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.Start(System.Net.IPAddress,System.Int32,System.Int32)">
+            <summary>
+            Starts the server on the specified port, address, and client limit.
+            </summary>
+            <param name="address">The listening address.</param>
+            <param name="port">The listening port.</param>
+            <param name="maxClients">The maximum number of allowed clients.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.Stop">
+            <summary>
+            Stops the server manually.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.Stop(NetSockets.NetStoppedReason)">
+            <summary>
+            Stops the server.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.DisconnectClient(System.Guid)">
+            <summary>
+            Disconnect a single client.
+            </summary>
+            <param name="guid">The client's guid.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.DisconnectAll">
+            <summary>
+            Disconnect all clients.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.DispatchTo(System.Guid,`0)">
+            <summary>
+            Dispatch data to a single client.
+            </summary>
+            <param name="guid">The client's guid.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.DispatchTo(System.Guid[],`0)">
+            <summary>
+            Dispatch data to a group of clients.
+            </summary>
+            <param name="guid">The array of client guids.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.DispatchAll(`0)">
+            <summary>
+            Dispatch data to all clients.
+            </summary>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.DispatchAllExcept(System.Guid,`0)">
+            <summary>
+            Dispatch data to all clients except a single client.
+            </summary>
+            <param name="guid">The client's guid.</param>
+            <param name="data">The data.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.ThreadedAccept">
+            <summary>
+            The threaded loop for accepting new clients.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.OnClientReceived(System.Object,NetSockets.NetStreamReceivedEventArgs{`0})">
+            <summary>
+            Invoked when data is received from a client stream.
+            </summary>
+            <param name="stream">The client stream.</param>
+            <param name="data">The data received.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.OnClientStopped(System.Object,NetSockets.NetStreamStoppedEventArgs)">
+            <summary>
+            Invoked when a client stream is stopped. Eg: the client has disconnected.
+            </summary>
+            <param name="stream">The client stream.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseServer`1.CreateStream(System.Net.Sockets.NetworkStream,System.Net.EndPoint)">
+            <summary>
+            Returns a new instance of the appropriate stream.
+            </summary>
+            <param name="ns">The network stream associated with the stream.</param>
+            <param name="ep">The end point associated with the stream.</param>
+            <returns></returns>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnStarted">
+            <summary>
+            Occurs when the server is started.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnStopped">
+            <summary>
+            Occurs when the server is stopped.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnError">
+            <summary>
+            Occurs when an error occurs.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnClientConnected">
+            <summary>
+            Occurs when a new client connects.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnClientAccepted">
+            <summary>
+            Occurs when a new client is accepted.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnClientRejected">
+            <summary>
+            Occurs when a new client is rejected.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnClientDisconnected">
+            <summary>
+            Occurs when a client disconnects.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseServer`1.OnReceived">
+            <summary>
+            Occurs when data is received from a client.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.MaxClients">
+            <summary>
+            Gets the max number of clients allowed.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.Port">
+            <summary>
+            Gets the listening port number.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.IsOnline">
+            <summary>
+            Gets a value indicating whether the server is online.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.TickRate">
+            <summary>
+            Gets or sets the server tick rate.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.LocalAddresses">
+            <summary>
+            Gets an array of local addresses.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.DefaultAddress">
+            <summary>
+            Gets the default address used.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.Address">
+            <summary>
+            Gets or sets the listening address.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.Clients">
+            <summary>
+            Gets an array of connected client guids.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.ClientCount">
+            <summary>
+            Gets the number of connected clients.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.ClientStreams">
+            <summary>
+            Gets a dictionary of client streams.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseServer`1.EchoMode">
+            <summary>
+            Gets or sets a value indicating whether the server should echo all received data.
+            </summary>
+        </member>
+        <member name="T:NetSockets.NetBaseStream`1">
+            <summary>
+            Abstract generic base class providing core stream functionality.
+            </summary>
+            <typeparam name="T">The type of data communicated.</typeparam>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.#ctor(System.Net.Sockets.NetworkStream,System.Net.EndPoint)">
+            <summary>
+            Initializes a new instance of the NetBaseStream class.
+            </summary>
+            <param name="stream">The network stream to stream from.</param>
+            <param name="endpoint">The remote endpoint.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.Start">
+            <summary>
+            Starts the stream.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.Stop">
+            <summary>
+            Stops the stream manually locally.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.Stop(NetSockets.NetStoppedReason)">
+            <summary>
+            Stops the stream with a specific reason.
+            </summary>
+            <param name="reason">The stop reason.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.Send(`0)">
+            <summary>
+            Sends strictly typed data to the stream.
+            </summary>
+            <param name="data">The type of data.</param>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.SendRaw(System.Byte[])">
+            <summary>
+            Sends a raw byte array to the stream.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.ReceivedRaw(System.Byte[])">
+            <summary>
+            Should be implemented for handling raw bytes received from the stream.
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.ThreadedReceive">
+            <summary>
+            The threaded receive loop.
+            </summary>
+        </member>
+        <member name="M:NetSockets.NetBaseStream`1.RaiseOnReceived(`0)">
+            <summary>
+            Raises the OnReceived event.
+            </summary>
+            <param name="data">The data associated with the event.</param>
+        </member>
+        <member name="E:NetSockets.NetBaseStream`1.OnStarted">
+            <summary>
+            Occurs when the stream is started.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseStream`1.OnStopped">
+            <summary>
+            Occurs when the stream is stopped.
+            </summary>
+        </member>
+        <member name="E:NetSockets.NetBaseStream`1.OnReceived">
+            <summary>
+            Occurs when data received from the stream.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseStream`1.Guid">
+            <summary>
+            Gets the streams guid (identifier used by server).
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseStream`1.DataSent">
+            <summary>
+            Gets the number of bytes sent.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseStream`1.DataReceived">
+            <summary>
+            Gets the number of bytes received.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseStream`1.IsActive">
+            <summary>
+            Gets a value indicating whether the stream is active.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseStream`1.EndPoint">
+            <summary>
+            Gets the remote endpoint.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetBaseStream`1.TickRate">
+            <summary>
+            Gets the tick rate.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetStreamEventArgs.Guid">
+            <summary>
+            The stream's guid.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetStreamStoppedEventArgs.Reason">
+            <summary>
+            The reason why the stream being stopped.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetStreamReceivedEventArgs`1.Data">
+            <summary>
+            The data received.
+            </summary>
+        </member>
+        <member name="T:NetSockets.NetStoppedReason">
+            <summary>
+            Stop reasons.
+            </summary>
+        </member>
+        <member name="T:NetSockets.NetRejectedReason">
+            <summary>
+            Rejection reasons.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetDisconnectedEventArgs.Reason">
+            <summary>
+            The reason why the client was stopped.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetReceivedEventArgs`1.Data">
+            <summary>
+            The data received.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetStoppedEventArgs.Reason">
+            <summary>
+            The reason why the server was stopped.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetClientConnectedEventArgs.Reject">
+            <summary>
+            Gets or sets whether the client should be rejected.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetClientRejectedEventArgs.Reason">
+            <summary>
+            The reason why the stream being stopped.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetExceptionEventArgs.Exception">
+            <summary>
+            The exception tht was caught.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetClientReceivedEventArgs`1.Data">
+            <summary>
+            The data received.
+            </summary>
+        </member>
+        <member name="P:NetSockets.NetClientReceivedEventArgs`1.EchoMode">
+            <summary>
+            The echo mode for this event.
+            </summary>
+        </member>
+    </members>
+</doc>

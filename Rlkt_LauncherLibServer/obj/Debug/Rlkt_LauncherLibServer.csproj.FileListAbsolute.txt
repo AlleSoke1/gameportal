@@ -1,0 +1,55 @@
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe.config
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.pdb
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.exe
+c:\users\k\documents\visual studio 2013\Projects\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.exe
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe.config
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\WindowsFormsApplication1\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe.config
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.exe
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
+D:\Hossam\DN\GamesPortal\Katalin\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe.config
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\NetSockets.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Packets.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Packets.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\NetSockets.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\NetSockets.xml
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.exe
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe.config
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Enums.dll
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\NetSockets.dll
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Packets.dll
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Enums.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\Packets.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\NetSockets.pdb
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\bin\Debug\NetSockets.xml
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.exe
+D:\Hossam\DN\GamesPortal\Katalin\v4\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Enums.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\RlktXmlData.dll
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Enums.pdb
+C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\RlktXmlData.pdb

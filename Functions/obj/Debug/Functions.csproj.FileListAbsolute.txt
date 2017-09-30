@@ -1,0 +1,4 @@
+C:\LauncherApp\Source\v5\Functions\bin\Debug\Functions.dll
+C:\LauncherApp\Source\v5\Functions\bin\Debug\Functions.pdb
+C:\LauncherApp\Source\v5\Functions\obj\Debug\Functions.dll
+C:\LauncherApp\Source\v5\Functions\obj\Debug\Functions.pdb

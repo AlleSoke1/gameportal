@@ -1,0 +1,120 @@
+﻿<Window x:Name="SettingsWnd" x:Class="LauncherApp.InstallGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
+        FontFamily="{DynamicResource AppFontPath}"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Title="{DynamicResource wndGameInstall}" Height="450" Width="720" Background="#FF2B2B2B" BorderThickness="0" MinWidth="720" MinHeight="450"  MouseDown="Window_MouseDown" ShowInTaskbar="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner">
+    <Window.Resources>
+        <ResourceDictionary Source="/Styles/Style.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+
+        <WrapPanel HorizontalAlignment="Right" Width="40" Margin="0,5,5,0" Height="22" VerticalAlignment="Top" Panel.ZIndex="20">
+            <cControls:HeaderButton x:Name="tCloseBtn" Width="40" Height="22" Icon="Close" BackgroundColor="#FFDA0029"  Click="tCloseBtn_Click" />
+        </WrapPanel>
+
+        <DockPanel LastChildFill="False" Background="White" Margin="221,0,1,62" Opacity="0.15" Height="1" VerticalAlignment="Bottom" Panel.ZIndex="1"/>
+        <DockPanel LastChildFill="False" Background="White" Margin="220,1,499,1" Opacity="0.15" Panel.ZIndex="1" Width="1"/>
+
+        <Grid x:Name="InfoWnd" Height="387" VerticalAlignment="Top" HorizontalAlignment="Right" Width="500" Background="#FF141413">
+
+            <Label x:Name="WndTitle" Content="{DynamicResource InstallGameTitle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,41,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
+
+            <Border BorderThickness="1" Margin="13,130,12,30" Width="470">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                </Border.BorderBrush>
+                <Grid>
+
+                    <Label Content="{DynamicResource InstallInfoBoxLocal}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,10,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}" FontWeight="Bold"/>
+
+                    <StackPanel Margin="26,39,10,167" Orientation="Horizontal">
+                        <Label x:Name="InstallPath" Content="D:\Hossam\DN\GamesPortal\Katalin\v5\LauncherApp\resources\images\background"  Margin="0,0,10,0" Foreground="#FFB2B2B2" Padding="0" Width="332" VerticalContentAlignment="Center"/>
+                        <Button x:Name="InstallPathBtn" Content="{DynamicResource strChange}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="49"  Height="19" BorderThickness="0" FontSize="14" Style="{StaticResource TransButtonStyle}"  Margin="5,0,0,0" Padding="0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Click="InstallPathBtn_Click"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="26,60,10,150" Orientation="Horizontal">
+                        <Label  Content="{DynamicResource InstallInfoBoxDownSize}" Foreground="#FFB2B2B2" Padding="0" Margin="0,0,5,0"/>
+                        <fa:ImageAwesome x:Name="ReqSizeIcon" Icon="Close" SpinDuration="2" HorizontalAlignment="Center" Width="15" Foreground="#FFCD0101" Margin="0,5,0,0" Height="8" VerticalAlignment="Top"/>
+                        <Label x:Name="ReqSizeLbil" Content="10.00 GB" Foreground="#FFCD0101" Padding="0" Width="54" FlowDirection="LeftToRight"/>
+                        <Label x:Name="ReqSizeErrorLbil" Content="{DynamicResource InstallInfoBoxDownSize}" Foreground="#FFCD0101" Padding="0" Width="225" FlowDirection="LeftToRight"/>
+                    </StackPanel>
+
+                    <Label Content="{DynamicResource InstallInfoBoxLang}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,85,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}" FontWeight="Bold"/>
+                    <Label x:Name="GameLangLbil" Content="{DynamicResource InstallInfoBoxLangStr}"   Margin="26,112,164,89" Foreground="#FFB2B2B2" Padding="0" Height="22" Width="278" Opacity="0.985"/>
+
+                    <Label Content="{DynamicResource InstallInfoBoxPreferences}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,145,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}" FontWeight="Bold"/>
+                    <CheckBox x:Name="ShortcutFlag" Content="{DynamicResource InstallInfoBoxShortCutFlag}" Style="{StaticResource myCheckboxStyle}" Margin="26,172,27,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" IsChecked="True" />
+
+                </Grid>
+
+            </Border>
+
+            <Button x:Name="InstallBtn" Content="{DynamicResource InstallStartInstall}" Style="{StaticResource RedButtonStyle}" Cursor="Hand" Margin="0,0,13,-47" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="90" Click="InstallBtn_Click" IsEnabled="False">
+
+            </Button>
+
+        </Grid>
+
+        <Grid x:Name="InstallWnd" Height="387" VerticalAlignment="Top" HorizontalAlignment="Right" Width="500" Background="#FF141413" Visibility="Hidden">
+
+            <Label Content="{DynamicResource InstallGameInstallTitle}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,41,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold" Padding="0,5"/>
+            <Label x:Name="WndInstallText"  Content="{DynamicResource InstallGameInstallText}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,70,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
+
+
+            <Label x:Name="Downloadstr" Content="{DynamicResource InstallGameDownloadProgress}"  Margin="20,226,259,139" Foreground="#FFE2E2E2" Padding="0" Height="22"/>
+            <Label x:Name="DownloadStatus" Content="0%"  Margin="238,226,20,139" Foreground="#FFB2B2B2" Padding="0" Height="22" HorizontalContentAlignment="Right"/>
+            <ProgressBar x:Name="DownloadBar" Height="20" Margin="20,248,20,0" VerticalAlignment="Top" Background="#FF141413" Foreground="#FFDA0029">
+                <ProgressBar.BorderBrush>
+                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                </ProgressBar.BorderBrush>
+            </ProgressBar>
+
+            <Label x:Name="Installstr" Content="{DynamicResource InstallGameInstallProgress}"  Margin="20,289,259,76" Foreground="#FFE2E2E2" Padding="0" Height="22"/>
+            <Label x:Name="InstallStatus" Content="0%"  Margin="243,289,20,76" Foreground="#FFB2B2B2" Padding="0" Height="22" HorizontalContentAlignment="Right"/>
+            <ProgressBar x:Name="InstallBar" Height="20" Margin="20,311,20,0" VerticalAlignment="Top" Background="#FF141413" Foreground="#FFDA0029">
+                <ProgressBar.BorderBrush>
+                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                </ProgressBar.BorderBrush>
+            </ProgressBar>
+
+            <Label x:Name="ProgressPath" Content="C:\arcangames\downloads\dragonnest"  Margin="20,346,0,19" Foreground="#FFB2B2B2" Padding="0" Height="22" HorizontalAlignment="Left" Width="457"/>
+
+            <Button x:Name="StartBtn" Content="{DynamicResource GameStartBtn}" Style="{StaticResource RedButtonStyle}" Cursor="Hand" Margin="0,0,13,-47" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="90" IsEnabled="False" Click="StartBtn_Click">
+
+            </Button>
+
+        </Grid>
+
+        <Grid x:Name="MessageWnd" Height="387" VerticalAlignment="Top" HorizontalAlignment="Right" Width="500">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5"/>
+            </Grid.Background>
+
+            <fa:ImageAwesome x:Name="MessageIcon" Icon="CircleOutlineNotch" Spin="True" SpinDuration="1.5" Foreground="White" Margin="221,167"/>
+            <Label x:Name="MessageText" Content="{DynamicResource LoadingStr}" Margin="0,225,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" FontSize="14"/>
+
+        </Grid>
+
+        <Grid x:Name="LeftMenu" Width="220" Background="#FF310616" HorizontalAlignment="Left">
+
+            <Image x:Name="GameImage" Source="resources/images/games/background/install/dragonnest.png" Stretch="Fill"/>
+
+        </Grid>
+
+
+        <Border BorderThickness="1" x:Name="WndBorder" Panel.ZIndex="-1">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="White" Opacity="0.2"/>
+            </Border.BorderBrush>
+        </Border>
+
+    </Grid>
+
+
+
+</Window>

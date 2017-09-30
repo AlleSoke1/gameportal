@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D48EC8A3-D0A2-4CE0-ADA6-B6FB0C08150C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rlkt_LauncherLibServer</RootNamespace>
+    <AssemblyName>Rlkt_LauncherLibServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Rlkt_LauncherLibServer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NetSockets">
+      <HintPath>..\NetSockets\Release\NetSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\Clients.cs" />
+    <Compile Include="Clients\ClientInfo.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="PacketLogic\channel\ChannelInviteLogic.cs" />
+    <Compile Include="PacketLogic\channel\CreateChannelLogic.cs" />
+    <Compile Include="PacketLogic\channel\ChannelUseresListLogic.cs" />
+    <Compile Include="PacketLogic\channel\ChannelOptionLogic.cs" />
+    <Compile Include="PacketLogic\chat\ChatMessagesLogic.cs" />
+    <Compile Include="PacketLogic\chat\SendMessageLogic.cs" />
+    <Compile Include="ServiceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceWindow.Designer.cs">
+      <DependentUpon>ServiceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameData\GamesInfo.cs" />
+    <Compile Include="PacketLogic\friend\FriendOptionLogic.cs" />
+    <Compile Include="PacketLogic\friend\AddFriendOptionLogic.cs" />
+    <Compile Include="PacketLogic\friend\AddFriendLogic.cs" />
+    <Compile Include="PacketLogic\friend\FriendListLogic.cs" />
+    <Compile Include="PacketLogic\LoginLogic.cs" />
+    <Compile Include="PacketLogic\LogoutLogic.cs" />
+    <Compile Include="PacketLogic\UserInfoLogic.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\CDataBase.cs" />
+    <Compile Include="PacketLogic\NicknameLogic.cs" />
+    <Compile Include="Server\PacketHandler.cs" />
+    <Compile Include="Server\Server.cs" />
+    <Compile Include="PacketLogic\UserStatusLogic.cs" />
+    <EmbeddedResource Include="ServiceWindow.resx">
+      <DependentUpon>ServiceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enums\Enums.csproj">
+      <Project>{de3a6b3d-2ac1-4a69-8b73-2d17316b9f78}</Project>
+      <Name>Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Packets\Packets.csproj">
+      <Project>{c9454669-6b91-437c-9dc8-b8a7e381ddfc}</Project>
+      <Name>Packets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RlktXmlData\RlktXmlData.csproj">
+      <Project>{c5f24f3c-98a1-415c-b5a7-494488c3a434}</Project>
+      <Name>RlktXmlData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
