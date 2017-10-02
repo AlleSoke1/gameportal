@@ -74,19 +74,33 @@ namespace LauncherApp.Styles.Controls
         #region UserID DP
         public long UserID
         {
-            get { return UserIDProperty; }
-            set { UserIDProperty = value; }
+            get { return (long)GetValue(UserIDProperty); }
+            set { SetValue(UserIDProperty, value); UpdateUserID(value); }
         }
-        public static long UserIDProperty;
+
+        public static readonly DependencyProperty UserIDProperty
+            = DependencyProperty.Register(
+                  "UserID",
+                  typeof(long),
+                  typeof(FriendListItem)
+              );
+
         #endregion
 
         #region ChatID DP
         public long ChatID
         {
-            get { return ChatIDProperty; }
-            set { ChatIDProperty = value; }
+            get { return (long)GetValue(ChatIDProperty); }
+            set { SetValue(ChatIDProperty, value); }
         }
-        public static long ChatIDProperty;
+
+        public static readonly DependencyProperty ChatIDProperty
+            = DependencyProperty.Register(
+                  "ChatID",
+                  typeof(long),
+                  typeof(FriendListItem)
+              );
+
         #endregion
 
 
@@ -112,6 +126,7 @@ namespace LauncherApp.Styles.Controls
             
         }
 
+
         private void TittlePanel_MouseLeave(object sender, MouseEventArgs e)
         {
             if (!IsSelected)
@@ -122,6 +137,10 @@ namespace LauncherApp.Styles.Controls
             
         }
 
+        private void UpdateUserID(long value)
+        {
+            UserIdLabel.Content = "#" + value.ToString();
+        }
 
         private void SwithSelectedStatus(bool value)
         {

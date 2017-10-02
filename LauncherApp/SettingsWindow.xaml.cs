@@ -36,7 +36,7 @@ namespace LauncherApp
         {
             Panel.SetZIndex(wndBorder, 1);
 
-            VolumFlagLibl.Content   = SoundVolumeFlag.Value.ToString().Split('.')[0] + "%";
+            VolumFlagLabl.Content = SoundVolumeFlag.Value.ToString().Split('.')[0] + "%";
             SavedLibl.Visibility    = Visibility.Hidden;
 
             var versionInfo         = FileVersionInfo.GetVersionInfo(Assembly.GetEntryAssembly().Location);
@@ -53,12 +53,22 @@ namespace LauncherApp
         }
 
 
-        private void SoundVolumeFlag_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+
+        private void SoundVolumeFlag_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            VolumFlagLibl.Content = SoundVolumeFlag.Value.ToString().Split('.')[0] + "%";
+            VolumFlagLabl.Content = e.NewValue.ToString().Split('.')[0] + "%";
         }
 
 
+        private void InputDeviceVolumeFlag_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void OutputDeviceVolumeFlag_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
 
         private void tCloseBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -353,6 +363,10 @@ namespace LauncherApp
 
             this.IsEnabled = true;
         }
+
+
+
+
 
 
 

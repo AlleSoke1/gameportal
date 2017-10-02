@@ -45,6 +45,7 @@
                     <fa:ImageAwesome x:Name="StatusIcon" Icon="Circle" Foreground="#FF828282" Margin="0,0,0,0" HorizontalAlignment="Left" Width="5" Height="5" />
 
                     <Label x:Name="StatusText" Content="Offline" Padding="8,0,0,0" Foreground="#FF828282" Margin="0,-8,0,0" HorizontalAlignment="Left" Width="239" FontSize="10" />
+                    <Label x:Name="UserIdLabel" Content="Offline" Padding="0.1,0,0,0" Foreground="#FF828282" Margin="50,-13,0,0" FontSize="10" />
 
                 </StackPanel>
 

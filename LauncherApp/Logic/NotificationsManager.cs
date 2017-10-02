@@ -152,6 +152,18 @@ namespace NotifyManager
 
                     #endregion
 
+                    #region Incoming Call
+                    case NotifyType.IncomingCall:
+
+                        long chatID = (long)data;
+
+                        if (App.ChatMan._openedChats.ContainsKey(chatID))
+                        {
+                            App.ChatMan._openedChats[chatID].onIncomingCallRequset();
+                        }
+
+                        break;
+                    #endregion
 
 
                 }
@@ -173,6 +185,7 @@ namespace NotifyManager
 
         NewMessageAdded = 4,
 
+        IncomingCall = 5,
 
     };
 

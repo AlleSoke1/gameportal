@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Hossam\DN\GamesPortal\Katalin\v5\LauncherApp\obj\Debug\
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\obj\Debug\
 LauncherApp
 none
 false
 DEBUG;TRACE
 
-39-652268305
+40-1245356467
 
 481708302046
-261566193653
-App.xaml;AppsWindow.xaml;ChannelInvite.xaml;ChannelWindow.xaml;ChatWindow.xaml;ChannelCreate.xaml;FriendAddWindow.xaml;FriendsWindow.xaml;ScanGames.xaml;LoginWindow.xaml;NicknameWindow.xaml;resources\uistring\ar.xaml;resources\uistring\en.xaml;InstallGame.xaml;SettingsWindow.xaml;StartupWindow.xaml;Styles\Controls\chat\ChannelUserItem.xaml;Styles\Controls\chat\ChannelListItem.xaml;Styles\Controls\chat\ChannelList.xaml;Styles\Controls\QuickUserStatus.xaml;Styles\Controls\LoadingDots.xaml;Styles\Controls\ComboBox.xaml;Styles\Controls\ContextMenu.xaml;Styles\Controls\chat\ChatMessageItem.xaml;Styles\Controls\CheckBox.xaml;Styles\Controls\Notifications\NotifyBoxItem.xaml;Styles\Controls\friend\FriendRequestListitem.xaml;Styles\Controls\friend\FriendRequestList.xaml;Styles\Controls\friend\FriendListItem.xaml;Styles\Controls\GameListItem.xaml;Styles\Controls\friend\FriendList.xaml;Styles\Controls\DropMenu.xaml;Styles\Controls\FastMessage.xaml;Styles\Controls\HeaderButton.xaml;Styles\Controls\ScanListItem.xaml;NotifyBox.xaml;Styles\Style.xaml;Styles\Controls\ScrollBar.xaml;Styles\Controls\ScrollViewer.xaml;
+26-1721130605
+App.xaml;AppsWindow.xaml;ChannelInvite.xaml;ChannelWindow.xaml;ChatWindow.xaml;ChannelCreate.xaml;FriendAddWindow.xaml;FriendsWindow.xaml;ScanGames.xaml;LoginWindow.xaml;NicknameWindow.xaml;resources\uistring\ar.xaml;resources\uistring\en.xaml;InstallGame.xaml;SettingsWindow.xaml;StartupWindow.xaml;Styles\Controls\chat\ChannelUserItem.xaml;Styles\Controls\chat\ChannelListItem.xaml;Styles\Controls\chat\ChannelList.xaml;Styles\Controls\Slider.xaml;Styles\Controls\QuickUserStatus.xaml;Styles\Controls\LoadingDots.xaml;Styles\Controls\ComboBox.xaml;Styles\Controls\ContextMenu.xaml;Styles\Controls\chat\ChatMessageItem.xaml;Styles\Controls\CheckBox.xaml;Styles\Controls\Notifications\NotifyBoxItem.xaml;Styles\Controls\friend\FriendRequestListitem.xaml;Styles\Controls\friend\FriendRequestList.xaml;Styles\Controls\friend\FriendListItem.xaml;Styles\Controls\GameListItem.xaml;Styles\Controls\friend\FriendList.xaml;Styles\Controls\DropMenu.xaml;Styles\Controls\FastMessage.xaml;Styles\Controls\HeaderButton.xaml;Styles\Controls\ScanListItem.xaml;NotifyBox.xaml;Styles\Style.xaml;Styles\Controls\ScrollBar.xaml;Styles\Controls\ScrollViewer.xaml;
 
-True
+False
 

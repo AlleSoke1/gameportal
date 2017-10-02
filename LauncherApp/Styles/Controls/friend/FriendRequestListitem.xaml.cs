@@ -44,10 +44,16 @@ namespace LauncherApp.Styles.Controls
         #region UserID DP
         public long UserID
         {
-            get { return UserIDProperty; }
-            set { UserIDProperty = value; }
+            get { return (long)GetValue(UserIDProperty); }
+            set { SetValue(UserIDProperty, value);}
         }
-        public static long UserIDProperty;
+
+        public static readonly DependencyProperty UserIDProperty
+            = DependencyProperty.Register(
+                  "UserID",
+                  typeof(long),
+                  typeof(FriendRequestListitem)
+              );
         #endregion
 
         public FriendRequestListitem()

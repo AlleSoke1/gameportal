@@ -2,3 +2,8 @@ D:\Hossam\DN\GamesPortal\Katalin\v4\Enums\bin\Debug\Enums.dll
 D:\Hossam\DN\GamesPortal\Katalin\v4\Enums\bin\Debug\Enums.pdb
 D:\Hossam\DN\GamesPortal\Katalin\v4\Enums\obj\Debug\Enums.dll
 D:\Hossam\DN\GamesPortal\Katalin\v4\Enums\obj\Debug\Enums.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Enums\bin\Debug\Enums.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Enums\bin\Debug\Enums.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Enums\obj\Debug\Enums.csprojResolveAssemblyReference.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\Enums\obj\Debug\Enums.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Enums\obj\Debug\Enums.pdb

@@ -53,3 +53,21 @@ C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibS
 C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\RlktXmlData.dll
 C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\Enums.pdb
 C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Rlkt_LauncherLibServer\bin\Debug\RlktXmlData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe.config
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.exe
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Rlkt_LauncherLibServer.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Enums.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\NetSockets.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Packets.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\RlktXmlData.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Enums.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Packets.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\RlktXmlData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\NetSockets.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\NetSockets.xml
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.ServiceWindow.resources
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.exe
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.pdb

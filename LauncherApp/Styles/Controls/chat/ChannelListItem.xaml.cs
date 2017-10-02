@@ -56,12 +56,20 @@ namespace LauncherApp.Styles.Controls
         #endregion
 
         #region ChatID DP
+
         public long ChatID
         {
-            get { return ChatIDProperty; }
-            set { ChatIDProperty = value; SetChatIDLibl(value); }
+            get { return (long)GetValue(ChatIDProperty); }
+            set { SetValue(ChatIDProperty, value); SetChatIDLibl(value); }
         }
-        public static long ChatIDProperty;
+
+        public static readonly DependencyProperty ChatIDProperty
+            = DependencyProperty.Register(
+                  "ChatID",
+                  typeof(long),
+                  typeof(ChannelListItem)
+              );
+
         #endregion
 
         public string menuOrder;

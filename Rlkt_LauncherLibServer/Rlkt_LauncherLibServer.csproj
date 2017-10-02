@@ -53,6 +53,7 @@
     <Compile Include="Clients\Clients.cs" />
     <Compile Include="Clients\ClientInfo.cs" />
     <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="PacketLogic\calls\VOIPRequestLogic.cs" />
     <Compile Include="PacketLogic\channel\ChannelInviteLogic.cs" />
     <Compile Include="PacketLogic\channel\CreateChannelLogic.cs" />
     <Compile Include="PacketLogic\channel\ChannelUseresListLogic.cs" />
@@ -80,6 +81,8 @@
     <Compile Include="Server\PacketHandler.cs" />
     <Compile Include="Server\Server.cs" />
     <Compile Include="PacketLogic\UserStatusLogic.cs" />
+    <Compile Include="VoiceChannels\Channels.cs" />
+    <Compile Include="VoiceChannels\Voice.cs" />
     <EmbeddedResource Include="ServiceWindow.resx">
       <DependentUpon>ServiceWindow.cs</DependentUpon>
     </EmbeddedResource>

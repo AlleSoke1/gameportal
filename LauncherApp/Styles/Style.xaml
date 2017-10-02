@@ -7,7 +7,8 @@
         <ResourceDictionary Source="Controls/ScrollViewer.xaml" />
         <ResourceDictionary Source="Controls/ComboBox.xaml" />
         <ResourceDictionary Source="Controls/ContextMenu.xaml" />
-
+        <ResourceDictionary Source="Controls/Slider.xaml" />
+        
         <ResourceDictionary Source="/resources/uistring/en.xaml" />
     </ResourceDictionary.MergedDictionaries>
 

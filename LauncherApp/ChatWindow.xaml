@@ -5,17 +5,23 @@
         xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
         WindowStyle="None"
         FontFamily="{DynamicResource AppFontPath}"
-        AllowsTransparency="True" Height="455" Width="450" Background="#FF2B2B2B" BorderThickness="0" MinWidth="450" MinHeight="455"  MouseDown="Window_MouseDown" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        AllowsTransparency="True" Height="455" Width="450" Background="#FF2B2B2B" BorderThickness="0" MinWidth="450" MinHeight="455" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="/Styles/Style.xaml"/>
     </Window.Resources>
 
     <Grid>
 
-        <WrapPanel HorizontalAlignment="Right" Width="80" Margin="0,5,5,0" Height="22" VerticalAlignment="Top">
-            <cControls:HeaderButton x:Name="tMinieBtn" Width="40" Height="22" Icon="Minus" BackgroundColor="#FF808080"  Click="tMinieBtn_Click"/>
-            <cControls:HeaderButton x:Name="tCloseBtn" Width="40" Height="22" Icon="Close" BackgroundColor="#FFDA0029"  Click="tCloseBtn_Click"/>
-        </WrapPanel>
+        <Grid x:Name="TopGridBar" Height="32" VerticalAlignment="Top"  MouseDown="Window_MouseDown" >
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0"/>
+            </Grid.Background>
+            <WrapPanel HorizontalAlignment="Right" Width="80" Margin="0,5,5,0" Height="22" VerticalAlignment="Top">
+                <cControls:HeaderButton x:Name="tMinieBtn" Width="40" Height="22" Icon="Minus" BackgroundColor="#FF808080"  Click="tMinieBtn_Click"/>
+                <cControls:HeaderButton x:Name="tCloseBtn" Width="40" Height="22" Icon="Close" BackgroundColor="#FFDA0029"  Click="tCloseBtn_Click"/>
+            </WrapPanel>
+        </Grid>
+
 
 
 
@@ -26,8 +32,17 @@
 
         <DockPanel LastChildFill="False" Background="White" Height="1" Margin="1,88,1,0" Opacity="0.15" VerticalAlignment="Top"/>
 
-        <Button x:Name="voiceChatBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xe719;" Margin="0,41,10,0" VerticalAlignment="Top" Height="30" Style="{StaticResource RedButtonStyle}" Cursor="" FontSize="16" IsEnabled="False" ToolTip="Start Voice Call" HorizontalAlignment="Right" Width="30" Click="voiceChatBtn_Click">
-        </Button>
+        <WrapPanel x:Name="ActionsPanel" HorizontalAlignment="Right" Width="130" Margin="0,40,14,0" Height="30" VerticalAlignment="Top">
+
+            <StackPanel x:Name="callVolumePanel" Orientation="Horizontal" Visibility="Hidden">
+                <fa:ImageAwesome x:Name="callVolumeIcon" Icon="VolumeUp"  SpinDuration="1.5" Foreground="White" Width="13" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,11,2,0" Height="10" />
+                <Slider x:Name="callVolumeScroll" Width="85" Height="12" LargeChange="10" Style="{StaticResource Horizontal_Slider}" Maximum="1" Value="1.1" ValueChanged="callVolumeScroll_ValueChanged" />
+            </StackPanel>
+
+            <Button x:Name="voiceChatBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xe719;" Margin="0" VerticalAlignment="Center" Height="30" Style="{StaticResource TransButtonStyle}" Cursor="Hand" FontSize="20" ToolTip="Start Voice Call" HorizontalAlignment="Center" Width="30" Click="voiceChatBtn_Click" IsEnabledChanged="voiceChatBtn_IsEnabledChanged" Panel.ZIndex="5" IsEnabled="False"/>
+
+        </WrapPanel>
+
 
 
 
@@ -56,9 +71,30 @@
                     <SolidColorBrush Color="Black" Opacity="0.5"/>
                 </Grid.Background>
                 <fa:ImageAwesome x:Name="MessageIcon" Icon="CircleOutlineNotch" Spin="True"  SpinDuration="1.5" Foreground="White" Margin="199,79,199,122"/>
-                <Label x:Name="MessageText" Content="{DynamicResource LoadingStr}" Margin="0,135,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" FontSize="14"/>
+                <Label x:Name="MessageText" Content="{StaticResource LoadingStr}" Margin="0,135,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Center" FontSize="14"/>
             </Grid>
 
+            <Grid x:Name="IncomingCallWindow" Height="0" VerticalAlignment="Top" Background="Black">
+
+                <StackPanel Orientation="Horizontal" Margin="50,0,50,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Foreground="White" Content="Incoming Call:" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+
+                    <Button x:Name="acceptCallBtn" Width="60" VerticalAlignment="Center" Style="{StaticResource RedButtonStyle}" Height="20" HorizontalAlignment="Center" Content="Accept" Cursor="Hand" Padding="0" FontSize="11" >
+
+                    </Button>
+
+                    <Button x:Name="declineCallBtn" Style="{DynamicResource TransBorderedButton}" Content="Decline" Margin="10,0,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Center" Width="60" Height="20" VerticalAlignment="Center" FontSize="11">
+                        <Button.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.345"/>
+                        </Button.Background>
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="White" Opacity="0.2"/>
+                        </Button.BorderBrush>
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
 
 
         </Grid>

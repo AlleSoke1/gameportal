@@ -12,3 +12,10 @@ D:\Hossam\DN\GamesPortal\Katalin\v4\Packets\obj\Debug\Packets.dll
 D:\Hossam\DN\GamesPortal\Katalin\v4\Packets\obj\Debug\Packets.pdb
 C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Packets\bin\Debug\Enums.dll
 C:\Users\K\Documents\Visual Studio 2013\Projects\GamesLauncher\Packets\bin\Debug\Enums.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\bin\Debug\Packets.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\bin\Debug\Packets.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\bin\Debug\Enums.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\bin\Debug\Enums.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\obj\Debug\Packets.csprojResolveAssemblyReference.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\obj\Debug\Packets.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Packets\obj\Debug\Packets.pdb

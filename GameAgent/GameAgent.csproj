@@ -89,7 +89,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\v5\Enums\Enums.csproj">
+    <ProjectReference Include="..\Enums\Enums.csproj">
       <Project>{de3a6b3d-2ac1-4a69-8b73-2d17316b9f78}</Project>
       <Name>Enums</Name>
     </ProjectReference>

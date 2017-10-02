@@ -18,6 +18,13 @@ namespace LauncherApp.Game_Data
         public static bool Initialized = false;
         public static Enums.UserInfo.UserStatus status { get; set; }
         public static int OnlineFriendCount { get; set; }
+
+
+
+        // voice chat system
+        public static bool CallCenterIsBusy { get; set; }
+        public static int CallCenterCannelID { get; set; }
+
     }
 
 }

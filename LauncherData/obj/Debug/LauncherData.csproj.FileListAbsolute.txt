@@ -14,3 +14,14 @@ D:\Hossam\DN\GamesPortal\Katalin\v4\LauncherData\bin\Debug\RlktXmlData.pdb
 D:\Hossam\DN\GamesPortal\Katalin\v4\LauncherData\obj\Debug\LauncherData.csprojResolveAssemblyReference.cache
 D:\Hossam\DN\GamesPortal\Katalin\v4\LauncherData\obj\Debug\LauncherData.dll
 D:\Hossam\DN\GamesPortal\Katalin\v4\LauncherData\obj\Debug\LauncherData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\LauncherData.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\LauncherData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\Enums.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\Functions.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\RlktXmlData.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\Enums.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\Functions.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\bin\Debug\RlktXmlData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\obj\Debug\LauncherData.csprojResolveAssemblyReference.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\obj\Debug\LauncherData.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherData\obj\Debug\LauncherData.pdb

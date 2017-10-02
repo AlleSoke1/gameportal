@@ -27,6 +27,7 @@ namespace Rlkt_LauncherLibServer.Clients
         //Network
         public Guid guid { get; set; }         //session id
         public ClientState state { get; set; } //session state
+        public bool CallCenterBusy { get; set; }   //Calls Flag
 
         internal bool isOnline()
         {

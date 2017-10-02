@@ -23,13 +23,13 @@
 
             <Label x:Name="ChannelIdLibl"  Content="#0" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Silver" Padding="0" Margin="24,58,0,0"/>
 
-            <WrapPanel x:Name="ActionsPanel" HorizontalAlignment="Right" Width="120" Margin="0,49,18,0" Height="23" VerticalAlignment="Top" IsEnabled="False">
+            <WrapPanel x:Name="ActionsPanel" HorizontalAlignment="Right" Width="120" Margin="0,49,18,0" Height="30" VerticalAlignment="Top" IsEnabled="False">
 
-                <Button x:Name="SettingsBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE60F;" VerticalAlignment="Top" Height="23" Style="{StaticResource TransButtonStyle}" Cursor="" FontSize="20" ToolTip="Voice Call Settings" HorizontalAlignment="Right" Width="40" Click="SettingsBtn_Click"/>
+                <Button x:Name="SettingsBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE60F;" VerticalAlignment="Center" Height="30" Style="{StaticResource TransButtonStyle}" Cursor="" FontSize="20" ToolTip="Voice Call Settings" HorizontalAlignment="Center" Width="30" Click="SettingsBtn_Click" Margin="10,0,0,0"/>
 
-                <Button x:Name="AddFriendBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE61A;"  VerticalAlignment="Top" Height="23" Style="{StaticResource TransButtonStyle}" Cursor="" FontSize="20" ToolTip="Invite friends to channel" HorizontalAlignment="Right" Width="40" Click="AddFriendBtn_Click"/>
+                <Button x:Name="AddFriendBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE61A;"  VerticalAlignment="Center" Height="30" Style="{StaticResource TransButtonStyle}" Cursor="" FontSize="20" ToolTip="Invite friends to channel" HorizontalAlignment="Center" Width="30" Click="AddFriendBtn_Click" Margin="10,0,0,0"/>
 
-                <Button x:Name="MicOnBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE719;"  VerticalAlignment="Top" Height="23" Style="{StaticResource TransButtonStyle}" Cursor="" FontSize="20" ToolTip="Start Voice Call" HorizontalAlignment="Right" Width="40" Click="MicOnBtn_Click"/>
+                <Button x:Name="MicOnBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE719;"  VerticalAlignment="Center" Height="30" Style="{StaticResource TransButtonStyle}" Cursor="" FontSize="20" ToolTip="Start Voice Call" HorizontalAlignment="Center" Width="30" Click="MicOnBtn_Click" Margin="10,0,0,0"/>
 
             </WrapPanel>
 

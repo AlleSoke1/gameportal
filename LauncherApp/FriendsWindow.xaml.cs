@@ -333,6 +333,7 @@ namespace LauncherApp
                         {
                             RequestList.AddItem(new FriendRequestListitem()
                             {
+                                Name = "Request_" + fInfo.Id,
                                 UserID = fInfo.Id,
                                 UesrName = fInfo.NickName,
                             });
@@ -358,14 +359,17 @@ namespace LauncherApp
                             // if friend is currently online incress this value
                             LauncherApp.Game_Data.Globals.OnlineFriendCount++;
 
-                            FriendsList.AddItem(new FriendListItem()
+                            var fItem = new FriendListItem()
                             {
+                                Name = "Friend_" + fInfo.Id,
                                 UserID = fInfo.Id,
                                 FriendName = fInfo.NickName,
                                 ChatID = fInfo.ChatId,
                                 Status = fInfo.Status
 
-                            });
+                            };
+
+                            FriendsList.AddItem(fItem);
 
 
                         });

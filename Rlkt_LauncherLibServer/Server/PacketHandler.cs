@@ -109,6 +109,13 @@ namespace Rlkt_LauncherLibServer.Server
 
                 #endregion
 
+                #region VoiceChat System Packets
+
+                case "VoceChatReq":
+                    new PacketLogic.VOIPRequestLogic(packet);
+                    break;
+
+                #endregion
                 default:
                     Console.WriteLine(" -> Packet not found !! [" + packetName + "]");
                     break;

@@ -26,6 +26,9 @@ namespace LauncherApp
         public long friendID;
         public long chatID;
         public Enums.UserInfo.UserStatus friendStatus;
+
+        private bool isOnCall;
+        
         
         private int messagePageCounter = 1;
         Packets.Chat.ChatMessageReq sendingMsgInfo = new Packets.Chat.ChatMessageReq();
@@ -128,6 +131,11 @@ namespace LauncherApp
             emojiBox.Visibility = Visibility.Visible;
         }
 
+        private void voiceChatBtn_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            voiceChatBtn.IsCancel = (bool)e.NewValue;
+        }
+
         private void showMessageWnd(bool sStatus, FontAwesome.WPF.FontAwesomeIcon sIcon, string sMessage, bool sSpin = false)
         {
             if (sStatus == true)
@@ -144,6 +152,26 @@ namespace LauncherApp
 
             MessageWnd.Visibility = Visibility.Hidden;
             TypeBox.IsEnabled = true;
+        }
+
+
+
+        private void callVolumeScroll_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (e.NewValue > 0.5)
+            {
+                callVolumeIcon.Icon = FontAwesome.WPF.FontAwesomeIcon.VolumeUp;
+            }
+
+            if (e.NewValue < 0.5 && e.NewValue > 0)
+            {
+                callVolumeIcon.Icon = FontAwesome.WPF.FontAwesomeIcon.VolumeDown;
+            }
+
+            if (e.NewValue == 0)
+            {
+                callVolumeIcon.Icon = FontAwesome.WPF.FontAwesomeIcon.VolumeOff;
+            }
         }
 
         #endregion
@@ -336,10 +364,124 @@ namespace LauncherApp
         private void voiceChatBtn_Click(object sender, RoutedEventArgs e)
         {
 
+            if (!isOnCall)
+            {
+                if (!LauncherApp.Game_Data.Globals.CallCenterIsBusy)
+                {
+                    SendCallRequsetPacket();
+
+                    // for force app to make one call.
+                    LauncherApp.Game_Data.Globals.CallCenterIsBusy = true;
+                    // 
+
+                    voiceChatBtn.IsDefault = true;
+                    callVolumePanel.Visibility = Visibility.Visible;
+
+                    isOnCall = true;
+                    return;
+                }
+                else
+                {
+                    showError("Sorry you already on call." , FastMessage.MessageTypes.Warning);
+                    return;
+                }
+                
+            }
+            else
+            {
+                // for force app to make one call.
+                LauncherApp.Game_Data.Globals.CallCenterIsBusy = false;
+                // 
+
+                voiceChatBtn.IsDefault = false;
+                callVolumePanel.Visibility = Visibility.Hidden;
+
+                isOnCall = false;
+                return;
+            }
+
         }
+
+        #region CallSystem
+        private void SendCallRequsetPacket()
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                Packets.Chat.VoiceChatRequest packet = new Packets.Chat.VoiceChatRequest();
+
+                packet.senderUserID = LauncherApp.Game_Data.Globals.uid;
+                packet.reciverUserID = this.friendID;
+                packet.chatID = this.chatID;
+
+                App.connection.Send(packet, "VoceChatReq");
+            }
+        }
+
+        internal void onCallRequsetResult(Packets.Chat.VoiceChatRequestResult resultPacket)
+        {
+            if (isOnCall)
+            {
+                if (resultPacket.Result == Enums.Voip.CallResultReply.Success) return;
+
+                string tempMSG = "";
+
+                switch (resultPacket.Result)
+                {
+
+                    case Enums.Voip.CallResultReply.Failed:
+                        tempMSG = "Sorry, The call failed.";
+                        break;
+
+                    case Enums.Voip.CallResultReply.FriendOffline:
+                        tempMSG = "Sorry, You can't call offline friend.";
+                        break;
+
+                    case Enums.Voip.CallResultReply.FriendOnCall:
+                        tempMSG = "Sorry, This user is busy on other call. Please wait or send messages.";
+                        break;
+                }
+
+                
+
+                // for force app to make one call.
+                LauncherApp.Game_Data.Globals.CallCenterIsBusy = false;
+                // 
+
+                Dispatcher.Invoke(() =>
+                {
+                    showError(tempMSG, FastMessage.MessageTypes.Warning);
+                    voiceChatBtn.IsDefault = false;
+                    callVolumePanel.Visibility = Visibility.Hidden;
+                });
+                
+
+                isOnCall = false;
+            }
+        }
+
+
+        internal void onIncomingCallRequset()
+        {
+            // for force app to make one call.
+            LauncherApp.Game_Data.Globals.CallCenterIsBusy = true;
+            // 
+
+            Dispatcher.Invoke(() =>
+            {
+                LauncherFactory.ElementAnimation(IncomingCallWindow, UserControl.HeightProperty, 0, 40, 0.1, false);
+                voiceChatBtn.IsDefault = true;
+                callVolumePanel.Visibility = Visibility.Visible;
+            });
+            isOnCall = true;
+        }
+
+        #endregion
+        
 
         internal void SwitchUserStatus(Enums.UserInfo.UserStatus userStatus)
         {
+            friendStatus = userStatus;
+
             switch (userStatus)
             {
                 case Enums.UserInfo.UserStatus.Disconnected:
@@ -360,14 +502,19 @@ namespace LauncherApp
                 case Enums.UserInfo.UserStatus.Away:
 
                     UserStatus.Content = "Away";
+                    voiceChatBtn.IsEnabled = true;
 
                     break;
                 case Enums.UserInfo.UserStatus.Busy:
 
                     UserStatus.Content = "Busy";
+                    voiceChatBtn.IsEnabled = true;
 
                     break;
             }
         }
+
+
+
     }
 }

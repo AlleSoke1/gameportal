@@ -201,6 +201,27 @@ namespace LauncherApp.Network
                     break;
                 #endregion
 
+                #region VoiceChat Packets
+
+                case "VoceChatReqResult":
+                    {
+                        Packets.Chat.VoiceChatRequestResult resultPacket = (Packets.Chat.VoiceChatRequestResult)data.Object;
+
+                        if (App.ChatMan._openedChats.ContainsKey(resultPacket.chatID))
+                        {
+                            App.ChatMan._openedChats[resultPacket.chatID].onCallRequsetResult(resultPacket);
+                        }
+
+                    }
+                    break;
+
+                case "VoceChatReqNotify":
+
+                    App.NotifyMan.NotifyHandler(NotifyManager.NotifyType.IncomingCall, data.Object);
+
+                    break;
+
+                #endregion
 
                 default:
                     Console.WriteLine("Packet does not exists!! " + data.Name);

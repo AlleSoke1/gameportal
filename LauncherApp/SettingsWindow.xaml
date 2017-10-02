@@ -92,17 +92,16 @@
 
                     <CheckBox x:Name="EnableSoundFlag" Content="{DynamicResource EnableSoundFlag}" Style="{StaticResource myCheckboxStyle}" Margin="46,169,482,0" Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Top" Checked="EnableSoundFlag_Checked" Unchecked="EnableSoundFlag_Checked" />
                     <Label Content="{DynamicResource EnableSoundFlagLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,194,0,0" Foreground="#FFE2E2E2" Padding="0,5"/>
-                    <ScrollBar x:Name="SoundVolumeFlag" HorizontalAlignment="Left" Margin="75,220,0,0" VerticalAlignment="Top" Height="24" Width="378" Maximum="100" Value="100" ViewportSize="1" LargeChange="0" Orientation="Horizontal" Scroll="SoundVolumeFlag_Scroll"/>
 
-
-                    <Label x:Name="VolumFlagLibl" Content="0" HorizontalAlignment="Right" Margin="0,194,173,0" VerticalAlignment="Top" Foreground="#FF616161" Padding="0,5"/>
+                    <Label x:Name="VolumFlagLabl" Content="0" HorizontalAlignment="Right" Margin="0,194,173,0" VerticalAlignment="Top" Foreground="#FF9C9C9C" Padding="0,5"/>
+                    <Slider Style="{StaticResource Horizontal_Slider}" x:Name="SoundVolumeFlag"  HorizontalAlignment="Left" Margin="75,220,0,0" VerticalAlignment="Top" Height="24" Width="378" Maximum="100" Value="100" LargeChange="0" Orientation="Horizontal" ValueChanged="SoundVolumeFlag_ValueChanged" />
 
                     <StackPanel HorizontalAlignment="Left" Height="435" VerticalAlignment="Top" Width="600" Margin="16,392,0,-89">
 
                         <StackPanel Height="180" Margin="0,0,0,20">
 
                             <WrapPanel  Background="#FF141413" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,1" >
-                               
+
                                 <Label Content="{DynamicResource Panel1Title}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
                                 <Label Content="{DynamicResource DisplayBlocklibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
                                 <Label Content="{DynamicResource PlaySoundLibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
@@ -121,14 +120,14 @@
                             </WrapPanel>
 
                             <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,1" >
-                               
+
                                 <Label Content="{DynamicResource evFriendStartGame}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
                                 <CheckBox x:Name="evFriendStartGameToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                                 <CheckBox x:Name="evFriendStartGameSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                             </WrapPanel>
 
                             <WrapPanel Background="#FF1F1F1F" Grid.ColumnSpan="3" Height="35" Width="600" Margin="0,0,0,-2" >
-                               
+
                                 <Label Content="{DynamicResource evIncomingFreindRequest}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="240" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
                                 <CheckBox x:Name="evIncomingFreindRequestToastsFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                                 <CheckBox x:Name="evIncomingFreindRequestSoundFlag" Content="" Style="{StaticResource myCheckboxStyle}"  Foreground="#FFB2B2B2" Height="20" VerticalAlignment="Center" Width="180" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
@@ -139,7 +138,7 @@
                         <StackPanel Height="106" Margin="0,0,0,20">
 
                             <WrapPanel  Background="#FF141413" Grid.ColumnSpan="3" Height="35" Width="600" >
-                               
+
                                 <Label Content="{DynamicResource Panel2Title}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="225" Foreground="#FFA6A6A6" Padding="15,5,5,5"/>
                                 <Label Content="{DynamicResource DisplayBlocklibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
                                 <Label Content="{DynamicResource PlaySoundLibl}" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="180" Foreground="#FFA6A6A6"/>
@@ -231,7 +230,7 @@
                         <ComboBoxItem Content="SomeShit2"/>
                     </ComboBox>
                     <Label Content="{DynamicResource strVolume}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="336,52,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
-                    <ScrollBar x:Name="OutputDeviceVolumeFlag" HorizontalAlignment="Left" Margin="336,81,0,0" VerticalAlignment="Top" Height="24" Width="280" Maximum="100" Value="100" ViewportSize="1" LargeChange="0" Orientation="Horizontal" Scroll="SoundVolumeFlag_Scroll"/>
+                    <Slider Style="{StaticResource Horizontal_Slider}" x:Name="OutputDeviceVolumeFlag" HorizontalAlignment="Left" Margin="336,86,0,0" VerticalAlignment="Top" Height="15" Width="280" Maximum="100" Value="100"  LargeChange="0" Orientation="Horizontal" ValueChanged="OutputDeviceVolumeFlag_ValueChanged" />
 
 
                     <Label Content="{DynamicResource settingsTitleMic}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,128,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold"/>
@@ -242,7 +241,7 @@
                         <ComboBoxItem Content="SomeShit2"/>
                     </ComboBox>
                     <Label Content="{DynamicResource strVolume}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="336,162,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
-                    <ScrollBar x:Name="InputDeviceVolumeFlag" HorizontalAlignment="Left" Margin="336,191,0,0" VerticalAlignment="Top" Height="24" Width="280" Maximum="100" Value="100" ViewportSize="1" LargeChange="0" Orientation="Horizontal" Scroll="SoundVolumeFlag_Scroll"/>
+                    <Slider Style="{StaticResource Horizontal_Slider}" x:Name="InputDeviceVolumeFlag" HorizontalAlignment="Left" Margin="336,197,0,0" VerticalAlignment="Top" Height="15" Width="280" Maximum="100" Value="100"  LargeChange="0" Orientation="Horizontal" ValueChanged="InputDeviceVolumeFlag_ValueChanged" />
 
                     <Label Content="{DynamicResource TestMicBtnLibl}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="43,244,0,0" Foreground="#FFE2E2E2" Padding="0,5" Background="{x:Null}"/>
                     <ProgressBar HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="568" Margin="45,272,0,0" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" BorderThickness="0" Foreground="#FFDA0029" Background="#FF141413" Value="0.3">
@@ -336,7 +335,7 @@
 
 
         <Button x:Name="saveBtn" Content="{DynamicResource strDone}" Style="{StaticResource RedButtonStyle}" Cursor="Hand" Margin="0,0,10,12" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="80" Click="saveBtn_Click">
-         
+
         </Button>
 
         <Label x:Name="SavedLibl" Content="{DynamicResource savedLibl}" Margin="220,559,171,15" FontWeight="Bold" Foreground="#FF11BB09" Panel.ZIndex="1"/>
@@ -371,6 +370,6 @@
             </Border.BorderBrush>
 
         </Border>
-        
+
     </Grid>
 </Window>
