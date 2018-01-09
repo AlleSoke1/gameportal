@@ -20,21 +20,13 @@ namespace LauncherApp
             //Set app lang 
             SwitchWindowsLanguage(App.launcherSettings.data.AppLanguage);
 
-
             //  factoryObjects.Add(new App());
             factoryObjects.Add(new StartupWindow());
-            factoryObjects.Add(new AppWindow());
-            factoryObjects.Add(new FriendsWindow());
+            factoryObjects.Add(new MainApp());
+            //factoryObjects.Add(new FriendsWindow());
             factoryObjects.Add(new LoginsWindow());
             factoryObjects.Add(new NicknameWindow());
-            factoryObjects.Add(new SettingsWindow());
-            factoryObjects.Add(new FriendAddWindow());
-            //factoryObjects.Add(new ChatWindow());
-            //factoryObjects.Add(new ChannelWindow());
-            factoryObjects.Add(new ScanGames());
             factoryObjects.Add(new NotifyBox());
-            factoryObjects.Add(new ChannelCreate());
-            factoryObjects.Add(new ChannelInvite());
             
             // Change Windows Algin by lang
             SwitchWindowsAlgin();
@@ -88,21 +80,34 @@ namespace LauncherApp
 
         public static void SwitchWindowsLanguage(string fileName)
         {
-            
 
+            foreach (ResourceDictionary tRD in App.Current.Resources.MergedDictionaries.ToList())
+            {
+                if (tRD.Source.ToString().Contains("/uistring/"))
+                    App.Current.Resources.MergedDictionaries.Remove(tRD);
+            }
             ResourceDictionary dict = new ResourceDictionary();
-            dict.Source = new Uri("/resources/uistring/" + fileName + ".xaml", UriKind.Relative);
+            dict.Source = new Uri("pack://application:,,,/LauncherResources;component/resources/uistring/" + fileName + ".xaml");
             App.Current.Resources.MergedDictionaries.Add(dict);
 
            
         }
 
-        public static void ElementAnimation(UIElement elm, DependencyProperty elmProp, dynamic anFrom, dynamic anTo, double anSpeed, bool ThicknessFlag)
+        public static void ElementAnimation(UIElement elm, DependencyProperty elmProp, dynamic anFrom, dynamic anTo, double anSpeed, bool ThicknessFlag, Action finishedAction = null)
         {
 
             ThicknessAnimation tempThicknessAnimation = new ThicknessAnimation();
             DoubleAnimation temDoubleAnimation = new DoubleAnimation();
             Storyboard sb = new Storyboard();
+
+            if (finishedAction != null)
+            {
+                sb.Completed += (s, e) =>
+                {
+                    finishedAction();
+                };
+            }
+           
 
             if(ThicknessFlag){
                 tempThicknessAnimation.From = anFrom;
@@ -134,17 +139,14 @@ namespace LauncherApp
         }
 
         public static LoginsWindow getLoginClass() { return getObjByName<LoginsWindow>(); }
-        public static AppWindow getAppClass() { return getObjByName<AppWindow>(); }
-        public static FriendsWindow getFriendsClass() { return getObjByName<FriendsWindow>(); }
+        public static MainApp getAppClass() { return getObjByName<MainApp>(); }
+        //public static AppWindow getAppClass() { return getObjByName<AppWindow>(); }
+       // public static FriendsWindow getFriendsClass() { return getObjByName<FriendsWindow>(); }
         public static StartupWindow getStartClass() { return getObjByName<StartupWindow>(); }
         public static NicknameWindow getNicknameClass() { return getObjByName<NicknameWindow>(); }
-        public static SettingsWindow getSettingsClass() { return getObjByName<SettingsWindow>(); }
-        public static FriendAddWindow getNewFriendClass() { return getObjByName<FriendAddWindow>(); }
-        public static ChannelCreate getChannelCreateClass() { return getObjByName<ChannelCreate>(); }
-        public static ChannelInvite getChannelInviteClass() { return getObjByName<ChannelInvite>(); }
-        public static ScanGames getScanGamesClass() { return getObjByName<ScanGames>(); }
+      
         public static NotifyBox getNotifyClass() { return getObjByName<NotifyBox>(); }
-        
+
         
         internal static void SafeShow(Window gObjWnd, bool ShowDialog)
         {

@@ -90,6 +90,7 @@ namespace Rlkt_LauncherLibServer.Server
     
             //Send GUID
             server.DispatchTo(e.Guid, new NetObject("handshake", new Packets.Login.handshake(e.Guid)));
+         
 
             // add online clients
             Program.serviceWnd.AddClient(tempClient);

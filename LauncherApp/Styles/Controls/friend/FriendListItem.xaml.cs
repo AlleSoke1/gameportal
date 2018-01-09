@@ -23,8 +23,6 @@ namespace LauncherApp.Styles.Controls
     {
 
 
-        public event MouseButtonEventHandler MenuClick;
-
         #region Status DP
         public Enums.UserInfo.UserStatus Status
         {
@@ -75,7 +73,7 @@ namespace LauncherApp.Styles.Controls
         public long UserID
         {
             get { return (long)GetValue(UserIDProperty); }
-            set { SetValue(UserIDProperty, value); UpdateUserID(value); }
+            set { SetValue(UserIDProperty, value); }
         }
 
         public static readonly DependencyProperty UserIDProperty
@@ -116,47 +114,33 @@ namespace LauncherApp.Styles.Controls
 
         #region UI Functions
 
-        private void TittlePanel_MouseEnter(object sender, MouseEventArgs e)
+        private void ItemElement_MouseEnter(object sender, MouseEventArgs e)
         {
             if (!IsSelected)
             {
                 TittlePanel.Background.Opacity = 0.10;
-                PanelBorder.BorderBrush.Opacity = 1;
             }
-            
         }
 
 
-        private void TittlePanel_MouseLeave(object sender, MouseEventArgs e)
+        private void ItemElement_MouseLeave(object sender, MouseEventArgs e)
         {
             if (!IsSelected)
             {
                 TittlePanel.Background.Opacity = 0;
-                PanelBorder.BorderBrush.Opacity = 0;
             }
             
         }
 
-        private void UpdateUserID(long value)
-        {
-            UserIdLabel.Content = "#" + value.ToString();
-        }
-
         private void SwithSelectedStatus(bool value)
         {
-            if (value)
+            if (value || IsSelected)
             {
-                PanelBorder.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDA0029");
-                TittlePanel.Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDA0029");
-                TittlePanel.Background.Opacity = 0.10;
-                PanelBorder.BorderBrush.Opacity = 1;
+                TittlePanel.Background.Opacity = 0.15;
                 return;
             }
 
-            PanelBorder.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF68394B");
-            TittlePanel.Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFFFFFFF");
             TittlePanel.Background.Opacity = 0;
-            PanelBorder.BorderBrush.Opacity = 0;
 
         }
         
@@ -170,58 +154,47 @@ namespace LauncherApp.Styles.Controls
 
         private void onMenuClick(object sender, MouseButtonEventArgs e)
         {
-            if (this.MenuClick != null)
-            {
-                menuOrder = ((StackPanel)sender).Name.ToString();
-                this.MenuClick(this, e);
-                
-            }
+            this.menuOrder = ((StackPanel)sender).Name.ToString();
+            LauncherFactory.getAppClass().SocialPage.onUesrMenuClick(this, e);
         }
 
 
         private void SwithUserStatus(Enums.UserInfo.UserStatus userStatus)
         {
-
-            UserImage.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/avatar.png"));
+            UserName.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#a9a9a9");
 
             switch (userStatus)
             {
-                case Enums.UserInfo.UserStatus.Disconnected: 
+                case Enums.UserInfo.UserStatus.Disconnected:
 
-                    UserName.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF700015");
-                    StatusText.Content = "Offline";
+                    UserName.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF919191");
                     StatusIcon.Foreground = Brushes.Silver;
-                    UserImage.Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/avatar-off.png"));
 
                     break ;
 
                 case Enums.UserInfo.UserStatus.Available:
-                    UserName.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDA0029");
-                    StatusText.Content = "Online";
                     StatusIcon.Foreground = Brushes.Lime;
                     break;
                 case Enums.UserInfo.UserStatus.Away:
-                    UserName.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDA0029");
-                    StatusText.Content = "Away";
                     StatusIcon.Foreground = Brushes.Orange;
                     break;
                 case Enums.UserInfo.UserStatus.Busy:
-                    UserName.Foreground = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDA0029");
-                    StatusText.Content = "Busy";
                     StatusIcon.Foreground = Brushes.Red;
                     break;
             }
 
 
-            if (App.ChatMan._openedChats.ContainsKey(this.ChatID)) App.ChatMan._openedChats[this.ChatID].SwitchUserStatus(userStatus);
+            if (App.ChatMan._openedChatList.ContainsKey(this.ChatID)) App.ChatMan._openedChatList[this.ChatID].SwitchUserStatus(userStatus);
 
         }
 
-        private void UserMenuBtn_Click(object sender, RoutedEventArgs e)
+
+        private void ItemElement_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             ContextMenu temp = (ContextMenu)this.Resources["UserMenu"];
-            temp.PlacementTarget = (Button)sender;
+            temp.PlacementTarget = this;
             temp.IsOpen = true;
+
         }
 
 

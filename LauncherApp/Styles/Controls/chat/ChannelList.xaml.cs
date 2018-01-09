@@ -52,22 +52,6 @@ namespace LauncherApp.Styles.Controls
               );
         #endregion
 
-        #region ShowEmptyFlag DP
-        public Visibility ShowEmptyFlag
-        {
-            get { return (Visibility)GetValue(ShowEmptyFlagProperty); }
-            set { SetValue(ShowEmptyFlagProperty, value); }
-        }
-
-        public static readonly DependencyProperty ShowEmptyFlagProperty
-            = DependencyProperty.Register(
-                  "ShowEmptyFlag",
-                  typeof(Visibility),
-                  typeof(ChannelList)
-              );
-        #endregion
-
-        public event MouseButtonEventHandler OnMenuClick;
 
         public ChannelList()
         {
@@ -77,20 +61,16 @@ namespace LauncherApp.Styles.Controls
 
         }
 
-
-
         #region UI Functions
 
         private void TittlePanel_MouseEnter(object sender, MouseEventArgs e)
         {
             TittlePanel.Background.Opacity = 0.10;
-            TittlePanelBorder.BorderBrush.Opacity = 1;
         }
 
         private void TittlePanel_MouseLeave(object sender, MouseEventArgs e)
         {
             TittlePanel.Background.Opacity = 0;
-            TittlePanelBorder.BorderBrush.Opacity = 0;
         }
 
         private void TittlePanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -99,21 +79,16 @@ namespace LauncherApp.Styles.Controls
 
             if (ListElement.Height == 30)
             {
-                ArrowIcon.Content = "";
-                LauncherFactory.ElementAnimation(ListElement, UserControl.HeightProperty,30, oldHight, 0.1, false );
+                ArrowIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.ChevronDown;
+                LauncherFactory.ElementAnimation(ListElement, UserControl.HeightProperty, 30, oldHight, 0.1, false);
                 return;
             }
 
-            ArrowIcon.Content = "";
+            ArrowIcon.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.ChevronRight;
             LauncherFactory.ElementAnimation(ListElement, UserControl.HeightProperty, oldHight, 30, 0.1, false);
             
         }
 
-        private void ShowEmptyFlagStatus(bool value)
-        {
-            if(!value)
-                EmptyFlag.Visibility = Visibility.Hidden;
-        }
 
         #endregion
 
@@ -122,7 +97,6 @@ namespace LauncherApp.Styles.Controls
             ChannelListItem temp = (ChannelListItem)elm;
             temp.Margin = new Thickness(0, 0, 0, 1);
             temp.MouseDown += ListItemClicked;
-            temp.MenuClick += ListItemMenuClicked;
             ListPanel.Children.Add(temp);
 
             double newHeight = (ListPanel.Children.Count * 45) + 30;
@@ -134,15 +108,6 @@ namespace LauncherApp.Styles.Controls
             
         }
 
-        private void ListItemMenuClicked(object sender, MouseButtonEventArgs e)
-        {
-            if (this.OnMenuClick != null)
-            {
-                this.OnMenuClick(sender, e);
-            }
-
-
-        }
 
 
         private void SetCounterValues(string counters)
@@ -196,12 +161,13 @@ namespace LauncherApp.Styles.Controls
 
             LauncherFactory.ElementAnimation(ListElement, UserControl.HeightProperty, ListElement.ActualHeight, showedRows * 45 + 30, 0.1, false);
 
-                
         }
 
         private void ListItemClicked(object sender, MouseButtonEventArgs e)
         {
             ChannelListItem objSender = (ChannelListItem)sender;
+
+            LauncherFactory.getAppClass().SocialPage.SwitchChatWindow(objSender.ChatID, objSender.ChannelName, 0, Enums.UserInfo.UserStatus.Available);
 
             foreach (ChannelListItem flItem in ListPanel.Children)
             {
@@ -215,12 +181,11 @@ namespace LauncherApp.Styles.Controls
                 }
 
             }
-
         }
 
         public void RemoveItem(UIElement elm)
         {
-            if (ListPanel.Children.Count == 1 && ShowEmptyFlag == Visibility.Visible)
+            if (ListPanel.Children.Count == 1)
             {
                 EmptyFlag.Visibility = Visibility.Visible;
             }
@@ -237,7 +202,7 @@ namespace LauncherApp.Styles.Controls
             {
                 if (item.ChatID == id)
                 {
-                    if (App.ChatMan._openedChannels.ContainsKey(id)) App.ChatMan._openedChannels[id].Close();
+                    if (App.ChatMan._openedChatList.ContainsKey(id)) LauncherFactory.getAppClass().SocialPage.wndChatControl.Children.Remove(App.ChatMan._openedChatList[id]);
 
                     this.RemoveItem(item);
                     return item;
@@ -245,13 +210,13 @@ namespace LauncherApp.Styles.Controls
             }
 
             return null;
-
         }
 
         public void RemoveItemAt(int elmIndex)
         {
             ListPanel.Children.RemoveAt(elmIndex);
         }
+
         public void ClearItems()
         {
             ListPanel.Children.Clear();

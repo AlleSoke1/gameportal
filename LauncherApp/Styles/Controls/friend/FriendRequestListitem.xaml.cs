@@ -22,7 +22,6 @@ namespace LauncherApp.Styles.Controls
     public partial class FriendRequestListitem : UserControl
     {
 
-        public event MouseButtonEventHandler MenuClick;
         public event RoutedEventHandler OptionClick;
 
 
@@ -56,6 +55,21 @@ namespace LauncherApp.Styles.Controls
               );
         #endregion
 
+        #region Action DP
+        public Enums.Friend.FriendRequestOptions Action
+        {
+            get { return (Enums.Friend.FriendRequestOptions)GetValue(ActionProperty); }
+            set { SetValue(ActionProperty, value); }
+        }
+
+        public static readonly DependencyProperty ActionProperty
+            = DependencyProperty.Register(
+                  "Action",
+                  typeof(Enums.Friend.FriendRequestOptions),
+                  typeof(FriendRequestListitem)
+              );
+        #endregion
+
         public FriendRequestListitem()
         {
             InitializeComponent();
@@ -64,47 +78,44 @@ namespace LauncherApp.Styles.Controls
             
         }
 
+        private void ItemElement_MouseEnter(object sender, MouseEventArgs e)
+        {
+            this.Background.Opacity = 0.10;
+            this.bottomLine.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#303337"));
+        }
 
+        private void ItemElement_MouseLeave(object sender, MouseEventArgs e)
+        {
+            this.Background.Opacity = 0;
+            this.bottomLine.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF717171"));
+        }
 
         #region UI Functions
 
         #endregion
 
 
-        private void onMenuClick(object sender, MouseButtonEventArgs e)
-        {
-            if (this.MenuClick != null)
-            {
-                this.MenuClick(sender, e);
-            }
-        }
-
         private void onOptionClick(object sender, RoutedEventArgs e)
         {
+            switch(((Control)sender).Name){
+                case "acceptRequest":
+                    this.Action = Enums.Friend.FriendRequestOptions.Approve;
+                    break;
+                case "declineRequest":
+                    this.Action = Enums.Friend.FriendRequestOptions.Ignore;
+                    break;
+                case "blockRequest":
+                    this.Action = Enums.Friend.FriendRequestOptions.Block;
+                    break;
+            }
+
             if (this.OptionClick != null)
             {
-                this.OptionClick(sender, e);
+                this.OptionClick(this, e);
             }
         }
 
-
-
-        private void UserMenuBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ContextMenu temp = (ContextMenu)this.Resources["UserMenu"];
-            temp.PlacementTarget = (Button)sender;
-            temp.IsOpen = true;
-        }
-
-        private void acceptRequest_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-
-
-
-
     }
+
+
 }

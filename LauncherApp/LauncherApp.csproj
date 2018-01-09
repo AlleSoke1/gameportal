@@ -44,12 +44,19 @@
     <Reference Include="Awesomium.Windows.Controls, Version=1.7.5.1, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86">
       <HintPath>..\..\..\client\Awesomium.Windows.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.WPF, Version=4.7.0.4195, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\v3\LauncherApp\bin\Debug\FontAwesome.WPF.dll</HintPath>
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.1.9.1\lib\net45\MahApps.Metro.IconPacks.Material.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NetSockets">
       <HintPath>..\NetSockets\Release\NetSockets.dll</HintPath>
+    </Reference>
+    <Reference Include="NetworkingBasics">
+      <HintPath>..\..\..\..\Downloads\SocketCoder_RTP_Voice_Library_R0.2\SocketCoder_RTP_Voice_Library_R0.2\RTP Voice Library\bin\Debug\NetworkingBasics.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
@@ -71,17 +78,44 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelInvite.xaml.cs">
-      <DependentUpon>ChannelInvite.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChannelCreate.xaml.cs">
-      <DependentUpon>ChannelCreate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Logic\SoundManager.cs" />
     <Compile Include="Logic\ChatManager.cs" />
     <Compile Include="Logic\NotificationsManager.cs" />
+    <Compile Include="MainApp.xaml.cs">
+      <DependentUpon>MainApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\buttons\SpecialButton.xaml.cs">
+      <DependentUpon>SpecialButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\CallUserIcon.xaml.cs">
+      <DependentUpon>CallUserIcon.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Styles\Controls\chat\ChatMessageItem.xaml.cs">
       <DependentUpon>ChatMessageItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\friend\AddFriend.xaml.cs">
+      <DependentUpon>AddFriend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\CreateChannel.xaml.cs">
+      <DependentUpon>CreateChannel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\InviteChannel.xaml.cs">
+      <DependentUpon>InviteChannel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChatMemeberListItem.xaml.cs">
+      <DependentUpon>ChatMemeberListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChatMemeberList.xaml.cs">
+      <DependentUpon>ChatMemeberList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\EmojiPickerBox.xaml.cs">
+      <DependentUpon>EmojiPickerBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChatMessageList.xaml.cs">
+      <DependentUpon>ChatMessageList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\chat\ChatControl.xaml.cs">
+      <DependentUpon>ChatControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Styles\Controls\chat\ChannelUserItem.xaml.cs">
       <DependentUpon>ChannelUserItem.xaml</DependentUpon>
@@ -92,13 +126,46 @@
     <Compile Include="Styles\Controls\chat\ChannelList.xaml.cs">
       <DependentUpon>ChannelList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\QuickUserStatus.xaml.cs">
+    <Compile Include="Styles\Controls\friend\FriendRequestControl.xaml.cs">
+      <DependentUpon>FriendRequestControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\Games\MyGamesItem.xaml.cs">
+      <DependentUpon>MyGamesItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\other\LoadingIcon.xaml.cs">
+      <DependentUpon>LoadingIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\other\sTextBox.xaml.cs">
+      <DependentUpon>sTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\GameInstall.xaml.cs">
+      <DependentUpon>GameInstall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\TheSettings.xaml.cs">
+      <DependentUpon>TheSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\GameScan.xaml.cs">
+      <DependentUpon>GameScan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\Social.xaml.cs">
+      <DependentUpon>Social.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\TheShop.xaml.cs">
+      <DependentUpon>TheShop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\MyGames.xaml.cs">
+      <DependentUpon>MyGames.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\Controls\other\QuickUserStatus.xaml.cs">
       <DependentUpon>QuickUserStatus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\LoadingDots.xaml.cs">
+    <Compile Include="Styles\Controls\other\LoadingDots.xaml.cs">
       <DependentUpon>LoadingDots.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\CheckBox.xaml.cs">
+    <Compile Include="Styles\Controls\other\CheckBox.xaml.cs">
       <DependentUpon>CheckBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Styles\Controls\Notifications\NotifyBoxItem.xaml.cs">
@@ -107,28 +174,22 @@
     <Compile Include="Styles\Controls\friend\FriendRequestListitem.xaml.cs">
       <DependentUpon>FriendRequestListitem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\friend\FriendRequestList.xaml.cs">
-      <DependentUpon>FriendRequestList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Styles\Controls\friend\FriendListItem.xaml.cs">
       <DependentUpon>FriendListItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\GameListItem.xaml.cs">
+    <Compile Include="Styles\Controls\Games\GameListItem.xaml.cs">
       <DependentUpon>GameListItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Styles\Controls\friend\FriendList.xaml.cs">
       <DependentUpon>FriendList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\DropMenu.xaml.cs">
-      <DependentUpon>DropMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Styles\Controls\FastMessage.xaml.cs">
+    <Compile Include="Styles\Controls\other\FastMessage.xaml.cs">
       <DependentUpon>FastMessage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\HeaderButton.xaml.cs">
+    <Compile Include="Styles\Controls\buttons\HeaderButton.xaml.cs">
       <DependentUpon>HeaderButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Styles\Controls\ScanListItem.xaml.cs">
+    <Compile Include="Styles\Controls\Games\ScanListItem.xaml.cs">
       <DependentUpon>ScanListItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="NotifyBox.xaml.cs">
@@ -138,22 +199,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AppsWindow.xaml.cs">
-      <DependentUpon>AppsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChannelWindow.xaml.cs">
-      <DependentUpon>ChannelWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ChatWindow.xaml.cs">
-      <DependentUpon>ChatWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FriendAddWindow.xaml.cs">
-      <DependentUpon>FriendAddWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Game Data\Globals.cs" />
-    <Compile Include="ScanGames.xaml.cs">
-      <DependentUpon>ScanGames.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Logic\DownloadManager.cs" />
     <Compile Include="Logic\GameManager.cs" />
     <Compile Include="Logic\LauncherFactory.cs" />
@@ -162,46 +208,12 @@
     <Compile Include="NicknameWindow.xaml.cs">
       <DependentUpon>NicknameWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="InstallGame.xaml.cs">
-      <DependentUpon>InstallGame.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsWindow.xaml.cs">
-      <DependentUpon>SettingsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StartupWindow.xaml.cs">
       <DependentUpon>StartupWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AppsWindow.xaml">
+    <Page Include="MainApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ChannelInvite.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ChannelWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ChatWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ChannelCreate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FriendAddWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FriendsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ScanGames.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -211,9 +223,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FriendsWindow.xaml.cs">
-      <DependentUpon>FriendsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -222,25 +231,53 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="resources\uistring\ar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="resources\uistring\en.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="InstallGame.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="SettingsWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="StartupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\buttons\SpecialButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\CallUserIcon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChatMessageItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\friend\AddFriend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\CreateChannel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\InviteChannel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChatMemeberListItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChatMemeberList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\EmojiPickerBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChatMessageList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\chat\ChatControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Controls\chat\ChannelUserItem.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -254,31 +291,71 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\Slider.xaml">
+    <Page Include="Styles\Controls\friend\FriendRequestControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\QuickUserStatus.xaml">
+    <Page Include="Styles\Controls\Games\MyGamesItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\LoadingDots.xaml">
+    <Page Include="Styles\Controls\other\LoadingIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\ComboBox.xaml">
+    <Page Include="Styles\Controls\other\sTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\ContextMenu.xaml">
+    <Page Include="Styles\Pages\GameInstall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Pages\TheSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\chat\ChatMessageItem.xaml">
+    <Page Include="Styles\Pages\GameScan.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\CheckBox.xaml">
+    <Page Include="Styles\Pages\Social.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Pages\TheShop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Pages\MyGames.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Pages\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\other\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\other\QuickUserStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\other\LoadingDots.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\other\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\other\ContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\other\CheckBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -290,15 +367,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\friend\FriendRequestList.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Styles\Controls\friend\FriendListItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\GameListItem.xaml">
+    <Page Include="Styles\Controls\Games\GameListItem.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -306,19 +379,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\DropMenu.xaml">
+    <Page Include="Styles\Controls\other\FastMessage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\FastMessage.xaml">
+    <Page Include="Styles\Controls\buttons\HeaderButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\HeaderButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Styles\Controls\ScanListItem.xaml">
+    <Page Include="Styles\Controls\Games\ScanListItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -330,11 +399,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\ScrollBar.xaml">
+    <Page Include="Styles\Controls\other\ScrollBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Styles\Controls\ScrollViewer.xaml">
+    <Page Include="Styles\Controls\other\ScrollViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -357,54 +426,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Resource Include="resources\fonts\Ubuntu-Regular.ttf" />
-    <Resource Include="resources\fonts\NeoSansArabic.ttf" />
-    <Resource Include="resources\fonts\themify.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\background\small_window_focus.png" />
-    <Resource Include="resources\images\background\small_window_focusout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\checkbox.png" />
-    <Resource Include="resources\images\checkbox_checked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\logo\worldofwonders.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\background\big_window_focus.png" />
-    <Resource Include="resources\images\background\big_window_focusout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\logo\dragonnest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\background\gbtn_active.png" />
-    <Resource Include="resources\images\background\gbtn_hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\logo\main_dragonnest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\background\video_dragonnest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\avatar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\logo\main_worldofwonders.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Enums\Enums.csproj">
@@ -419,24 +449,14 @@
       <Project>{adff56e8-0ccc-40bf-b9d0-e28d45876027}</Project>
       <Name>LauncherData</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LauncherResources\LauncherResources.csproj">
+      <Project>{3cec431b-a9d0-43dd-9a1b-32a10d6dcbf2}</Project>
+      <Name>LauncherResources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Packets\Packets.csproj">
       <Project>{c9454669-6b91-437c-9dc8-b8a7e381ddfc}</Project>
       <Name>Packets</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\background\dragonnest.png" />
-    <Resource Include="resources\images\games\background\worldofwonders.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\games\background\video_worldofwonders.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\background\mid_window_focus.png" />
-    <Resource Include="resources\images\background\mid_window_focusout.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">
@@ -450,55 +470,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\images\games\background\install\dragonnest.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\avatar-off.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\emoji\01.png" />
-    <Resource Include="resources\images\emoji\02.png" />
-    <Resource Include="resources\images\emoji\03.png" />
-    <Resource Include="resources\images\emoji\04.png" />
-    <Resource Include="resources\images\emoji\05.png" />
-    <Resource Include="resources\images\emoji\06.png" />
-    <Resource Include="resources\images\emoji\07.png" />
-    <Resource Include="resources\images\emoji\08.png" />
-    <Resource Include="resources\images\emoji\09.png" />
-    <Resource Include="resources\images\emoji\10.png" />
-    <Resource Include="resources\images\emoji\11.png" />
-    <Resource Include="resources\images\emoji\12.png" />
-    <Resource Include="resources\images\emoji\13.png" />
-    <Resource Include="resources\images\emoji\14.png" />
-    <Resource Include="resources\images\emoji\15.png" />
-    <Resource Include="resources\images\emoji\16.png" />
-    <Resource Include="resources\images\emoji\17.png" />
-    <Resource Include="resources\images\emoji\18.png" />
-    <Resource Include="resources\images\emoji\19.png" />
-    <Resource Include="resources\images\emoji\20.png" />
-    <Resource Include="resources\images\emoji\21.png" />
-    <Resource Include="resources\images\emoji\22.png" />
-    <Resource Include="resources\images\emoji\23.png" />
-    <Resource Include="resources\images\emoji\24.png" />
-    <Resource Include="resources\images\emoji\25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\emoji\26.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\avatar-group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\background\login-bg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="resources\images\ag-logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="resources\sounds\0.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="resources\sounds\1.wav" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

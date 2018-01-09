@@ -7,27 +7,33 @@
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip"
         FontFamily="{DynamicResource AppFontPath}"
-        Title="{DynamicResource wndLogin}" Height="540" Width="900" BorderThickness="0" MinWidth="900" MinHeight="540" Padding="0,0,0,1" Foreground="White" WindowStartupLocation="CenterScreen" Loaded="LoginWindow_Loaded" >
+        Title="{DynamicResource wndLogin}" Height="560" Width="920" BorderThickness="0" MinWidth="920" MinHeight="560" Padding="0,0,0,1" Foreground="White" WindowStartupLocation="CenterScreen" Loaded="LoginWindow_Loaded" Background="{x:Null}" >
     <Window.Resources>
         <ResourceDictionary Source="/Styles/Style.xaml"/>
     </Window.Resources>
-    <Window.Background>
-        <ImageBrush ImageSource="resources/images/background/login-bg.jpg" Stretch="UniformToFill"/>
-    </Window.Background>
 
-    <Grid x:Name="MainGrid">
+    <Grid Margin="10" x:Name="MainGrid">
+        <Grid.Effect>
+            <DropShadowEffect ShadowDepth="0" BlurRadius="14" Opacity="0.51"/>
+        </Grid.Effect>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/LauncherResources;component/resources/images/background/login-bg.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
 
         <Border BorderThickness="1" Panel.ZIndex="-1" >
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Border.Background>
             <Border.BorderBrush>
-                <SolidColorBrush Color="White" Opacity="0.15"/>
+                <SolidColorBrush Color="Black" Opacity="0.4"/>
             </Border.BorderBrush>
         </Border>
 
         <Grid x:Name="headerGrid" Height="55" VerticalAlignment="Top"  MouseDown="LoginWindow_MouseDown" Panel.ZIndex="22">
             <Grid.Background>
-                <SolidColorBrush Color="White" Opacity="0"/>
+                <SolidColorBrush Color="White" Opacity="0.05"/>
             </Grid.Background>
-            <Image x:Name="LoginLogo" Height="35" Margin="25,10,0,0" VerticalAlignment="Top" Source="/resources/images/ag-logo.png" Width="35" Stretch="UniformToFill" RenderTransformOrigin="0.216,0.505" HorizontalAlignment="Left"/>
+            <Image x:Name="LoginLogo" ToolTip="{DynamicResource wndApps}" Height="35" Margin="25,10,0,0" VerticalAlignment="Top" Source="pack://application:,,,/LauncherResources;component/resources/images/ag-icon.png" Width="35" Stretch="UniformToFill" RenderTransformOrigin="0.216,0.505" HorizontalAlignment="Left"/>
 
             <WrapPanel HorizontalAlignment="Right" Width="120" Margin="0,15,10,0" Height="22" VerticalAlignment="Top">
 
@@ -43,44 +49,47 @@
 
         <Grid x:Name="LoginGrid" Margin="239,138,239,137" Width="422" Height="265">
 
-            <TextBox x:Name="loginID" TextWrapping="Wrap"  Foreground="#FFB2B2B2" Padding="15,8,5,8" Style="{StaticResource TransTextBox}" SelectionBrush="#FFD7153A" Panel.ZIndex="1" Width="422" Height="50" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" >
-                <TextBox.Background>
-                    <SolidColorBrush Color="Black" Opacity="0.25"/>
-                </TextBox.Background>
-                <TextBox.BorderBrush>
-                    <SolidColorBrush Color="White" Opacity="0.2"/>
-                </TextBox.BorderBrush>
-            </TextBox>
-            <Label x:Name="loginID_libl" Content="{DynamicResource LoginID}" Foreground="#FFE2E2E2" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Padding="15,5,5,5" Width="422" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-            <PasswordBox x:Name="loginPass" Margin="0,65,0,0"  Style="{StaticResource TransPasswordBox}" Foreground="#FFB2B2B2" Padding="15,8,5,8" SelectionBrush="#FFD7153A" Panel.ZIndex="1" Height="50" Width="422" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" >
-                <PasswordBox.Background>
+            <cControls:sTextBox x:Name="loginID"  SecText="{DynamicResource LoginID}"  boxRadius="5" boxPadding="15,8,5,8" Foreground="#FFB2B2B2"  boxBorderThickness="1"  boxBorderHover="#FFB41111"  boxCaretBrush="#FFCFCCCC"  Panel.ZIndex="1"   Height="50" Width="422" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Left"  >
+                <cControls:sTextBox.boxBackground>
                     <SolidColorBrush Color="Black" Opacity="0.25"/>
-                </PasswordBox.Background>
-                <PasswordBox.BorderBrush>
+                </cControls:sTextBox.boxBackground>
+                <cControls:sTextBox.boxBorder>
                     <SolidColorBrush Color="White" Opacity="0.2"/>
-                </PasswordBox.BorderBrush>
-            </PasswordBox>
-            <Label x:Name="loginPass_libl" Content="{DynamicResource LoginPassword}" Margin="0,65,0,0" Foreground="#FFE2E2E2" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Padding="15,5,5,5" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="422"/>
+                </cControls:sTextBox.boxBorder>
+            </cControls:sTextBox>
+
+            <!--<Label x:Name="loginID_libl" Content="{DynamicResource LoginID}" Foreground="#FFE2E2E2" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Padding="15,5,5,5" Width="422" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left"/>-->
+
+            <cControls:sTextBox x:Name="loginPass" boxPadding="15,8,5,8" SecText="{DynamicResource LoginPassword}" IsPassword="True" ShowPasswordAble="True" boxRadius="5" Foreground="#FFB2B2B2"  boxBorderThickness="1"  boxBorderHover="#FFB41111"  boxCaretBrush="#FFCFCCCC"  Panel.ZIndex="1" Margin="0,65,0,0"  Height="50" Width="422" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Left"  >
+                <cControls:sTextBox.boxBackground>
+                    <SolidColorBrush Color="Black" Opacity="0.25"/>
+                </cControls:sTextBox.boxBackground>
+                <cControls:sTextBox.boxBorder>
+                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                </cControls:sTextBox.boxBorder>
+            </cControls:sTextBox>
+
+            <!--<Label x:Name="loginPass_libl" Content="{DynamicResource LoginPassword}" Margin="0,65,0,0" Foreground="#FFE2E2E2" FontSize="14" FontWeight="Bold" Padding="15,5,5,5" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="422" VerticalContentAlignment="Center"/>-->
 
             <cControls:CheckBox x:Name="RememberCheck" Text="{DynamicResource LoginRememberMe}" ActiveColor="#FFDA0029" Margin="1,134,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20" Width="173"/>
 
-            <Button Content="{DynamicResource resetInfo}"   Margin="307,134,0,0" Cursor="Hand" Click="Forgot_Click" HorizontalContentAlignment="Right" Height="20" Style="{StaticResource TransButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" />
+            <cControls:SpecialButton x:Name="forgotButton" BtnStyle="NoBackground" Text="{DynamicResource resetInfo}"  Margin="0,134,4,0" Click="Forgot_Click" HorizontalContentAlignment="Right" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="0" Width="224" />
 
             <!--<CheckBox x:Name="RememberCheck" Content="{DynamicResource LoginRememberMe}" Style="{StaticResource myCheckboxStyle}" Margin="39,280,39,195" Height="20" Foreground="#FFB2B2B2" />-->
 
-            <Button x:Name="loginButton" Content="{DynamicResource LoginBtn}" Margin="48,173,0,0" Click="loginButton_Click" Style="{StaticResource OutLineStyle}" Cursor="Hand" FontWeight="Bold" Width="325"  Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <cControls:SpecialButton x:Name="loginButton" BtnStyle="FlatOutLine" Text="{DynamicResource LoginBtn}"  Margin="48,0,49,42" Click="loginButton_Click" FontWeight="Bold"  Height="50" VerticalAlignment="Bottom" BtnRadius="5" BtnBorder="White" BtnBorderThickness="1" BtnBackgroundHover="#FFCF0027" Loaded="loginButton_Loaded"/>
 
+            <!--<Button x:Name="loginButton" Content="{DynamicResource LoginBtn}" Margin="48,173,0,0" Click="loginButton_Click" Style="{StaticResource OutLineStyle}" Cursor="Hand" FontWeight="Bold" Width="325"  Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" />-->
 
-            <Button Content="{DynamicResource newAccount}"  Style="{StaticResource TransButtonStyle}" Margin="48,238,49,0" Cursor="Hand" Click="RegisterButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Width="325" />
-
+            <cControls:SpecialButton x:Name="registerButton" BtnStyle="NoBackground" Text="{DynamicResource newAccount}"  Margin="48,238,49,0" Click="RegisterButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" HorizontalAlignment="Center" VerticalAlignment="Top" Width="325" />
 
 
         </Grid>
 
         <StackPanel x:Name="LoginLoading" Margin="239,233" Panel.ZIndex="20" Height="74" Visibility="Hidden">
-            <Label Content="Welcome to your family" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Background="{x:Null}" Foreground="#FFDA0029" Padding="5,5,5,0" ScrollViewer.CanContentScroll="True" Margin="0,0,0,2"></Label>
-            <Label Content="We're signing you to your account" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" Padding="5,0,5,5" ScrollViewer.CanContentScroll="True"></Label>
+            <Label Content="{DynamicResource LoginLoadingTitle}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="14" Background="{x:Null}" Foreground="#FFDA0029" Padding="5,5,5,0" ScrollViewer.CanContentScroll="True" Margin="0,0,0,2"></Label>
+            <Label Content="{DynamicResource LoginLoadingMessage}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" Padding="5,0,5,5" ScrollViewer.CanContentScroll="True"></Label>
             <cControls:LoadingDots HorizontalAlignment="Center" Margin="172,0" Width="78"></cControls:LoadingDots>
         </StackPanel>
 

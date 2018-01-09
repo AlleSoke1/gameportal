@@ -13,50 +13,65 @@ namespace Rlkt_LauncherLibServer.PacketLogic
 {
     class VOIPRequestLogic
     {
-        private Guid guid;
-        private long senderUserID;
-        private long reciverUserID;
-        private long chatID;
-
         public VOIPRequestLogic(Packets.packet packet)
         {
             //Set user GUID and username
-            guid = packet.guid;
-            senderUserID = packet.data.senderUserID;
-            reciverUserID = packet.data.reciverUserID;
-            chatID = packet.data.chatID;
+            Guid guid = packet.guid;
+            long senderUserID = packet.data.senderUserID;
+            long reciverUserID = packet.data.reciverUserID;
+            long chatID = packet.data.chatID;
+            string CallIpHost = packet.data.CallIpHost;
 
             Rlkt_LauncherLibServer.Clients.ClientInfo cInfo = Program.clients.findClientByUserID(reciverUserID);
 
-            Packets.Chat.VoiceChatRequestResult resultPacket = new Packets.Chat.VoiceChatRequestResult() { 
-                chatID = this.chatID , 
-                Result = Enums.Voip.CallResultReply.Success
+            Packets.Chat.VoiceChatRequestResult resultPacket = new Packets.Chat.VoiceChatRequestResult()
+            {
+                chatID = chatID,
+                Result = Enums.Voip.CallResultReply.Success,
+                CallHostIp = CallIpHost
             };
 
-            // reply call result
-            if (cInfo == null)
+
+            long createdVoipChannelID = Program.VOIPManager.Create(chatID);
+            bool addMembersError = false;
+            if (!Program.VOIPManager.AddMember(chatID, senderUserID))
             {
-                resultPacket.Result = Enums.Voip.CallResultReply.FriendOffline;
-                Server.Server.server.DispatchTo(guid, new NetObject("VoceChatReqResult", resultPacket));
-                return;
+                addMembersError = true;
             }
 
-            if (cInfo.CallCenterBusy)
+            if (addMembersError)
             {
-                resultPacket.Result = Enums.Voip.CallResultReply.FriendOnCall;
+                // here destroy the channel and send faild packet to users
+            }else{
+
+                Program.VOIPManager.SetCallHostIp(chatID, CallIpHost);
+
+                // reply call result
+                if (cInfo == null)
+                {
+                    resultPacket.Result = Enums.Voip.CallResultReply.FriendOffline;
+                    Server.Server.server.DispatchTo(guid, new NetObject("VoceChatReqResult", resultPacket));
+                    return;
+                }
+
+                if (cInfo.CallCenterBusy)
+                {
+                    resultPacket.Result = Enums.Voip.CallResultReply.FriendOnCall;
+                    Server.Server.server.DispatchTo(guid, new NetObject("VoceChatReqResult", resultPacket));
+                    return;
+                }
+
+                // send to reciverUserID the call request
+                Server.Server.server.DispatchTo(cInfo.guid, new NetObject("VoceChatReqNotify", resultPacket));
+
+                // reply call result
                 Server.Server.server.DispatchTo(guid, new NetObject("VoceChatReqResult", resultPacket));
-                return;
             }
-
-            // send to reciverUserID the call request
-            Server.Server.server.DispatchTo(cInfo.guid, new NetObject("VoceChatReqNotify", chatID));
-
-            // reply call result
-            Server.Server.server.DispatchTo(guid, new NetObject("VoceChatReqResult", resultPacket));
+           
 
         }
 
-        
+
 
     }
 }

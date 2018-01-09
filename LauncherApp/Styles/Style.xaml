@@ -3,17 +3,15 @@
                     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="Controls/ScrollBar.xaml" />
-        <ResourceDictionary Source="Controls/ScrollViewer.xaml" />
-        <ResourceDictionary Source="Controls/ComboBox.xaml" />
-        <ResourceDictionary Source="Controls/ContextMenu.xaml" />
-        <ResourceDictionary Source="Controls/Slider.xaml" />
-        
-        <ResourceDictionary Source="/resources/uistring/en.xaml" />
+        <ResourceDictionary Source="Controls/other/ScrollBar.xaml" />
+        <ResourceDictionary Source="Controls/other/ScrollViewer.xaml" />
+        <ResourceDictionary Source="Controls/other/ComboBox.xaml" />
+        <ResourceDictionary Source="Controls/other/ContextMenu.xaml" />
+        <ResourceDictionary Source="Controls/other/Slider.xaml" />
+
+       <ResourceDictionary Source="pack://application:,,,/LauncherResources;component/resources/uistring/en.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-
-    <FontFamily x:Key="IconsFont">pack://application:,,,/resources/fonts/#themify</FontFamily>
 
     <!-- Transparent Red Check Box 20x20 -->
     <Style TargetType="{x:Type CheckBox}" x:Key="myCheckboxStyle">
@@ -21,12 +19,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
-                        <Image x:Name="checkboxImage" Source="/resources/images/checkbox.png" Width="20" Margin="0,0,5,0"/>
+                        <Image x:Name="checkboxImage" Source="pack://application:,,,/LauncherResources;component/resources/images/checkbox.png" Width="20" Margin="0,0,5,0"/>
                         <ContentPresenter VerticalAlignment="Center"/>
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="checkboxImage" Property="Source" Value="/resources/images/checkbox_checked.png"/>
+                            <Setter TargetName="checkboxImage" Property="Source" Value="pack://application:,,,/LauncherResources;component/resources/images/checkbox_checked.png"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -46,22 +44,41 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="{x:Type ResizeGrip}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ResizeGrip}">
+                    <Border Background="{TemplateBinding Background}"
+                    SnapsToDevicePixels="True"
+                    Width="10"
+                            Margin ="0,0,12,12"
+                    Height="10">
+                        <Path  Data="M7.677,7.5300003 L9.677,7.5300003 9.677,9.5300002 7.677,9.5300002 z M3.786,7.5300003 L5.7859998,7.5300003 5.7859998,9.5300002 3.786,9.5300002 z M0,7.5300003 L2,7.5300003 2,9.5300002 0,9.5300002 z M3.786,3.8280003 L5.7859998,3.8280003 5.7859998,5.8280003 3.786,5.8280003 z M7.677,3.7660003 L9.677,3.7660003 9.677,5.7659999 7.677,5.7659999 z M7.677,0 L9.677,0 9.677,2 7.677,2 z" Fill="{TemplateBinding Foreground}" Height="9.53" Stretch="Fill" VerticalAlignment="Top" Width="9.677"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- ToolTip theme -->
     <Style x:Key="{x:Type ToolTip}" TargetType="ToolTip">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
-        <Setter Property="HasDropShadow" Value="True"/>
-        <Setter Property="Foreground" Value="Silver"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HasDropShadow" Value="False"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="13"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">
-                    <Border Name="Border" Background="#FF2B2B2B" BorderBrush="#FF141413" BorderThickness="1" Padding="5,2,5,2" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                    <Border Name="Border" Background="Black" BorderBrush="{x:Null}" BorderThickness="1" Padding="5,5,5,5" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" CornerRadius="5">
                         <ContentPresenter Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="HasDropShadow" Value="true">
-                            <Setter TargetName="Border" Property="CornerRadius" Value="0"/>
+                            <Setter TargetName="Border" Property="CornerRadius" Value="5"/>
                             <Setter TargetName="Border" Property="SnapsToDevicePixels" Value="true"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -69,184 +86,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
-
-    <!-- Clean Red Button -->
-    <Style TargetType="Button" x:Key="RedButtonStyle">
-        <Setter Property="Background" Value="#FFDA0029"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Opacity" Value="1"/>
-        <Setter Property="Margin" Value="0,0,0,0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="#FFDA0029" BorderThickness="1" Margin="0,0,0,0">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#FFEA0832"/>
-                <Setter Property="BorderBrush" Value="#FFEA0832"/>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value="0.6"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF890019" Offset="0"/>
-                            <GradientStop Color="#FFEA0832" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="BorderBrush" Value="#FFEA0832"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <!-- Out-Line Button -->
-    <Style TargetType="Button" x:Key="OutLineStyle">
-        <Setter Property="Background">
-            <Setter.Value>
-                <SolidColorBrush Color="#FFDA0029" Opacity="0"/>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Opacity" Value="1"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="#FFDA0029" BorderThickness="1">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <SolidColorBrush Color="#FFDA0029" Opacity="1"/>
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Opacity" Value="0.6"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="#FFEA0832"/>
-                <Setter Property="BorderBrush" Value="#FFEA0832"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <!-- Transparent Bordered Button -->
-    <Style TargetType="Button" x:Key="TransBorderedButton">
-        <Setter Property="Opacity" Value="0.80"/>
-        <Setter Property="Margin" Value="0"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value="1"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value="0.80"/>
-                <Setter Property="Margin" Value="0,1,0,0"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-
-
-    <!-- ListView item non-Background -->
-    <Style  x:Key="ListViewContainerStyle" TargetType="{x:Type ListViewItem}">
-        <Setter Property="SnapsToDevicePixels" Value="True"/>
-        <Setter Property="Padding" Value="4,1"/>
-        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ListViewItem}">
-                    <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" Value="True"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="Bd" Value="{x:Null}"/>
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{x:Null}"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="Selector.IsSelectionActive" Value="False"/>
-                                <Condition Property="IsSelected" Value="True"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="Bd" Value="{x:Null}"/>
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{x:Null}"/>
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="Selector.IsSelectionActive" Value="True"/>
-                                <Condition Property="IsSelected" Value="True"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="Bd" Value="{x:Null}"/>
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{x:Null}"/>
-                        </MultiTrigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!-- ListView style -->
-    <Style x:Key="{x:Type ListView}"
-         TargetType="ListView">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ListBox">
-                    <Border Name="Border" BorderThickness="0,0,1,0" CornerRadius="2" Padding="0,10">
-                        <Border.BorderBrush>
-                            <SolidColorBrush Color="#FFFFFFFF" Opacity="0.1" />
-                        </Border.BorderBrush>
-                        <ScrollViewer Margin="0" Focusable="false">
-                            <StackPanel Margin="2" IsItemsHost="True" />
-                        </ScrollViewer>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter TargetName="Border" Property="Background">
-                                <Setter.Value>
-                                    <SolidColorBrush Color="{Binding Color}" Opacity="{Binding Opacity}"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
 
     <!-- Non-backround Button -->
     <Style TargetType="Button" x:Key="TransButtonStyle">
@@ -259,7 +98,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="0">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="0" Padding="{Binding Path=Padding}">
                         <ContentPresenter VerticalAlignment="{TemplateBinding VerticalAlignment}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" />
                     </Border>
                 </ControlTemplate>
@@ -290,7 +129,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
+    
     <!-- Game Video Preview Button -->
     <Style TargetType="Button" x:Key="GameVidBtn">
         <Setter Property="Foreground" Value="#FFDD163B"/>
@@ -312,46 +151,12 @@
         </Style.Triggers>
     </Style>
 
-    <!-- Games List Button Button -->
-    <Style TargetType="Button" x:Key="GameListButton">
-        <Setter Property="Background" Value="{x:Null}"/>
-        <Setter Property="Opacity" Value="0.70"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" BorderBrush="{x:Null}" BorderThickness="0" >
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Opacity" Value="1"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <ImageBrush ImageSource="/resources/images/background/gbtn_hover.png"/>
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-            <Trigger Property="IsDefault" Value="True">
-                <Setter Property="Opacity" Value="1"/>
-                <Setter Property="Background">
-                    <Setter.Value>
-                        <ImageBrush ImageSource="/resources/images/background/gbtn_active.png"/>
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
     <!-- Transparent TextBox -->
     <Style TargetType="TextBox"  x:Key="TransTextBox">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding Background}" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -359,10 +164,10 @@
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFFF85AC"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFC80040"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -374,7 +179,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type PasswordBox}">
-                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding Background}" BorderThickness="0" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -382,10 +187,10 @@
                             <Setter Property="Opacity" TargetName="border" Value="0.56"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFFF85AC"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFC80040"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{x:Null}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

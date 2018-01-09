@@ -115,7 +115,17 @@ namespace Rlkt_LauncherLibServer.Server
                     new PacketLogic.VOIPRequestLogic(packet);
                     break;
 
+                case "VoceChatReqReply":
+                    new PacketLogic.VOIPRequestReplyLogic(packet);
+                    break;
+
+                case "VoiceChatLeaveCallReq":
+                    new PacketLogic.VOIPLeaveRequestLogic(packet);
+                    break;
+
+
                 #endregion
+
                 default:
                     Console.WriteLine(" -> Packet not found !! [" + packetName + "]");
                     break;

@@ -77,7 +77,7 @@ namespace LauncherApp.Network
                     {
                         Packets.GameData.SC_GameInfo info = (Packets.GameData.SC_GameInfo)data.Object;
                        
-                        LauncherFactory.getAppClass().onGameListRecv(info);
+                        LauncherFactory.getAppClass().HomePage.onGameListRecv(info);
                     }
                     break;
 
@@ -88,21 +88,21 @@ namespace LauncherApp.Network
                     Packets.Friends.SCFriendList fList = (Packets.Friends.SCFriendList)data.Object;
 
                     // update friends list
-                    LauncherFactory.getFriendsClass().UpdateFriendList(fList);
+                    LauncherFactory.getAppClass().SocialPage.UpdateFriendList(fList);
 
                     break;
                 case "SC_AddFriendRep":
 
-                    LauncherFactory.getNewFriendClass().OnLoginResult(data.Object);
+                    LauncherFactory.getAppClass().SocialPage.AddFriendWindow.OnReciveResult(data.Object);
                     break;
 
                 case "SC_FriendRequestOption":
 
-                    LauncherFactory.getFriendsClass().OnRequestOptionResult(data.Object);
+                    LauncherFactory.getAppClass().SocialPage.OnRequestOptionResult(data.Object);
                     break;
                 case "SC_FriendOption":
 
-                    LauncherFactory.getFriendsClass().OnFriendOptionResult(data.Object);
+                    LauncherFactory.getAppClass().SocialPage.OnFriendOptionResult(data.Object);
                     break;
                 case "SC_AddFriendNotify":
 
@@ -125,15 +125,17 @@ namespace LauncherApp.Network
 
                     handlerChatID = ((Packets.Chat.ChatMessagesList)data.Object).chatID;
 
-                    if (App.ChatMan._openedChats.ContainsKey(handlerChatID))
-                    {
-                        App.ChatMan._openedChats[handlerChatID].OnMessageListResult(data.Object); 
-                    }
+                    LauncherFactory.getAppClass().SocialPage._chatControl.OnMessageListResult(data.Object);
 
-                    if (App.ChatMan._openedChannels.ContainsKey(handlerChatID))
-                    {
-                        App.ChatMan._openedChannels[handlerChatID].OnMessageListResult(data.Object); 
-                    }
+                    //if (App.ChatMan._openedChats.ContainsKey(handlerChatID))
+                    //{
+                    //    App.ChatMan._openedChats[handlerChatID].OnMessageListResult(data.Object); 
+                    //}
+
+                    //if (App.ChatMan._openedChannels.ContainsKey(handlerChatID))
+                    //{
+                    //    App.ChatMan._openedChannels[handlerChatID].OnMessageListResult(data.Object); 
+                    //}
 
                     break;
 
@@ -141,15 +143,11 @@ namespace LauncherApp.Network
 
                     handlerChatID = ((Packets.Chat.ChatMessageRep)data.Object).chatID;
 
-                    if (App.ChatMan._openedChats.ContainsKey(handlerChatID))
+                    if (App.ChatMan._openedChatList.ContainsKey(handlerChatID))
                     {
-                        App.ChatMan._openedChats[handlerChatID].OnSendingResult(data.Object);
+                        App.ChatMan._openedChatList[handlerChatID].MessagesList.OnSendingResult(data.Object);
                     }
 
-                    if (App.ChatMan._openedChannels.ContainsKey(handlerChatID))
-                    {
-                        App.ChatMan._openedChannels[handlerChatID].OnSendingResult(data.Object);
-                    }
 
                     break;
                 case "SC_SendMessageNotify":
@@ -164,23 +162,24 @@ namespace LauncherApp.Network
 
                 case "CreateChannelRep":
 
-                    LauncherFactory.getChannelCreateClass().OnLoginResult(data.Object);
+                    LauncherFactory.getAppClass().SocialPage.CreateChannelWindow.OnReciveResult(data.Object);
 
                     break;
 
                 case "ChannelUseresListRep":
 
-                    App.ChatMan._openedChannels[((Packets.Channel.ChannelUsersListRep)data.Object).chatID].OnUsersListResult(data.Object);
+                    App.ChatMan._openedChatList[((Packets.Channel.ChannelUsersListRep)data.Object).chatID].OnUsersListResult(data.Object);
 
                     break;
                 case "ChannelOptionRep":
 
-                    LauncherFactory.getFriendsClass().OnChannelOptionResult(data.Object);
+                    LauncherFactory.getAppClass().SocialPage.OnChannelOptionResult(data.Object);
 
                     break;
                 case "ChannelInviteRep":
 
-                    LauncherFactory.getChannelInviteClass().OnLoginResult(data.Object);
+                    long[] tempPacket = (long[])data.Object;
+                    App.ChatMan._openedChatList[tempPacket[1]].inviteWinfow.OnReciveResult((int)tempPacket[0]);
 
                     break;
 
@@ -192,11 +191,12 @@ namespace LauncherApp.Network
                     {
                         App.Current.Dispatcher.Invoke(() =>
                         {
-                            LauncherFactory.getFriendsClass().AddToChannelList(notifyData.ChannelName, notifyData.chatID, true);
+                            LauncherFactory.getAppClass().SocialPage.AddToChannelList(notifyData.ChannelName, notifyData.chatID, true);
                         });
                     }
 
-                    App.ChatMan._openedChannels[notifyData.chatID].OnUserNotifyResult(data.Object);
+                    if (App.ChatMan._openedChatList.ContainsKey(notifyData.chatID))
+                        App.ChatMan._openedChatList[notifyData.chatID].OnUserNotifyResult(data.Object);
 
                     break;
                 #endregion
@@ -207,9 +207,9 @@ namespace LauncherApp.Network
                     {
                         Packets.Chat.VoiceChatRequestResult resultPacket = (Packets.Chat.VoiceChatRequestResult)data.Object;
 
-                        if (App.ChatMan._openedChats.ContainsKey(resultPacket.chatID))
+                        if (App.ChatMan._openedChatList.ContainsKey(resultPacket.chatID))
                         {
-                            App.ChatMan._openedChats[resultPacket.chatID].onCallRequsetResult(resultPacket);
+                            App.ChatMan._openedChatList[resultPacket.chatID].MessagesList.onCallRequsetResult(resultPacket);
                         }
 
                     }
@@ -221,6 +221,19 @@ namespace LauncherApp.Network
 
                     break;
 
+                case "VoceChatReqRepNotify":
+
+                    App.NotifyMan.NotifyHandler(NotifyManager.NotifyType.IncomingCallReply, data.Object);
+
+                    break;
+
+                case "VoiceChatLeaveNotify":
+
+                    App.NotifyMan.NotifyHandler(NotifyManager.NotifyType.LeaveCall, data.Object);
+
+                    break;
+
+                    
                 #endregion
 
                 default:

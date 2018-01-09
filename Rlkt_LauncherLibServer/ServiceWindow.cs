@@ -47,6 +47,23 @@ namespace Rlkt_LauncherLibServer
             
         }
 
+        public void UpdateVoipChannelsCount(int number)
+        {
+
+            if (voipChannelsCounter.InvokeRequired)
+            {
+                voipChannelsCounter.Invoke((MethodInvoker)delegate
+                {
+                    UpdateVoipChannelsCount(number);
+                });
+            }
+            else
+            {
+                voipChannelsCounter.Text = "Voip Channels:  " + number;
+            }
+
+        }
+
         public void UpdateServerStatus(bool isOnline)
         {
 
@@ -66,6 +83,11 @@ namespace Rlkt_LauncherLibServer
         private void ServiceWindow_Shown(object sender, EventArgs e)
         {
            
+        }
+
+        private void ServiceWindow_Load(object sender, EventArgs e)
+        {
+            Program._voiceServer.Show();
         }
 
         #region  Client Data Grid Functions
@@ -134,6 +156,10 @@ namespace Rlkt_LauncherLibServer
             }
 
         #endregion
+
+
+
+            
         
 
 

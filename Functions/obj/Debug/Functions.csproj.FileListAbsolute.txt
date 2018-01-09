@@ -2,3 +2,7 @@ C:\LauncherApp\Source\v5\Functions\bin\Debug\Functions.dll
 C:\LauncherApp\Source\v5\Functions\bin\Debug\Functions.pdb
 C:\LauncherApp\Source\v5\Functions\obj\Debug\Functions.dll
 C:\LauncherApp\Source\v5\Functions\obj\Debug\Functions.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Functions\bin\Debug\Functions.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Functions\bin\Debug\Functions.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\Functions\obj\Debug\Functions.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\Functions\obj\Debug\Functions.pdb

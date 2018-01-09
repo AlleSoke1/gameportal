@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace LauncherApp.Styles.Controls
 {
     /// <summary>
-    /// Interaction logic for FriendListItem.xaml
+    /// Interaction logic for ChatMessageItem.xaml
     /// </summary>
     public partial class ChatMessageItem : UserControl
     {
@@ -41,7 +41,7 @@ namespace LauncherApp.Styles.Controls
         public string OwnerName
         {
             get { return (string)GetValue(OwnerNameProperty); }
-            set { SetValue(OwnerNameProperty, value); SetOwnerName(value); }
+            set { SetValue(OwnerNameProperty, value);}
         }
 
 
@@ -54,16 +54,16 @@ namespace LauncherApp.Styles.Controls
         #endregion
 
         #region SendDate DP
-        public string SendDate
+        public DateTime SendDate
         {
-            get { return (string)GetValue(SendDateProperty); }
+            get { return (DateTime)GetValue(SendDateProperty); }
             set { SetValue(SendDateProperty, value); }
         }
 
         public static readonly DependencyProperty SendDateProperty
             = DependencyProperty.Register(
                   "SendDate",
-                  typeof(string),
+                  typeof(DateTime),
                   typeof(ChatMessageItem)
               );
         #endregion
@@ -71,7 +71,6 @@ namespace LauncherApp.Styles.Controls
         public ChatMessageItem()
         {
             InitializeComponent();
-
             this.DataContext = this;
             
         }
@@ -80,7 +79,6 @@ namespace LauncherApp.Styles.Controls
         {
 
             Paragraph paragraph = new Paragraph();
-            paragraph.ToolTip = this.SendDate;
             paragraph.Margin = new Thickness(0);
             paragraph.Padding = new Thickness(0);
 
@@ -92,34 +90,9 @@ namespace LauncherApp.Styles.Controls
 
         private void MessagePanel_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            messageText.Width = MessagePanel.ActualWidth - ownerName.ActualWidth;
+            //messageText.Width = MessagePanel.ActualWidth;
         }
 
-        private void SetOwnerName(string value)
-        {
-            Run temp = new Run();
-            temp.Text = string.Format("{0}:", value);
-
-            if (value.ToLower() == LauncherApp.Game_Data.Globals.nickname.ToLower()) {
-                ItemElement.Background.Opacity = 1;
-                temp.Foreground = (Brush)new BrushConverter().ConvertFromString("#FFDA0029");
-            }
-
-            ownerName.Inlines.Add(temp);
-        }
-
-        public void AddMoreMessage(string message, string sendDate){
-
-            Paragraph paragraph = new Paragraph();
-            paragraph.ToolTip = sendDate;
-            paragraph.Margin = new Thickness(0);
-            paragraph.Padding = new Thickness(0);
-
-            Run name = new Run();
-            name.Text = message;
-            App.ChatMan.Emoticons(name.Text, paragraph, messageText, false);
-            messageText.UpdateLayout();
-        }
 
 
     }

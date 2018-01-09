@@ -7,3 +7,7 @@ D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\bin\Debug\RlktXmlData.dll
 D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\bin\Debug\RlktXmlData.pdb
 D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\obj\Debug\RlktXmlData.dll
 D:\Hossam\DN\GamesPortal\Katalin\v4\RlktXmlData\obj\Debug\RlktXmlData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\RlktXmlData\bin\Debug\RlktXmlData.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\RlktXmlData\bin\Debug\RlktXmlData.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\RlktXmlData\obj\Debug\RlktXmlData.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\RlktXmlData\obj\Debug\RlktXmlData.pdb

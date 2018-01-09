@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="LauncherApp.Styles.Controls.MyGamesItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
+             mc:Ignorable="d" 
+             d:DesignHeight="45" d:DesignWidth="218" BorderThickness="0" Width="375" Height="170">
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Path=ImageSource}"/>
+        </Grid.Background>
+
+        <Grid x:Name="ItemButtons" Height="30" Width="335" Margin="20,0,20,10" VerticalAlignment="Bottom" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <cControls:SpecialButton x:Name="runGameBtn" BtnStyle="Flat" Text="Game Run" ExtraIcon="play" Grid.Column="0" FontSize="12" BtnRadius="5,0,0,5" BtnBackground="#FFDA0029" BtnBackgroundHover="#FFB60022" HorizontalContentAlignment="Center" Click="runGameBtn_Click"/>
+
+
+            <DockPanel Grid.Column="1" Background="#FFB60022" />
+
+            <cControls:SpecialButton  x:Name="viewGameBtn" BtnStyle="Flat" Text="View Details" ExtraIcon="InformationVariant" Grid.Column="2" FontSize="12" BtnRadius="0,5,5,0" BtnBackground="#FFDA0029" BtnBackgroundHover="#FFB60022" HorizontalContentAlignment="Center" Click="viewGameBtn_Click"/>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

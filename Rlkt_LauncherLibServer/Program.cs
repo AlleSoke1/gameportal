@@ -7,17 +7,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rlkt_LauncherLibServer
-{ 
+{
     static class Program
     {
         public static Clients.Clients clients;
         public static Server.Server server;
         public static CDatabase sql;
+        public static Rlkt_LauncherLibServer.Voip.cChannels VOIPManager;
 
         //Games settings/data/info
         public static GameData.GamesInfo gamesInfo;
 
         public static ServiceWindow serviceWnd = new ServiceWindow();
+        public static VoiceServer _voiceServer = new VoiceServer();
+
+
 
         /// <summary>
         /// The main entry point for the application.
@@ -32,11 +36,13 @@ namespace Rlkt_LauncherLibServer
             gamesInfo = new GameData.GamesInfo();
 
             sql = new CDatabase();
+            
+            VOIPManager = new Rlkt_LauncherLibServer.Voip.cChannels();
+
 
             // start serivce Window
             Application.EnableVisualStyles();
             Application.Run(serviceWnd);
-
         }
 
 

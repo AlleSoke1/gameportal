@@ -32,7 +32,7 @@ namespace NotifyManager
 
                         App.Current.Dispatcher.Invoke(() =>
                         {
-                            LauncherFactory.getFriendsClass().UpdateUserStatus(statusData.userID, statusData.userStatus);
+                            LauncherFactory.getAppClass().SocialPage.UpdateUserStatus(statusData.userID, statusData.userStatus);
 
                             if (statusData.IsLogin)
                             {
@@ -58,11 +58,12 @@ namespace NotifyManager
                         App.Current.Dispatcher.Invoke(() =>
                         {
                             LauncherFactory.getNotifyClass().AddItem("New Friend Request", notifyMessage, 5);
-                            LauncherFactory.getFriendsClass().RequestList.AddItem(new LauncherApp.Styles.Controls.FriendRequestListitem()
+                            LauncherFactory.getAppClass().SocialPage.FriendRequests.AddItem(new LauncherApp.Styles.Controls.FriendRequestListitem()
                             {
                                 UserID = temp1.senderID,
                                 UesrName = temp1.senderName
                             });
+                            LauncherFactory.getAppClass().SocialPage.friendRequestCount++;
                         });
 
                         break;
@@ -75,7 +76,7 @@ namespace NotifyManager
 
                         App.Current.Dispatcher.Invoke(() =>
                         {
-                            LauncherFactory.getFriendsClass().FriendsList.RemoveByUserID((int)data);
+                            LauncherFactory.getAppClass().SocialPage.FriendsList.RemoveByUserID((int)data);
                         });
 
                         break;
@@ -93,7 +94,7 @@ namespace NotifyManager
                         App.Current.Dispatcher.Invoke(() =>
                         {
                             LauncherFactory.getNotifyClass().AddItem("Request Accepted!", notifyMessage, 5);
-                            LauncherFactory.getFriendsClass().FriendsList.AddItem(new LauncherApp.Styles.Controls.FriendListItem()
+                            LauncherFactory.getAppClass().SocialPage.FriendsList.AddItem(new LauncherApp.Styles.Controls.FriendListItem()
                             {
                                 UserID = temp2.friendID,
                                 FriendName = temp2.friendName
@@ -120,26 +121,15 @@ namespace NotifyManager
 
                         App.Current.Dispatcher.Invoke(() =>
                         {
-                            
-                            if (App.ChatMan._openedChats.ContainsKey(msgInfo.chatID))
+
+                            if (App.ChatMan._openedChatList.ContainsKey(msgInfo.chatID))
                             {
-                                if (!App.ChatMan._openedChats[msgInfo.chatID].IsActive)
+                                if (!App.ChatMan._openedChatList[msgInfo.chatID].isActive)
                                 {
                                     LauncherFactory.getNotifyClass().AddItem("New Message!", notifyMessage, 5);
                                 }
 
-                                App.ChatMan._openedChats[msgInfo.chatID].OnSendingResult(msgInfo);
-                                return;
-                            }
-
-                            if (App.ChatMan._openedChannels.ContainsKey(msgInfo.chatID))
-                            {
-                                if (!App.ChatMan._openedChannels[msgInfo.chatID].IsActive)
-                                {
-                                    LauncherFactory.getNotifyClass().AddItem("New Message!", notifyMessage, 5);
-                                }
-
-                                App.ChatMan._openedChannels[msgInfo.chatID].OnSendingResult(msgInfo);
+                                App.ChatMan._openedChatList[msgInfo.chatID].MessagesList.OnSendingResult(msgInfo);
                                 return;
                             }
 
@@ -155,14 +145,42 @@ namespace NotifyManager
                     #region Incoming Call
                     case NotifyType.IncomingCall:
 
-                        long chatID = (long)data;
+                        long chatID = ((Packets.Chat.VoiceChatRequestResult)data).chatID;
 
-                        if (App.ChatMan._openedChats.ContainsKey(chatID))
+                        if (App.ChatMan._openedChatList.ContainsKey(chatID))
                         {
-                            App.ChatMan._openedChats[chatID].onIncomingCallRequset();
+                            App.ChatMan._openedChatList[chatID].MessagesList.onIncomingCallRequset(data);
                         }
 
                         break;
+                    #endregion
+
+                    #region Incoming Call Reply
+                    case NotifyType.IncomingCallReply:
+
+                        long chatID1 = ((Packets.Chat.VoiceChatRequestResult)data).chatID;
+
+                        if (App.ChatMan._openedChatList.ContainsKey(chatID1))
+                        {
+                            App.ChatMan._openedChatList[chatID1].MessagesList.onIncomingCallRequsetReply(data);
+                        }
+
+                        break;
+                    #endregion
+
+                    #region Leave Call
+
+                    case NotifyType.LeaveCall:
+
+                        long chatID2 = ((Packets.Chat.VoiceChatLeaveCall)data).chatID;
+
+                        if (App.ChatMan._openedChatList.ContainsKey(chatID2))
+                        {
+                            App.ChatMan._openedChatList[chatID2].MessagesList.onLeaveCallNotfiy(data);
+                        }
+
+                        break;
+
                     #endregion
 
 
@@ -186,6 +204,8 @@ namespace NotifyManager
         NewMessageAdded = 4,
 
         IncomingCall = 5,
+        IncomingCallReply = 6,
+        LeaveCall = 7,
 
     };
 

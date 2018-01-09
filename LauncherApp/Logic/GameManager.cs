@@ -14,45 +14,72 @@ namespace LauncherApp
 {
     public class GameManager
     {
+        public bool ActiveTimer = false;
 
         public void StartGame(string gameName)
         {
+          
+            ActiveTimer = true;
+            Thread timerThread = new Thread(() => { StartGameTimer(); });
             var gParams = App.installedGamesList[gameName];
 
             App.Current.Dispatcher.Invoke(() =>
             {
-                LauncherFactory.getAppClass().RunGameStatus(true);
+                LauncherFactory.getAppClass().HomePage.RunGameStatus(true);
+                LauncherFactory.getAppClass().MyGamesPage.RunGameStatus(true);
             });
-
 
             ProcessStartInfo procStartInfo = new ProcessStartInfo();
             Process procExecuting = new Process();
 
             var _with1 = procStartInfo;
             _with1.UseShellExecute = true;
-            _with1.FileName = Path.Combine(gParams.gameFolder, "GameAgent.exe");
+            _with1.FileName = Path.Combine(gParams.gameFolder, gParams.startupExeFile);
             _with1.WorkingDirectory = gParams.gameFolder;
             _with1.Verb = "runas";
-            _with1.Arguments = string.Format("{0} {1} {2}", (int)Enums.GameAgent.AgentOrder.Start, gParams.startupExeFile, gParams.startCommand.Replace(' ', '+'));
+            _with1.Arguments = string.Format(gParams.startCommand);
 
+            if (File.Exists(_with1.FileName))
+            {
+                procExecuting = Process.Start(procStartInfo);
+                timerThread.Start();
 
-            procExecuting = Process.Start(procStartInfo);
+                // wait while game is running
+                procExecuting.WaitForExit();
 
-            Thread.Sleep(200);
-            procExecuting.WaitForExit();
+            }
+
+            // after game close
+            ActiveTimer = false;
             Thread.Sleep(200);
 
             App.Current.Dispatcher.Invoke(() =>
             {
-                LauncherFactory.getAppClass().RunGameStatus(false);
+                LauncherFactory.getAppClass().HomePage.RunGameStatus(false);
+                LauncherFactory.getAppClass().MyGamesPage.RunGameStatus(false);
             });
+
+        }
+
+        public void StartGameTimer()
+        {
+            long secs = 0;
+            while (ActiveTimer)
+            {
+                secs++;
+                App.Current.Dispatcher.Invoke(() =>
+                {
+                    LauncherFactory.getAppClass().HomePage.UpdatePlayTime(secs);
+                });
+                Thread.Sleep(1000);
+            }
 
         }
 
         public void ScanGamesPath(string path, bool isDefaultPath)
         {
 
-            GameData[] varGamesInfo = LauncherFactory.getAppClass().gamesInfo.gameInfo;
+            GameData[] varGamesInfo = LauncherFactory.getAppClass().HomePage.gamesInfo.gameInfo;
 
             var installedGames = App.installedGamesList;
 
@@ -71,7 +98,7 @@ namespace LauncherApp
                     {
                         App.Current.Dispatcher.Invoke(() =>
                         {
-                            LauncherFactory.getScanGamesClass().AddGame(true, gData.gameDisplayName, correctPath, gData.gameName, gData.gameID, gData.gameExeFile);
+                            LauncherFactory.getAppClass().HomePage.GameScanPage.AddGame(true, gData.gameDisplayName, correctPath, gData.gameName, gData.gameID, gData.gameExeFile);
                         });
 
                     }
@@ -84,7 +111,7 @@ namespace LauncherApp
 
             App.Current.Dispatcher.Invoke(() =>
             {
-                LauncherFactory.getScanGamesClass().ShowMessageWnd(false, false, "");
+                LauncherFactory.getAppClass().HomePage.GameScanPage.ShowMessageWnd(false, false, "");
             });
 
         }
@@ -115,9 +142,12 @@ namespace LauncherApp
 
             App.Current.Dispatcher.Invoke(() =>
             {
-                LauncherFactory.getAppClass().UpdateInstalledGame(gameIndex);
+                LauncherFactory.getAppClass().HomePage.UpdateInstalledGame(gameIndex);
+                LauncherFactory.getAppClass().MyGamesPage.AddGameToList(igInfo.gameName, LauncherFactory.getAppClass().HomePage.GetGameListIDByName(igInfo.gameName));
             });
 
         }
+
+
     }
 }

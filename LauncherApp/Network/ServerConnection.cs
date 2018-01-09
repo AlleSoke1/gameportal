@@ -32,7 +32,7 @@ namespace LauncherApp.Network
                 client.OnConnected += new NetConnectedEventHandler(client_OnConnected);
 
                 //Connect to the server
-                client.TryConnect("176.9.85.148", 5892);
+                client.TryConnect(App._conServerIp, 5892);
               //  client.TryConnect("89.39.13.247", 5892);
 
                 //client.OnReceived += client_OnReceived;
@@ -57,7 +57,6 @@ namespace LauncherApp.Network
              //close all windows and show only login window!
              App.Current.Dispatcher.Invoke(() =>{
                         LauncherFactory.HideAllWindows();
-                        App.ChatMan.CloseAllOpenedWindows();
                         LauncherFactory.getLoginClass().ShowLogout();
                     });
         }

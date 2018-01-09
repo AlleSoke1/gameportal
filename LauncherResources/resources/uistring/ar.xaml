@@ -1,0 +1,229 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="LangName">العربية</system:String>
+    <system:String x:Key="LangAlign">RTL</system:String>
+    <FontFamily x:Key="AppFontPath">pack://application:,,,/LauncherResources;component/resources/fonts/#Neo Sans Arabic</FontFamily>
+
+    <!-- Window Title-->
+    <system:String x:Key="wndStartup">بدأ التطبيق</system:String>
+    <system:String x:Key="wndLogin">تسجيل الدخول</system:String>
+    <system:String x:Key="wndNickname">إختيار اسم الشهرة</system:String>
+    <system:String x:Key="wndFriendList">قائمة الاصداء</system:String>
+    <system:String x:Key="wndFriendAdd">إضافة صديق</system:String>
+    <system:String x:Key="wndChat">نافذة دردشة</system:String>
+    <system:String x:Key="wndChannel">نافذة قناة</system:String>
+    <system:String x:Key="wndApps">تطبيق أركان</system:String>
+    <system:String x:Key="wndSettings">اعدادات التطبيق</system:String>
+    <system:String x:Key="wndGameScan">بحث الالعاب</system:String>
+    <system:String x:Key="wndGameInstall">معالج الالعاب</system:String>
+    <system:String x:Key="wndChannelCreate">إنشاء قناة</system:String>
+    <system:String x:Key="wndChannelInvite">دعوة للقناة</system:String>
+
+
+    <!--Basics-->
+    <system:String x:Key="strOk">موافق</system:String>
+    <system:String x:Key="strNo">لا</system:String>
+    <system:String x:Key="strDone">تم</system:String>
+    <system:String x:Key="strSave">حفظ</system:String>
+    <system:String x:Key="strClose">اغلاق</system:String>
+    <system:String x:Key="strExit">خروج</system:String>
+    <system:String x:Key="strCancel">إلغاء</system:String>
+    <system:String x:Key="strNext">إلتالي</system:String>
+    <system:String x:Key="strBack">عودة</system:String>
+    <system:String x:Key="strChange">تغيير</system:String>
+    <system:String x:Key="strReset">إعادة تهيئة</system:String>
+    <system:String x:Key="strAccept">قبول</system:String>
+    <system:String x:Key="strDecline">رفض</system:String>
+    <system:String x:Key="LoadingStr">جارى التحميل, الرجاء الانتظار...</system:String>
+    <system:String x:Key="AppCopyrights">كافة الحقوق محفوظة © أركان جيمز.</system:String>
+    <system:String x:Key="strCallSupport">لقد حدث خطأ ما, قم بالتواصل مع الدعم الفني رجاءً!</system:String>
+    <system:String x:Key="statusOnline">متصل</system:String>
+    <system:String x:Key="statusOffline">غير متصل</system:String>
+    <system:String x:Key="statusAway">بعيد</system:String>
+    <system:String x:Key="statusBusy">مشغول</system:String>
+
+    <!--Start up Window -->
+    <system:String x:Key="StartUpMessage">نقوم بتهيئة التطبيق من أجلك!</system:String>
+    <system:String x:Key="StartUpStatusStart">جاري التشغيل...</system:String>
+    <system:String x:Key="NotifyIconShow">اظهار التطبيق</system:String>
+
+    <!--Login Window-->
+    <system:String x:Key="LoginID">اسم المستخدم/ البريد الالكتروني</system:String>
+    <system:String x:Key="LoginPassword">كلمة المرور</system:String>
+    <system:String x:Key="LoginRememberMe">إبقنى متصل</system:String>
+    <system:String x:Key="LoginBtn">دخول</system:String>
+    <system:String x:Key="newAccount">إنشاء حساب جديد</system:String>
+    <system:String x:Key="resetInfo">نسيت بيانات حسابك؟</system:String>
+    <system:String x:Key="Error_EmptyInputs">رجاءً قم بملئ كافة الخانات.</system:String>
+    <system:String x:Key="Error_InputCount">رجاءً تحقق من اسم المستخدم او كلمة المرور.</system:String>
+    <system:String x:Key="Error_AccountDoesNotExists">عذراً حسابك غير موجود.</system:String>
+    <system:String x:Key="Error_WongPassword">عذراً لقد ادخلت كلمة مرور خاطئة.</system:String>
+    <system:String x:Key="LoginLoadingTitle">مرحباً بك في عائلتك!</system:String>
+    <system:String x:Key="LoginLoadingMessage">جاري تسجيل الدخول الى حسابك.</system:String>
+
+    <!--Start up Window -->
+    <system:String x:Key="SideBarHome">الرئيسية</system:String>
+    <system:String x:Key="SideBarGames">إلعابي</system:String>
+    <system:String x:Key="SideBarShop">شحن النقاط</system:String>
+    <system:String x:Key="SideBarSocial">التواصل الاجتماعي</system:String>
+    <system:String x:Key="SideBarSettings">الإعدادات</system:String>
+    
+    <!--Apps Window-->
+    <system:String x:Key="MainMenuGames">الألعاب</system:String>
+    <system:String x:Key="MainMenuShop">المتجر</system:String>
+    <system:String x:Key="LogoMenuAccounts">إدارة الحساب</system:String>
+    <system:String x:Key="LogoMenuSupport">الدعم الفني</system:String>
+    <system:String x:Key="LogoMenuSettings">الإعدادات</system:String>
+    <system:String x:Key="LogoMenuForums">منتديات الألعاب</system:String>
+    <system:String x:Key="LogoMenuLogout">تسجيل الخروج</system:String>
+    <system:String x:Key="LogoMenuExit">أغلاق البرنامج</system:String>
+    <system:String x:Key="UserStatusOnline">متصل</system:String>
+    <system:String x:Key="UserStatusAway">بعيد</system:String>
+    <system:String x:Key="UserStatusBusy">مشغول</system:String>
+    <system:String x:Key="GameWebsiteBtn">موقع اللعبة</system:String>
+    <system:String x:Key="GameForumseBtn">المنتدى</system:String>
+    <system:String x:Key="GameDownloadBtn">تحميل و تنصيب</system:String>
+    <system:String x:Key="GameStartBtn">تشغيل اللعبة</system:String>
+    <system:String x:Key="GamePlayingBtn">مُشغلة الان...</system:String>
+    <system:String x:Key="GameOffInstallBtn">اللعبة على جهازك؟ ثبتها الان!</system:String>
+    <system:String x:Key="FriendsWindowToolTip">عرض قائمة اصدقائك</system:String>
+    <system:String x:Key="AppSettingsToolTip">فتح إعدادات التطبيق</system:String>
+    
+    <!--Games Texts-->
+    <system:String x:Key="AppsGameName_dragonnest">عش التنين</system:String>
+    <system:String x:Key="AppsGameTitle_dragonnest">عش مغامرة مجانية!</system:String>
+    <system:String x:Key="AppsGameDesc_dragonnest">لعبة متعددة الشخصيات اونلاين فهذا نص تجريبي فقط.</system:String>
+    <system:String x:Key="AppsGameName_worldofwonders">عالم العجائب2</system:String>
+    <system:String x:Key="AppsGameTitle_worldofwonders">عالم من الانمي لك فقط!</system:String>
+    <system:String x:Key="AppsGameDesc_worldofwonders">لعبة متعددة الشخصيات اونلاين فهذا نص تجريبي فقط.</system:String>
+
+    <!--Settings Window-->
+    <system:String x:Key="settings_General">الاعدادات العامة</system:String>
+    <system:String x:Key="settings_SoundsNotfiy">الاصوات والاشعارات</system:String>
+    <system:String x:Key="settings_FriendsChat">الاصدقاء والدردشة</system:String>
+    <system:String x:Key="settings_VoiceCalls">المكالمات الصوتية</system:String>
+    <system:String x:Key="settings_GamesSettings">إعدادات الالعاب</system:String>
+    <system:String x:Key="settings_AboutArcan">حول أركان</system:String>
+    <system:String x:Key="settingsTitleGeneral">الأعدادات العامة</system:String>
+    <system:String x:Key="settingsTitleSounds">الاصوات و الاشعارات</system:String>
+    <system:String x:Key="settingsTitleFriends">الاصدقاء</system:String>
+    <system:String x:Key="settingsTitleChat">الدردشة</system:String>
+    <system:String x:Key="settingsTitleSpekaers">السماعات</system:String>
+    <system:String x:Key="settingsTitleMic">الميكروفون</system:String>
+    <system:String x:Key="settingsTitleGamesInstall">تنصيب الألعاب</system:String>
+    <system:String x:Key="settingsTitleAppInfo">تطبيق أركان</system:String>
+    <system:String x:Key="settingsTitlePolicy">سياسة الخصوصية</system:String>
+    <system:String x:Key="resetBtn">استعادة الأعدادات الافتراضية</system:String>
+    <system:String x:Key="savedLibl">تم حفظ الإعدادات, رجاءً قم باعادة تشغيل البرنامج لتطبيق التغييرات.</system:String>
+    
+    <!--General Settings-->
+    <system:String x:Key="LangLibl">لغة تطبيق أركان</system:String>
+    <system:String x:Key="LaunchOnStartFlag">تشغيل تطبيق أركان عند أقلاع الجهاز</system:String>
+    <system:String x:Key="LaunchAsIconFlag">تشغيل تطبيق أركان بشكل مصغر كأيقونة في النظام.</system:String>
+    <system:String x:Key="onClosingFlagLibl">عندما اضغط على 'X' في اعلى نافذة التطبيق</system:String>
+    <system:String x:Key="onClosingFlagMini">تصغير تطبيق أركان كايقونة في النظام</system:String>
+    <system:String x:Key="onClosingFlagExit">الخروج من تطبيق أركان</system:String>
+    <system:String x:Key="onPlayingFlagLibl">عندما اقوم بتشغيل لعبة</system:String>
+    <system:String x:Key="onPlayingFlagKeepOpen">أبقاء نافذة تطبيق أركان مفتوحة</system:String>
+    <system:String x:Key="onPlayingFlagMiniTaskbar">تصغير تطبيق أركان الى شريط المهام</system:String>
+    <system:String x:Key="onPlayingFlagMiniTray">تصغير تطبيق أركان كأيقونة في النظام</system:String>
+    <system:String x:Key="onPlayingFlagExit">الخروج من تطبيق أركان نهائياً</system:String>
+    <system:String x:Key="WindowResetFlag">إعادة تهيئة النوافذ المتجأهلة</system:String>
+    <system:String x:Key="WindowResetFlagToolTip">سيقوم هذا باعادة تعيين كل النوافذ التي قمت بتحديدها كـ "لا تعرض مجدداً", بحيث ستقوم برؤيتها مرة اخرى.</system:String>
+
+    <!--Sounds Settings-->
+    <system:String x:Key="EnableBlocksFlag">تفعيل اشعارات تطبيق أركان</system:String>
+    <system:String x:Key="EnableBlocksFlagLibl">موقع الظهور</system:String>
+    <system:String x:Key="BlocksPositionFlagBr">أسفل يمين الشاشة</system:String>
+    <system:String x:Key="BlocksPositionFlagBl">أسفل يسار الشاشة</system:String>
+    <system:String x:Key="BlocksPositionFlagTr">أعلى يمين الشاشة</system:String>
+    <system:String x:Key="BlocksPositionFlagTl">أعلى يسار الشاشة</system:String>
+    <system:String x:Key="EnableSoundFlag">تفعيل اصوات التطبيق</system:String>
+    <system:String x:Key="EnableSoundFlagLibl">مستوى الصوت</system:String>
+    <system:String x:Key="OnPlayingLibl">عندما اكون داخل لعبة...</system:String>
+    <system:String x:Key="PlayingHideBlocksFlag">إخفاء الاشعارات</system:String>
+    <system:String x:Key="PlayingHideNewMessagesFlag">لا تقوم باظهار نوافذ دردشة جديدة منبثقة</system:String>
+    <system:String x:Key="PlayingMuteSoundsFlag">كتم صوت الرسائل والاشعارات</system:String>
+    <system:String x:Key="Panel1Title">الحدث</system:String>
+    <system:String x:Key="Panel2Title">المراسلة</system:String>
+    <system:String x:Key="Panel3Title">القنوات</system:String>
+    <system:String x:Key="DisplayBlocklibl">عرض الإشعار</system:String>
+    <system:String x:Key="PlaySoundLibl">تشغيل صوت</system:String>
+    <system:String x:Key="evOnlineFriends">صديق اصبح متصل</system:String>
+    <system:String x:Key="evOfflineFriends">صديق اصبح غير متصل</system:String>
+    <system:String x:Key="evFriendStartGame">صديق قام بتشغيل لعبة</system:String>
+    <system:String x:Key="evIncomingFreindRequest">وصول طلب صداقة</system:String>
+    <system:String x:Key="evIncomingMessage">وصول رسالة جديدة</system:String>
+    <system:String x:Key="evNewMessage">وصول رسائل جديدة في نافذة الدردشة</system:String>
+    <system:String x:Key="evChannelInvite">وصول دعوة لقناة</system:String>
+    <system:String x:Key="evChatLeaveOrJoin">إنضمام او مغادرة لاعب للقناة</system:String>
+
+    <!--Friends Chat Settings-->
+    <system:String x:Key="HideFirnedsIDFlag">إخقاء الرقم التعريفي الخاص بالاصدقاء</system:String>
+    <system:String x:Key="ShowFriendsPicFlag">اظهار صور الاصدقاء في قائمة الاصدقاء</system:String>
+    <system:String x:Key="AlertNewMessageFlag">قم بتنبيهي عند استلام رسالة دردشة جديدة</system:String>
+    <system:String x:Key="FilterbadWordsFlag">قم بتفعيل تصفية الكلمات السيئة</system:String>
+    <system:String x:Key="ShownWhenTypingFlag">اسمح للآخرين بالمعرفة عندما أكتب</system:String>
+    <system:String x:Key="ViewBlockList">عرض قائمة الحظر</system:String>
+    <system:String x:Key="ViewBlockListToolTip">قائمة الحظر هي قائمة تحتوى على اللاعبين الاخرين الذين قمت بحظرهم من قبل, يمكنك إلغاء حظر اللاعبين من هذه القائمة في أي وقت.</system:String>
+
+    <!--Voice Call Settings-->
+    <system:String x:Key="strVolume">مستوى الصوت</system:String>
+    <system:String x:Key="OutputDeviceFlagLibl">جهاز الاخراج</system:String>
+    <system:String x:Key="InputDeviceFlagLibl">جهاز الادخال</system:String>
+    <system:String x:Key="TestMicBtnLibl">اختبار الميكروفون</system:String>
+    <system:String x:Key="TestMicBtn">إضغط لبدأ الاختبار</system:String>
+
+    <!--Games Settings-->
+    <system:String x:Key="InstallStartupIconFlag">إنشاء ايقونة على سطح المكتب للالعاب بشكل تلقائي إثناء التثبيت</system:String>
+    <system:String x:Key="InstallDesktopIconFlag">إنشاء ايقونة للعبة في قائمة البدأ لكافة المستخدمين</system:String>
+    <system:String x:Key="DefaultInstallPathFlagLibl">مسار تثبيت الألعاب الافتراضي</system:String>
+    <system:String x:Key="ScanForGamesBtn">البحث عن ألعاب</system:String>
+    <system:String x:Key="ScanGamesOnLaunchFlag">البحث عن ألعاب أركان في الخلفية كلما قمت بتشغيل تطبيق أركان</system:String>
+
+    <!--About App-->
+    <system:String x:Key="AppTitleLibl">اسم التطبيق: {0}</system:String>
+    <system:String x:Key="AppVersionLibl">اصدار التطبيق: {0}</system:String>
+    <system:String x:Key="AppCompanyLibl">الشركة الناشرة: {0}</system:String>
+    <system:String x:Key="PolicyLibl">سياسة الخصوصية فقط بالعربية.</system:String>
+
+    <!--Install Game Window -->
+    <system:String x:Key="InstallGameTitle">تثبيت {0}</system:String>
+    <system:String x:Key="InstallInfoBoxLocal">مسار التثبيت</system:String>
+    <system:String x:Key="InstallInfoBoxDownSize">المساحة المطلوبة:</system:String>
+    <system:String x:Key="InstallInfoBoxSizeError">ليس هناك مساحة كافية على القرص.</system:String>
+    <system:String x:Key="InstallInfoBoxLang">لغة اللعبة</system:String>
+    <system:String x:Key="InstallInfoBoxLangStr">عام: العربية</system:String>
+    <system:String x:Key="InstallInfoBoxPreferences">التفضيلاات</system:String>
+    <system:String x:Key="InstallInfoBoxShortCutFlag">إنشاء اختصار على سطح المكتب بعد إنتهاء التنصيب</system:String>
+    <system:String x:Key="InstallStartInstall">بدأ التنصيب</system:String>
+    <!--Download and install-->
+    <system:String x:Key="InstallGameInstallTitle">تحميل وتنصيب اللعبة</system:String>
+    <system:String x:Key="InstallGameInstallText">النظام يعمل على تحميل وتثبيت {0} الان, نرجوا الانتظار...</system:String>
+    <system:String x:Key="InstallGameDownloadProgress">التحميل</system:String>
+    <system:String x:Key="InstallGameInstallProgress">التثبيت</system:String>
+    <system:String x:Key="InstallGameComplete">أكتمل تثبيت اللعبة, جاهزة للانطلاق!</system:String>
+
+    <!-- Scan Window -->
+    <system:String x:Key="ScanQestuionLabel">لم نتنبه للعبة؟ ارشدنا لمسارها !</system:String>
+    <system:String x:Key="ScanLoacate">تحديد</system:String>
+
+    <!--Friends/Chat Window-->
+    <system:String x:Key="FriendListEmpty">ليس لديك اي اصدقاء حتى الان.</system:String>
+    <system:String x:Key="FriendBlockUser">حظر هذا العضو</system:String>
+    <system:String x:Key="FriendsListName">الاصدقاء</system:String>
+    <system:String x:Key="ChannelsListName">القنوات</system:String>
+    <system:String x:Key="ChatTextBoxLabel">اكتب رسالتك هنا...</system:String>
+    <system:String x:Key="ChatParticipantsLabel">مشاركين</system:String>
+    <system:String x:Key="ChatJoinNotify">لقد انضم {0} لهذه المحادثة</system:String>
+    <system:String x:Key="ChatLeaveNotify">لقد غادر {0} هذه المحادثة</system:String>
+    <system:String x:Key="ChatErrorCallBusy">عذراً, انت على مكالمة بالفعل.</system:String>
+    <system:String x:Key="ChatIncomingCall">مكالمة قادمة:</system:String>
+    <system:String x:Key="CallErrorFail">عذراً, فشلت المكالمة.</system:String>
+    <system:String x:Key="CallErrorOffline">عذراً, لا يمكنك الاتصال بصديق غير متصل.</system:String>
+    <system:String x:Key="CallErrorUserBusy">عذراً, هذا العضو على مكالمة بالفعل. يرجى الانتظار او ارسال رسالة.</system:String>
+    <system:String x:Key="ChatMessgeCalEnd">إنتهت المكالمة.</system:String>
+    <system:String x:Key="ChatMessgeCallLeft">لقد غادر {0} المكالمة.</system:String>
+    <system:String x:Key="ChatLoadMessage">إضغط هنا لعرض المزيد من الرسائل</system:String>
+
+</ResourceDictionary>

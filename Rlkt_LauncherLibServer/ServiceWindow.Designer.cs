@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.serviceInfo = new System.Windows.Forms.GroupBox();
+            this.voipChannelsCounter = new System.Windows.Forms.Label();
             this.serverStatus = new System.Windows.Forms.Label();
             this.onlineCounter = new System.Windows.Forms.Label();
             this.serverStatuslibl = new System.Windows.Forms.Label();
@@ -44,23 +45,37 @@
             this.serverOffBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.serviceInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientList)).BeginInit();
             this.serviceStatusBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // serviceInfo
             // 
+            this.serviceInfo.Controls.Add(this.voipChannelsCounter);
             this.serviceInfo.Controls.Add(this.serverStatus);
             this.serviceInfo.Controls.Add(this.onlineCounter);
             this.serviceInfo.Controls.Add(this.serverStatuslibl);
             this.serviceInfo.Location = new System.Drawing.Point(12, 16);
             this.serviceInfo.Name = "serviceInfo";
-            this.serviceInfo.Size = new System.Drawing.Size(176, 81);
+            this.serviceInfo.Size = new System.Drawing.Size(176, 93);
             this.serviceInfo.TabIndex = 0;
             this.serviceInfo.TabStop = false;
             this.serviceInfo.Text = "Service Data";
+            // 
+            // voipChannelsCounter
+            // 
+            this.voipChannelsCounter.AutoSize = true;
+            this.voipChannelsCounter.Location = new System.Drawing.Point(6, 65);
+            this.voipChannelsCounter.Name = "voipChannelsCounter";
+            this.voipChannelsCounter.Size = new System.Drawing.Size(87, 13);
+            this.voipChannelsCounter.TabIndex = 3;
+            this.voipChannelsCounter.Text = "Voip Channels: 0";
             // 
             // serverStatus
             // 
@@ -101,9 +116,9 @@
             this.Nickname,
             this.Status,
             this.IP});
-            this.clientList.Location = new System.Drawing.Point(201, 16);
+            this.clientList.Location = new System.Drawing.Point(6, 8);
             this.clientList.Name = "clientList";
-            this.clientList.Size = new System.Drawing.Size(643, 407);
+            this.clientList.Size = new System.Drawing.Size(643, 380);
             this.clientList.TabIndex = 1;
             // 
             // GUID
@@ -156,7 +171,7 @@
             // 
             this.serviceStatusBox.Controls.Add(this.serverOffBtn);
             this.serviceStatusBox.Controls.Add(this.serverOnBtn);
-            this.serviceStatusBox.Location = new System.Drawing.Point(12, 103);
+            this.serviceStatusBox.Location = new System.Drawing.Point(12, 115);
             this.serviceStatusBox.Name = "serviceStatusBox";
             this.serviceStatusBox.Size = new System.Drawing.Size(176, 74);
             this.serviceStatusBox.TabIndex = 2;
@@ -176,7 +191,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 183);
+            this.groupBox1.Location = new System.Drawing.Point(12, 195);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(176, 74);
             this.groupBox1.TabIndex = 4;
@@ -192,26 +207,49 @@
             this.button2.Text = "SEND";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(194, 16);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(663, 420);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.clientList);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(655, 394);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Clients";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // ServiceWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 434);
+            this.ClientSize = new System.Drawing.Size(873, 446);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.serviceStatusBox);
-            this.Controls.Add(this.clientList);
             this.Controls.Add(this.serviceInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(875, 473);
             this.Name = "ServiceWindow";
             this.Text = "LauncherServer Service";
+            this.Load += new System.EventHandler(this.ServiceWindow_Load);
             this.Shown += new System.EventHandler(this.ServiceWindow_Shown);
             this.serviceInfo.ResumeLayout(false);
             this.serviceInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientList)).EndInit();
             this.serviceStatusBox.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,5 +272,8 @@
         private System.Windows.Forms.Label serverStatus;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label voipChannelsCounter;
     }
 }

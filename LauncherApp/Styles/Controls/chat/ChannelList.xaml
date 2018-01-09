@@ -3,25 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" d:DesignWidth="545" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Width="Auto" Height="{Binding ActualHeight, ElementName=ElementGird}">
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" BorderThickness="0" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Width="Auto" >
 
-    <Grid x:Name="ElementGird" Width="{Binding ActualWidth, ElementName=ListElement}" Height="{Binding ActualHeight, ElementName=ListElement}" VerticalAlignment="Top" >
+    <Grid x:Name="ElementGird" >
 
-        <Border x:Name="TittlePanelBorder" BorderThickness="1" Height="30" VerticalAlignment="Top">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="#FF747474" Opacity="0"/>
-            </Border.BorderBrush>
+        <Border x:Name="TittlePanelBorder" BorderThickness="1" Height="30" VerticalAlignment="Top" CornerRadius="5" >
 
             <StackPanel x:Name="TittlePanel" Margin="-1" Orientation="Horizontal" MouseEnter="TittlePanel_MouseEnter" MouseLeave="TittlePanel_MouseLeave" MouseDown="TittlePanel_MouseDown">
                 <StackPanel.Background>
                     <SolidColorBrush Color="White" Opacity="0"/>
                 </StackPanel.Background>
 
-                <Label x:Name="ArrowIcon" FontFamily="pack://application:,,,/resources/fonts/#themify" Content="&#xe64b;" Padding="0" VerticalContentAlignment="Center" Foreground="#FF828282" Margin="5,0" FontWeight="Bold" FontSize="10"></Label>
+                <iconPacks:PackIconMaterial x:Name="ArrowIcon" Kind="ChevronDown" Padding="0" VerticalContentAlignment="Center" Foreground="#FF828282" Margin="5,0,5,0" FontWeight="Bold" Width="10" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
-                <Label x:Name="ChannelName" Content="{Binding Path=SectionName}" Padding="0" VerticalContentAlignment="Center" Foreground="Silver" Margin="0,0,5,0"/>
+                <Label x:Name="ChannelName" Content="{Binding Path=SectionName}" Padding="0" VerticalContentAlignment="Center" Foreground="#d3d3d3" Margin="0,0,5,0" FontWeight="Bold"/>
 
-                <Label x:Name="ChannelCounter" Content="- 0/0" Padding="0" VerticalContentAlignment="Center" Foreground="#FF828282"/>
+                <Label x:Name="ChannelCounter" Content="- 0/0" Padding="0" VerticalContentAlignment="Center" Foreground="#888888"/>
 
             </StackPanel>
 
@@ -30,8 +28,7 @@
         <StackPanel x:Name="ListPanel" Margin="0,31,0,-1"/>
 
         <StackPanel x:Name="EmptyFlag" Margin="0,31,0,0" Orientation="Horizontal" Height="29" VerticalAlignment="Top" Visibility="{Binding Path=ShowEmptyFlag}">
-            <Label FontFamily="pack://application:,,,/resources/fonts/#themify" Content="&#xe638;" Padding="0" VerticalContentAlignment="Center" Foreground="#FF686868" Margin="25,0,0,0" FontSize="10" Width="9" FontWeight="Bold"/>
-            <Label Width="253" Content="Drag friends to your Favorites list" Foreground="#FF686868" />
+            <Label Width="253" Content="{DynamicResource FriendListEmpty}" Foreground="#FF686868" Margin="25,0,0,0"  FontSize="10"/>
         </StackPanel>
 
     </Grid>

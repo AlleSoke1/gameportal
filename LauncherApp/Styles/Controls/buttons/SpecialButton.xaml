@@ -1,0 +1,22 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             x:Name="ControlElement" x:Class="LauncherApp.Styles.Controls.SpecialButton" 
+             Cursor="Hand" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" MouseEnter="ControlElement_MouseEnter" MouseLeave="ControlElement_MouseLeave" MouseLeftButtonDown="ControlElement_MouseDown" Loaded="ControlElement_Loaded" IsEnabledChanged="ControlElement_IsEnabledChanged" >
+    <Grid Width="{Binding ActualWidth, ElementName=ControlElement}"  Height="{Binding ActualHeight, ElementName=ControlElement}">
+
+        <Border x:Name="ButtonBorder" Background="{Binding Path=BtnBackground}"   CornerRadius="{Binding Path=BtnRadius}" BorderBrush="{Binding Path=BtnBorder}" BorderThickness="{Binding Path=BtnBorderThickness}"  >
+            <StackPanel x:Name="ContentFiled" Orientation="Horizontal" VerticalAlignment="{Binding VerticalContentAlignment, ElementName=ControlElement}" HorizontalAlignment="{Binding HorizontalContentAlignment, ElementName=ControlElement}">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial x:Name="iconFiled"  Kind="{Binding Path=ExtraIcon}" Height="{Binding FontSize, ElementName=ControlElement}" VerticalAlignment="Stretch" Width="{Binding FontSize, ElementName=ControlElement}" HorizontalContentAlignment="{Binding HorizontalContentAlignment, ElementName=ControlElement}" VerticalContentAlignment="{Binding VerticalContentAlignment, ElementName=ControlElement}" Margin="0,0,5,0"/>
+                <Label x:Name="textFiled" Content="{Binding Path=Text}" Foreground="{Binding Foreground, ElementName=ControlElement}" Padding="0" FontSize="{Binding FontSize, ElementName=ControlElement}" HorizontalContentAlignment="{Binding HorizontalContentAlignment, ElementName=ControlElement}" VerticalContentAlignment="{Binding VerticalContentAlignment, ElementName=ControlElement}" Background="{x:Null}"></Label>
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</UserControl>

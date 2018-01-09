@@ -38,8 +38,19 @@ namespace LauncherApp
         public static LauncherApp.Logic.ChatManager ChatMan = new LauncherApp.Logic.ChatManager();
         public static LauncherApp.Logic.SoundManager SoundMan = new LauncherApp.Logic.SoundManager();
 
+
+        #region Global Info
+
+        public static string _conServerIp = "176.9.85.148";
+
+        #endregion
+
+
         public App()
         {
+            ResourceDictionary dict = new ResourceDictionary();
+            dict.Source = new Uri("pack://application:,,,/LauncherApp;component/Styles/Style.xaml");
+            App.Current.Resources.MergedDictionaries.Add(dict);
 
             new LauncherFactory();
 
@@ -115,6 +126,7 @@ namespace LauncherApp
             try
             {
                 App.notifyIcon.Visible = false;
+                Application.Current.Shutdown();
             }
             catch { }
         }

@@ -1,15 +1,26 @@
-﻿
+﻿C:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\App.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\AppsWindow.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\ChannelInvite.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\ChannelWindow.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\ChatWindow.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\ChannelCreate.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\FriendAddWindow.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\FriendsWindow.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\ScanGames.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\MainApp.xaml;;
 FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\LoginWindow.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\InstallGame.xaml;;
-FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\SettingsWindow.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\NicknameWindow.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\StartupWindow.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\CallUserIcon.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\friend\AddFriend.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\CreateChannel.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\InviteChannel.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\ChatMemeberList.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\EmojiPickerBox.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\ChatMessageList.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\chat\ChatControl.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\friend\FriendRequestControl.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\Games\MyGamesItem.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\GameInstall.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\TheSettings.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\GameScan.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\Social.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\TheShop.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\MyGames.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Pages\Home.xaml;;
+FC:\Users\Hossam\Documents\GitHub\gameportal\LauncherApp\Styles\Controls\friend\FriendRequestListitem.xaml;;
 

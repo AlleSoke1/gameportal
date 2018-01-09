@@ -6,21 +6,30 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              VerticalAlignment="Top"
              SizeChanged="MessagePanel_SizeChanged"
-             mc:Ignorable="d" d:DesignWidth="425" BorderThickness="0"  MinHeight="25" MinWidth="425" Padding="0,5,0,10">
-    <UserControl.Background>
-        <SolidColorBrush Color="#FF373736" Opacity="0"/>
-    </UserControl.Background>
+             mc:Ignorable="d" d:DesignWidth="425" BorderThickness="0"  MinHeight="60" Padding="0,5">
 
     <Grid x:Name="ElementGird" >
 
-        <StackPanel x:Name="MessagePanel"  ToolTip="{Binding SendDate}"  >
+        <Border Margin="20,0,20,0" BorderThickness="0,0,0,1" BorderBrush="#4c4c4c">
+            <Grid x:Name="MessagePanel" Margin="0,0,0,0">
 
-            <TextBlock x:Name="ownerName" Foreground="Silver" Text="" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0,2,0" Height="18" FontSize="13"></TextBlock>
+                <Image x:Name="UserImage" Width="40" Height="40" Source="pack://application:,,,/LauncherResources;component/resources/images/avatar.png" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="0,15,0,15"/>
+                
+                <StackPanel Margin="50,0,0,0">
+                    <StackPanel Margin="0,20,0,5" Orientation="Horizontal">
+                        <Label x:Name="UsernameLabel" Content="{Binding OwnerName}" Padding="0" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="White" Margin="0,0,5,0" VerticalContentAlignment="Bottom"></Label>
+                        <Label x:Name="DateLabel" Content="{Binding SendDate}" Padding="0" VerticalContentAlignment="Bottom" Foreground="#7c7c7c" VerticalAlignment="Bottom"></Label>
+                    </StackPanel>
+                    
+                    <RichTextBox x:Name="messageText" IsReadOnly="True" Foreground="Silver" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"  Padding="0" SelectionBrush="#FFFF829A" Block.LineHeight="6" FontSize="13"  VerticalContentAlignment="Center" Margin="0,0,0,20" HorizontalContentAlignment="Stretch" />
 
-            <RichTextBox x:Name="messageText" IsReadOnly="True" Foreground="Silver" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"  Padding="0" SelectionBrush="#FFFF829A" Block.LineHeight="6" FontSize="13" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                
+            </Grid>
+        </Border>
 
 
-        </StackPanel>
 
 
 

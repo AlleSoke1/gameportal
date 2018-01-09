@@ -9,13 +9,8 @@
 
         <StackPanel x:Name="TittlePanel" Orientation="Horizontal" Background="#FF2B2B2B">
 
-            <fa:ImageAwesome x:Name="MessageIcon" Icon="InfoCircle" HorizontalAlignment="Center" Width="39" Margin="15,0,10,0">
-                <fa:ImageAwesome.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFDA0029" Offset="0"/>
-                        <GradientStop Color="#FFB00123" Offset="1"/>
-                    </LinearGradientBrush>
-                </fa:ImageAwesome.Foreground>
+            <fa:ImageAwesome x:Name="MessageIcon" Icon="InfoCircle" HorizontalAlignment="Center" Width="39" Margin="15,0,10,0" Foreground="#FFDA0029">
+              
             </fa:ImageAwesome>
 
             <StackPanel HorizontalAlignment="Center" Width="220" VerticalAlignment="Center" Margin="0,0,0,0" Height="150">

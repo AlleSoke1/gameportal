@@ -123,7 +123,7 @@ namespace LauncherApp
                         Dispatcher.Invoke(() =>
                         {
                             this.Hide();
-                            LauncherFactory.getAppClass().BlurWindow(false);
+                            //LauncherFactory.getAppClass().BlurWindow(false);
                         });
                     }
                     break;
@@ -153,7 +153,7 @@ namespace LauncherApp
         {
             Dispatcher.Invoke(() =>
             {
-                LauncherFactory.getAppClass().BlurWindow(true);
+               // LauncherFactory.getAppClass().BlurWindow(true);
 
                 Window Nickname = LauncherFactory.getNicknameClass();
                 Nickname.Owner = LauncherFactory.getAppClass();

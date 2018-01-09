@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using FontAwesome.WPF;
 using System.IO;
 using LauncherData;
+using LauncherResources;
 
 namespace LauncherApp
 {
@@ -30,7 +31,7 @@ namespace LauncherApp
             LoadStyles();
 
             App.notifyIcon = new System.Windows.Forms.NotifyIcon();
-            Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/LauncherApp;component/resources/icon.ico")).Stream;
+            Stream iconStream = Application.GetResourceStream(new Uri("pack://application:,,,/LauncherResources;component/resources/icon.ico")).Stream;
             App.notifyIcon.Icon = new System.Drawing.Icon(iconStream);
             App.notifyIcon.Visible = true;
             App.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(App.notifyIcon_Click);
@@ -41,6 +42,8 @@ namespace LauncherApp
             App.notifyIconMenu.MenuItems.Add("Exit", new EventHandler(App.notifyIcon_Exitbtn));
 
             App.notifyIcon.ContextMenu = App.notifyIconMenu;
+
+            //new MainApp().Show();
 
         }
 
@@ -57,7 +60,6 @@ namespace LauncherApp
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
-
 
         #endregion
 
@@ -107,7 +109,22 @@ namespace LauncherApp
             }
 
             //starting up work here.
+            checkScreenSize();
+        }
 
+        private void checkScreenSize()
+        {
+            double sWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double sHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+
+            if (sWidth > 1300 && sHeight > 800)
+            {
+                Dispatcher.Invoke(() =>
+                {
+                    LauncherFactory.getAppClass().Height = 660;
+                    LauncherFactory.getAppClass().Width = 1300;
+                });
+            }
         }
     }
 }

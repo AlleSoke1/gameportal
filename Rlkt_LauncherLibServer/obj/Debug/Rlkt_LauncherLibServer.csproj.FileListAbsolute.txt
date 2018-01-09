@@ -66,6 +66,7 @@ C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\Rlk
 C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\NetSockets.pdb
 C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\bin\Debug\NetSockets.xml
 C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csprojResolveAssemblyReference.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.VoiceServer.resources
 C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.ServiceWindow.resources
 C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.Properties.Resources.resources
 C:\Users\Hossam\Documents\GitHub\gameportal\Rlkt_LauncherLibServer\obj\Debug\Rlkt_LauncherLibServer.csproj.GenerateResource.Cache

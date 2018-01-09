@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LauncherApp.Styles.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,10 @@ namespace LauncherApp.Logic
 {
     public class ChatManager
     {
-        public Dictionary<long, ChatWindow> _openedChats = new Dictionary<long, ChatWindow>();
-        public Dictionary<long, ChannelWindow> _openedChannels = new Dictionary<long, ChannelWindow>();
+        //public Dictionary<long, ChatWindow> _openedChats = new Dictionary<long, ChatWindow>();
+        //public Dictionary<long, ChannelWindow> _openedChannels = new Dictionary<long, ChannelWindow>();
+
+        public Dictionary<long, ChatControl> _openedChatList = new Dictionary<long, ChatControl>();
 
         public ChatManager(){
 
@@ -47,7 +50,7 @@ namespace LauncherApp.Logic
 
         #region add emotion to RichTextBox function
 
-        private Dictionary<string, string> _mappings = new Dictionary<string, string>();
+        public Dictionary<string, string> _mappings = new Dictionary<string, string>();
 
         private string GetEmoticonText(string text)
         {
@@ -76,11 +79,9 @@ namespace LauncherApp.Logic
         {
 
             Run r = new Run(msg);
-
             para.Inlines.Add(r);
 
             string emoticonText = GetEmoticonText(r.Text);
-
             //if paragraph does not contains smile only add plain text to richtextbox rtb2
             if (string.IsNullOrEmpty(emoticonText))
             {
@@ -107,9 +108,9 @@ namespace LauncherApp.Logic
 
                     Image image = new Image
                     {
-                        Source = new BitmapImage(new Uri("pack://application:,,,/resources/images/emoji/" + path)),
-                        Width = 16,
-                        Height = 16,
+                        Source = new BitmapImage(new Uri("pack://application:,,,/LauncherResources;component/resources/images/emoji/" + path)),
+                        Width = 20,
+                        Height = 20,
                     };
 
                     //insert smile
@@ -135,54 +136,25 @@ namespace LauncherApp.Logic
                 if (clearFlag)  rtbConversation.Document.Blocks.Clear();
                 rtbConversation.Document.Blocks.Add(para);
 
+                rtbConversation.VerticalContentAlignment = System.Windows.VerticalAlignment.Center;
             }
         }
         #endregion
 
 
-        internal bool OpenChatFromList(long userID)
-        {
-            if (_openedChats.ContainsKey(userID))
-            {
-                _openedChats[userID].Topmost = true;
-                _openedChats[userID].Focus();
-                _openedChats[userID].Show();
-                _openedChats[userID].Topmost = false;
-                return true;
-            }
-
-            return false;
-        }
 
         internal bool OpenChannelFromList(long channelID)
         {
-            if (_openedChannels.ContainsKey(channelID))
+            if (_openedChatList.ContainsKey(channelID))
             {
-                _openedChannels[channelID].Topmost = true;
-                _openedChannels[channelID].Focus();
-                _openedChannels[channelID].Show();
-                _openedChannels[channelID].Topmost = false;
+                LauncherFactory.getAppClass().SocialPage.SwitchChatWindow(channelID);
                 return true;
             }
 
             return false;
         }
 
-        internal void CloseAllOpenedWindows()
-        {
-            for (int i = 0; i < _openedChats.Count; i++)
-            {
-                long elmKey = _openedChats.ElementAt(i).Key;
-                _openedChats[elmKey].Close();
-                _openedChats.Remove(elmKey);
-            }
-
-            for (int i = 0; i < _openedChannels.Count; i++)
-            {
-                long elmKey = _openedChannels.ElementAt(i).Key;
-                _openedChannels[elmKey].Close();
-                _openedChannels.Remove(elmKey);
-            }
-        }
     }
+
+
 }

@@ -10,8 +10,8 @@
     <GameInfo>
       <gameName>dragonnest</gameName>
       <gameFolder>C:\arcangames\dragonnest</gameFolder>
-      <startupExeFile>file1.exe</startupExeFile>
-      <startCommand>/asdsad //sadsad</startCommand>
+      <startupExeFile>file.exe</startupExeFile>
+      <startCommand>sadasdasd</startCommand>
     </GameInfo>
     <GameInfo>
       <gameName />

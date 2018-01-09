@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agent\GameAgent.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Channel\Channel.cs" />
     <Compile Include="Friend\Friend.cs" />

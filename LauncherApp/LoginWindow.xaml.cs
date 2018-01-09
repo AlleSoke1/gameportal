@@ -67,9 +67,9 @@ namespace LauncherApp
             backimg.TileMode = TileMode.None; 
 
             if (RememberCheck.IsChecked == true)
-                backimg.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/resources/images/checkbox_checked.png"));
+                backimg.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/LauncherResources;component/resources/images/checkbox_checked.png"));
             else
-                backimg.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/resources/images/checkbox.png"));
+                backimg.ImageSource = new BitmapImage(new Uri(@"pack://application:,,,/LauncherResources;component/resources/images/checkbox.png"));
 
             RememberCheck.Background = backimg;
 
@@ -92,7 +92,6 @@ namespace LauncherApp
 
             object textboxlibl = MainGrid.FindName(SenderName + "_libl");
 
-            ((Label)textboxlibl).Visibility = Visibility.Hidden;
 
         }
         private void textBox_FocusOut(object sender, RoutedEventArgs e)
@@ -115,8 +114,6 @@ namespace LauncherApp
 
             object textboxlibl = MainGrid.FindName(SenderName + "_libl");
 
-            if (SenderText == "")
-                ((Label)textboxlibl).Visibility = Visibility.Visible;
         }
 
         private void LoadingStatus(bool p)
@@ -157,13 +154,15 @@ namespace LauncherApp
         {
             if (!windowMaximizeState)
             {
-                tFullBtn.Icon = FontAwesomeIcon.WindowRestore;
+                tFullBtn.Icon = MahApps.Metro.IconPacks.PackIconMaterialKind.WindowRestore;
                 this.WindowState = WindowState.Maximized;
+                MainGrid.Margin = new Thickness(0);
             }
             else
             {
-                tFullBtn.Icon = FontAwesomeIcon.WindowMaximize;
+                tFullBtn.Icon = MahApps.Metro.IconPacks.PackIconMaterialKind.WindowMaximize;
                 this.WindowState = WindowState.Normal;
+                MainGrid.Margin = new Thickness(10);
             }
 
             windowMaximizeState = !windowMaximizeState;
@@ -202,11 +201,12 @@ namespace LauncherApp
             LoadingStatus(true);
             bool ErrorStatus = false;
 
-            if (loginID.Text == "" || loginPass.Password == "") {
+            if (loginID.Text == "" || loginPass.Text == "" || loginID.Text == null || loginPass.Text == null)
+            {
                 showError((string)App.Current.Resources["Error_EmptyInputs"], LauncherApp.Styles.Controls.FastMessage.MessageTypes.Warning);
                 ErrorStatus = true;
             }
-            else if (loginID.Text.Length < 4 || loginID.Text.Length > 50 || loginPass.Password.Length < 4 || loginPass.Password.Length > 50)
+            else if (loginID.Text.Length < 4 || loginID.Text.Length > 50 || loginPass.Text.Length < 4 || loginPass.Text.Length > 50)
             {
                 showError((string)App.Current.Resources["Error_InputCount"], LauncherApp.Styles.Controls.FastMessage.MessageTypes.Warning);
                 ErrorStatus = true;
@@ -223,11 +223,11 @@ namespace LauncherApp
             //
             if (ErrorStatus == false)
             {
-                SendLoginPacket(loginID.Text, loginPass.Password);
+                SendLoginPacket(loginID.Text, loginPass.Text);
 
                 if (RememberCheck.IsChecked == true) {
                     App.launcherSettings.data.RememberMe = true;
-                    App.launcherSettings.data.RememberData = SaveUserPassword(loginID.Text, loginPass.Password);
+                    App.launcherSettings.data.RememberData = SaveUserPassword(loginID.Text, loginPass.Text);
                 }
                 else
                 {
@@ -278,12 +278,12 @@ namespace LauncherApp
             string temp2 = new string(temp);
             string[] userpass = temp2.Split(new char[]{'&'}, 2);
 
-            loginID.Text         = userpass[0];
-            loginPass.Password   = userpass[1];
+            loginID.SetInputText(userpass[0]);
+            loginPass.SetInputText(userpass[1]);
 
            //if application was start first time then autologin!
             if (!Game_Data.Globals.Initialized)
-                loginButton.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+                loginButton.DoClick();
                 //SendLoginPacket(userpass[0], userpass[1]);
        }
 
@@ -310,8 +310,6 @@ namespace LauncherApp
                RememberCheck.IsChecked = true;
                LoadUserPassword(App.launcherSettings.data.RememberData);
 
-               if (this.loginID.Text != "") this.loginID_libl.Visibility = Visibility.Hidden;
-               if (this.loginPass.Password != "") this.loginPass_libl.Visibility = Visibility.Hidden;
            }
        }
 
@@ -328,7 +326,7 @@ namespace LauncherApp
                     {
                         //  Window appWnd = LauncherFactory.getAppWnd();
                         //App.Current.MainWindow = appWnd;
-                        Game_Data.Globals.password = loginPass.Password;
+                        Game_Data.Globals.password = loginPass.Text;
 
                         //LauncherFactory.getAppClass().Show();
                         //LauncherFactory.getLoginClass().Hide();
@@ -397,6 +395,11 @@ namespace LauncherApp
             loginButton.IsEnabled = true;
             loginID.IsEnabled = true;
             loginPass.IsEnabled = true;
+        }
+
+        private void loginButton_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

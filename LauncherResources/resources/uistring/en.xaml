@@ -1,0 +1,228 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <system:String x:Key="LangName">English</system:String>
+    <system:String x:Key="LangAlign">LTR</system:String>
+    <FontFamily x:Key="AppFontPath">pack://application:,,,/LauncherResources;component/resources/fonts/#Ubuntu</FontFamily>
+
+    <!-- Window Title-->
+    <system:String x:Key="wndStartup">Starting Application</system:String>
+    <system:String x:Key="wndLogin">Login</system:String>
+    <system:String x:Key="wndNickname">Choose Nickname</system:String>
+    <system:String x:Key="wndFriendList">Friends List</system:String>
+    <system:String x:Key="wndFriendAdd">New Friend</system:String>
+    <system:String x:Key="wndChat">Chat Window</system:String>
+    <system:String x:Key="wndChannel">Channel Window</system:String>
+    <system:String x:Key="wndApps">Arcan App</system:String>
+    <system:String x:Key="wndSettings">Application Settings</system:String>
+    <system:String x:Key="wndGameScan">Games Scanner</system:String>
+    <system:String x:Key="wndGameInstall">Games Installer</system:String>
+    <system:String x:Key="wndChannelCreate">Create Channel</system:String>
+    <system:String x:Key="wndChannelInvite">Invite To Channel</system:String>
+    
+    <!--Basics-->
+    <system:String x:Key="strOk">Ok</system:String>
+    <system:String x:Key="strNo">No</system:String>
+    <system:String x:Key="strDone">Done</system:String>
+    <system:String x:Key="strSave">Save</system:String>
+    <system:String x:Key="strClose">Close</system:String>
+    <system:String x:Key="strExit">Exit</system:String>
+    <system:String x:Key="strCancel">Cancel</system:String>
+    <system:String x:Key="strNext">Next</system:String>
+    <system:String x:Key="strBack">Back</system:String>
+    <system:String x:Key="strChange">Change</system:String>
+    <system:String x:Key="strPause">Pause</system:String>
+    <system:String x:Key="strContinue">Continue</system:String>
+    <system:String x:Key="strReset">Reset</system:String>
+    <system:String x:Key="strAccept">Accept</system:String>
+    <system:String x:Key="strDecline">Decline</system:String>
+    <system:String x:Key="LoadingStr">Loading, Please Wait...</system:String>
+    <system:String x:Key="AppCopyrights">COPYRIGHT © ALL RIGHTS RESERVED TO ARCAN GAMES.</system:String>
+    <system:String x:Key="strCallSupport">Something Wrong Happened, Please Call Support To Get Help!</system:String>
+    <system:String x:Key="statusOnline">Online</system:String>
+    <system:String x:Key="statusOffline">Offline</system:String>
+    <system:String x:Key="statusAway">Away</system:String>
+    <system:String x:Key="statusBusy">Busy</system:String>
+
+    <!--Start up Window -->
+    <system:String x:Key="StartUpMessage">We Are Preparing App For You!</system:String>
+    <system:String x:Key="StartUpStatusStart">Starting...</system:String>
+    <system:String x:Key="NotifyIconShow">Show App</system:String>
+    
+    <!--Login Window-->
+    <system:String x:Key="LoginID">Username/Email</system:String>
+    <system:String x:Key="LoginPassword">Password</system:String>
+    <system:String x:Key="LoginRememberMe">Keep me logged in</system:String>
+    <system:String x:Key="LoginBtn">LOGIN</system:String>
+    <system:String x:Key="newAccount">Don't have an Arcan Games Account? Register Now!</system:String>
+    <system:String x:Key="resetInfo">Forogt Account Info?</system:String>
+    <system:String x:Key="Error_EmptyInputs">Please fill all inputs.</system:String>
+    <system:String x:Key="Error_InputCount">Please check your ID or Password.</system:String>
+    <system:String x:Key="Error_AccountDoesNotExists">Sorry your account not exists.</system:String>
+    <system:String x:Key="Error_WongPassword">Sorry you have enter wrong password.</system:String>
+    <system:String x:Key="LoginLoadingTitle">Welcome to your family</system:String>
+    <system:String x:Key="LoginLoadingMessage">We're signing you to your account</system:String>
+
+    <!--Start up Window -->
+    <system:String x:Key="SideBarHome">Home</system:String>
+    <system:String x:Key="SideBarGames">My Games</system:String>
+    <system:String x:Key="SideBarShop">Points Shop</system:String>
+    <system:String x:Key="SideBarSocial">Social / Connection</system:String>
+    <system:String x:Key="SideBarSettings">Settings</system:String>
+
+    <!--Apps Window-->
+    <system:String x:Key="MainMenuGames">GAMES</system:String>
+    <system:String x:Key="MainMenuShop">SHOP</system:String>
+    <system:String x:Key="LogoMenuAccounts">Account Management</system:String>
+    <system:String x:Key="LogoMenuSupport">Support Center</system:String>
+    <system:String x:Key="LogoMenuSettings">Settings</system:String>
+    <system:String x:Key="LogoMenuForums">Gaming Forums</system:String>
+    <system:String x:Key="LogoMenuLogout">Log Out</system:String>
+    <system:String x:Key="LogoMenuExit">Applation Exit</system:String>
+    <system:String x:Key="UserStatusOnline">Online</system:String>
+    <system:String x:Key="UserStatusAway">Away</system:String>
+    <system:String x:Key="UserStatusBusy">Busy</system:String>
+    <system:String x:Key="GameWebsiteBtn">GAME WEBSITE</system:String>
+    <system:String x:Key="GameForumseBtn">COMMUNITY</system:String>
+    <system:String x:Key="GameDownloadBtn">DOWNLOAD &amp; INSTALL</system:String>
+    <system:String x:Key="GameStartBtn">GAME START</system:String>
+    <system:String x:Key="GamePlayingBtn">PLAING NOW...</system:String>
+    <system:String x:Key="GameOffInstallBtn">ALREADY HAVE THE GAME? INSTALL IT NOW!</system:String>
+    <system:String x:Key="FriendsWindowToolTip">Display your friends list</system:String>
+    <system:String x:Key="AppSettingsToolTip">Open application settings</system:String>
+    <system:String x:Key="MainGameTimer">Running-Time: {0}:{1}:{2}</system:String>
+    
+    <!--Games Texts-->
+    <system:String x:Key="AppsGameName_dragonnest">Dragon Nest</system:String>
+    <system:String x:Key="AppsGameTitle_dragonnest">Try A Free Adventure!</system:String>
+    <system:String x:Key="AppsGameDesc_dragonnest">A free to play action MMORPG based on cartoon characters</system:String>
+    <system:String x:Key="AppsGameName_worldofwonders">World of Wonders</system:String>
+    <system:String x:Key="AppsGameTitle_worldofwonders">Anime World For You!</system:String>
+    <system:String x:Key="AppsGameDesc_worldofwonders">A free to play action MMORPG based on cartoon characters</system:String>
+
+    <!--Settings Window-->
+    <system:String x:Key="settings_General">General</system:String>
+    <system:String x:Key="settings_SoundsNotfiy">Sounds &amp; Notifications</system:String>
+    <system:String x:Key="settings_FriendsChat">Friends &amp; Chat</system:String>
+    <system:String x:Key="settings_VoiceCalls">Voice Calls</system:String>
+    <system:String x:Key="settings_GamesSettings">Games Settings</system:String>
+    <system:String x:Key="settings_AboutArcan">About Arcan</system:String>
+    <system:String x:Key="settingsTitleGeneral">GENERAL</system:String>
+    <system:String x:Key="settingsTitleSounds">SOUNDS AND NOTIFICATIONS</system:String>
+    <system:String x:Key="settingsTitleFriends">FRIENDS</system:String>
+    <system:String x:Key="settingsTitleChat">CHAT</system:String>
+    <system:String x:Key="settingsTitleSpekaers">SPEAKERS AND HEADPHONES</system:String>
+    <system:String x:Key="settingsTitleMic">MICROPHONE</system:String>
+    <system:String x:Key="settingsTitleGamesInstall">GAME INSTALLATION</system:String>
+    <system:String x:Key="settingsTitleAppInfo">ARCAN APPLICATION</system:String>
+    <system:String x:Key="settingsTitlePolicy">PRIVACY POLICY</system:String>
+    <system:String x:Key="resetBtn">Reset to Defaults</system:String>
+    <system:String x:Key="savedLibl">Settings Saved, Please restart the app to take changes effect.</system:String>
+    <!--General Settings-->
+    <system:String x:Key="LangLibl">ARCAN APP LANGUAGE</system:String>
+    <system:String x:Key="LaunchOnStartFlag">Launch the Arcan App when computer starting</system:String>
+    <system:String x:Key="LaunchAsIconFlag">Launch the Arcan App minimized to the system tray</system:String>
+    <system:String x:Key="onClosingFlagLibl">WHEN I CLICK 'X' AT THE OP OF THE WINDOW</system:String>
+    <system:String x:Key="onClosingFlagMini">Minimize the Arcan App to system tray</system:String>
+    <system:String x:Key="onClosingFlagExit">Exit from Arcan App</system:String>
+    <system:String x:Key="onPlayingFlagLibl">WHEN I LAUNCH A GAME</system:String>
+    <system:String x:Key="onPlayingFlagKeepOpen">Keep the Arcan App window open</system:String>
+    <system:String x:Key="onPlayingFlagMiniTaskbar">Minimize the Arcan App window to taskbar</system:String>
+    <system:String x:Key="onPlayingFlagMiniTray">Minimize the Arcan App window to the system tray</system:String>
+    <system:String x:Key="onPlayingFlagExit">Exit the Arcan App compleltely</system:String>
+    <system:String x:Key="WindowResetFlag">Reset Dismissed Dialogs</system:String>
+    <system:String x:Key="WindowResetFlagToolTip">this will reset all dialogs yhat you marked as "Don't show this again", so that they will be seen again.</system:String>
+    <!--Sounds Settings-->
+    <system:String x:Key="EnableBlocksFlag">Enable Arcan App Toasts</system:String>
+    <system:String x:Key="EnableBlocksFlagLibl">POSITION</system:String>
+    <system:String x:Key="BlocksPositionFlagBr">Bottom Right</system:String>
+    <system:String x:Key="BlocksPositionFlagBl">Bottom Left</system:String>
+    <system:String x:Key="BlocksPositionFlagTr">Top Right</system:String>
+    <system:String x:Key="BlocksPositionFlagTl">Top Left</system:String>
+    <system:String x:Key="EnableSoundFlag">Enable Sound</system:String>
+    <system:String x:Key="EnableSoundFlagLibl">SOUND VOLUME</system:String>
+    <system:String x:Key="OnPlayingLibl">WHEN I PLAYING ARCAN GAME...</system:String>
+    <system:String x:Key="PlayingHideBlocksFlag">Hide Toasts</system:String>
+    <system:String x:Key="PlayingHideNewMessagesFlag">Don't pop-up new chat windows</system:String>
+    <system:String x:Key="PlayingMuteSoundsFlag">Mute messages and notifications sound</system:String>
+    <system:String x:Key="Panel1Title">EVENT</system:String>
+    <system:String x:Key="Panel2Title">WHISPERS</system:String>
+    <system:String x:Key="Panel3Title">CHANNELS</system:String>
+    <system:String x:Key="DisplayBlocklibl">DISPLAY A TOASTS</system:String>
+    <system:String x:Key="PlaySoundLibl">PLAY A SOUND</system:String>
+    <system:String x:Key="evOnlineFriends">Friend comes online</system:String>
+    <system:String x:Key="evOfflineFriends">Friend goes offline</system:String>
+    <system:String x:Key="evFriendStartGame">Friend starts game</system:String>
+    <system:String x:Key="evIncomingFreindRequest">Incoming friend request</system:String>
+    <system:String x:Key="evIncomingMessage">Incoming message</system:String>
+    <system:String x:Key="evNewMessage">Incoming message in chat window</system:String>
+    <system:String x:Key="evChannelInvite">Incoming invite</system:String>
+    <system:String x:Key="evChatLeaveOrJoin">Join or leave player</system:String>
+    <!--Friends Chat Settings-->
+    <system:String x:Key="HideFirnedsIDFlag">Hide friends real ID</system:String>
+    <system:String x:Key="ShowFriendsPicFlag">Show friends picture  in the friends list</system:String>
+    <system:String x:Key="AlertNewMessageFlag">Alert me (by flashing) when i receive a chat message</system:String>
+    <system:String x:Key="FilterbadWordsFlag">Filter mature language from chat</system:String>
+    <system:String x:Key="ShownWhenTypingFlag">Let others know when i am typing</system:String>
+    <system:String x:Key="ViewBlockList">View Block List</system:String>
+    <system:String x:Key="ViewBlockListToolTip">The Black List is a list of other players you have previously blocked communication from. You may unblock players from this list at any time.</system:String>
+    <!--Voice Call Settings-->
+    <system:String x:Key="strVolume">VOLUME</system:String>
+    <system:String x:Key="OutputDeviceFlagLibl">OUTPUT DEVICE</system:String>
+    <system:String x:Key="InputDeviceFlagLibl">INPUT DEVICE</system:String>
+    <system:String x:Key="TestMicBtnLibl">TEST MICROPHONE</system:String>
+    <system:String x:Key="TestMicBtn">Click To Start Testing</system:String>
+    <!--Games Settings-->
+    <system:String x:Key="InstallStartupIconFlag">Automatically create desktop icon for games during installation</system:String>
+    <system:String x:Key="InstallDesktopIconFlag">Create desktop icon for all users on start menu</system:String>
+    <system:String x:Key="DefaultInstallPathFlagLibl">DEFAULT GAMES INSTALLATION PATH</system:String>
+    <system:String x:Key="ScanForGamesBtn">Scan for games</system:String>
+    <system:String x:Key="ScanGamesOnLaunchFlag">Scan for Arcan games in the background every time the Arcan App launches</system:String>
+
+    <!--About App-->
+    <system:String x:Key="AppTitleLibl">App Title: {0}</system:String>
+    <system:String x:Key="AppVersionLibl">App Version: {0}</system:String>
+    <system:String x:Key="AppCompanyLibl">App Company: {0}</system:String>
+    <system:String x:Key="PolicyLibl">PRIVACY POLICY ONLY IN ARABIC.</system:String>
+
+    <!--Install Game Window -->
+    <system:String x:Key="InstallGameTitle">{0} INSTALLATION</system:String>
+    <system:String x:Key="InstallInfoBoxLocal">Install Location</system:String>
+    <system:String x:Key="InstallInfoBoxDownSize">Requested Size: </system:String>
+    <system:String x:Key="InstallInfoBoxSizeError">There is no enough free space</system:String>
+    <system:String x:Key="InstallInfoBoxLang">Game Language</system:String>
+    <system:String x:Key="InstallInfoBoxLangStr">General: Arabic</system:String>
+    <system:String x:Key="InstallInfoBoxPreferences">Install Preferences</system:String>
+    <system:String x:Key="InstallInfoBoxShortCutFlag">Create desktop shortcut after install finished</system:String>
+    <system:String x:Key="InstallStartInstall">Start Install</system:String>
+    <!--Download and install-->
+    <system:String x:Key="InstallGameInstallTitle">DOWNLOAD AND INSTALL</system:String>
+    <system:String x:Key="InstallGameInstallText">System progressing to download and install {0} now, Please wait...</system:String>
+    <system:String x:Key="InstallGameDownloadProgress">Download Progress</system:String>
+    <system:String x:Key="InstallGameInstallProgress">Install Progress</system:String>
+    <system:String x:Key="InstallGameComplete">Game Install Completed, Ready To Play!</system:String>
+
+    <!-- Scan Window -->
+    <system:String x:Key="ScanQestuionLabel">Did we miss one? Show us where it's installed</system:String>
+    <system:String x:Key="ScanLoacate">Locate</system:String>
+
+    <!--Friends/Chat Window-->
+    <system:String x:Key="FriendListEmpty">This section is empty now.</system:String>
+    <system:String x:Key="FriendBlockUser">Block this user</system:String>
+    <system:String x:Key="FriendsListName">FRIENDS</system:String>
+    <system:String x:Key="ChannelsListName">CHANNELS</system:String>
+    <system:String x:Key="ChatTextBoxLabel">Type your message here...</system:String>
+    <system:String x:Key="ChatParticipantsLabel">participants</system:String>
+    <system:String x:Key="ChatJoinNotify">{0} has joined this channel.</system:String>
+    <system:String x:Key="ChatLeaveNotify">{0} has left this channel.</system:String>
+    <system:String x:Key="ChatErrorCallBusy">Sorry you already on call.</system:String>
+    <system:String x:Key="ChatIncomingCall">Incoming Call:</system:String>
+    <system:String x:Key="CallErrorFail">Sorry, The call failed.</system:String>
+    <system:String x:Key="CallErrorOffline">Sorry, You can't call offline friend.</system:String>
+    <system:String x:Key="CallErrorUserBusy">Sorry, This user is busy on other call. Please wait or send messages.</system:String>
+    <system:String x:Key="ChatMessgeCalEnd">call end.</system:String>
+    <system:String x:Key="ChatMessgeCallLeft">{0} has left the call.</system:String>
+    <system:String x:Key="ChatLoadMessage">Click  Here To Load More Messages</system:String>
+
+
+
+</ResourceDictionary>

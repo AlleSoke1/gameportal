@@ -1,0 +1,25 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             x:Name="ControlElement" x:Class="LauncherApp.Styles.Controls.sTextBox" 
+             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Width="377" Height="32" Loaded="ControlElement_Loaded" >
+    <Grid Width="{Binding ActualWidth, ElementName=ControlElement}"  Height="{Binding ActualHeight, ElementName=ControlElement}">
+
+        <Border x:Name="Boxorder" Background="{Binding Path=boxBackground}" CornerRadius="{Binding Path=boxRadius}" BorderBrush="{Binding Path=boxBorder}" BorderThickness="{Binding Path=boxBorderThickness}"  >
+            <Grid>
+                <Label x:Name="backLabel" Content="{Binding SecText}" Padding="{Binding boxPadding}" FontSize="{Binding FontSize, ElementName=ControlElement}" Foreground="{Binding Foreground, ElementName=ControlElement}" Background="{x:Null}" Opacity="0.7"  VerticalContentAlignment="Center"></Label>
+                <TextBox x:Name="boxInput" Foreground="{Binding Foreground, ElementName=ControlElement}" FontSize="{Binding FontSize, ElementName=ControlElement}"  Padding="{Binding boxPadding}" Style="{StaticResource TransTextBox}"  BorderBrush="{x:Null}" Background="{x:Null}" CaretBrush="{Binding boxCaretBrush}" KeyDown="boxInput_KeyDown" LostFocus="boxInput_LostFocus" GotFocus="boxInput_GotFocus" TextChanged="boxInput_TextChanged" VerticalContentAlignment="Center" />
+                <PasswordBox x:Name="boxInputPassword" Foreground="{Binding Foreground, ElementName=ControlElement}" Padding="{Binding boxPadding}" Style="{StaticResource TransPasswordBox}"  BorderBrush="{x:Null}" Background="{x:Null}" CaretBrush="{Binding boxCaretBrush}" KeyDown="boxInput_KeyDown" LostFocus="boxInput_LostFocus" GotFocus="boxInput_GotFocus" PasswordChanged="boxInputPassword_PasswordChanged" VerticalContentAlignment="Center" Visibility="Hidden"/>
+                <iconPacks:PackIconMaterial x:Name="PasswordIcon" Kind="Eye" Width="20" Height="Auto" Margin="0,6,8,6" Cursor="Hand" MouseLeftButtonDown="PackIconMaterial_MouseLeftButtonDown" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <iconPacks:PackIconMaterial.Background>
+                        <SolidColorBrush Color="Black" Opacity="0"/>
+                    </iconPacks:PackIconMaterial.Background>
+                </iconPacks:PackIconMaterial>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>

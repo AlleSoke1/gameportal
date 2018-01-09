@@ -1,68 +1,49 @@
 ﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
              xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="ItemElement" x:Class="LauncherApp.Styles.Controls.FriendRequestListitem" 
-             mc:Ignorable="d" d:DesignWidth="305" BorderThickness="0" VerticalAlignment="Top" Width="Auto" MinWidth="305" MinHeight="60">
+             
+             mc:Ignorable="d" d:DesignWidth="305" BorderThickness="0" VerticalAlignment="Top" Width="Auto" MinWidth="630" MinHeight="65" Height="65" MouseEnter="ItemElement_MouseEnter" MouseLeave="ItemElement_MouseLeave">
 
-    <UserControl.Resources>
+    <UserControl.Background>
+        <SolidColorBrush Color="White" Opacity="0"/>
+    </UserControl.Background>
 
-        <ContextMenu x:Key="UserMenu" Width="{Binding ActualWidth, ElementName=ItemElement}" Height="{Binding ActualHeight, ElementName=ItemElement}">
-            <StackPanel Orientation="Horizontal" Height="12" x:Name="blockRequest" Tag="{Binding UserID}" MouseDown="onMenuClick">
-                <fa:ImageAwesome Icon="TimesCircle"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0"/>
-                <Label Content="Block This User" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
-            </StackPanel>
-        </ContextMenu>
-
-    </UserControl.Resources>
 
     <Grid x:Name="ElementGird" Width="{Binding ActualWidth, ElementName=ItemElement}" Height="{Binding ActualHeight, ElementName=ItemElement}" VerticalAlignment="Top" >
 
-        <Border x:Name="PanelBorder" BorderThickness="0,0,0,1" Width="{Binding ActualWidth, ElementName=ItemElement}" Height="{Binding ActualHeight, ElementName=ItemElement}">
-            <Border.BorderBrush>
-                <SolidColorBrush Color="White" Opacity="0.1"/>
-            </Border.BorderBrush>
+        <DockPanel x:Name="bottomLine"  Height="1"  Margin="30,0,30,0" Background="#717171" VerticalAlignment="Bottom"></DockPanel>
 
-            <StackPanel x:Name="TittlePanel" Margin="-1"  Width="{Binding ActualWidth, ElementName=ItemElement}" Height="{Binding ActualHeight, ElementName=ItemElement}" Orientation="Horizontal">
-                <StackPanel.Background>
-                    <SolidColorBrush Color="White" Opacity="0"/>
-                </StackPanel.Background>
+        
+        <Grid x:Name="BodyGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
 
-                <Image x:Name="UserImage" HorizontalAlignment="Left" Margin="20,10,10,11" Width="34" Source="/LauncherApp;component/resources/images/avatar.png"/>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Image x:Name="UserImage" HorizontalAlignment="Left" Margin="30,17,10,18" Source="pack://application:,,,/LauncherResources;component/resources/images/avatar.png" Height="30"/>
+                <Label x:Name="UserName" Content="{Binding UesrName}" Padding="0" Foreground="#acacac" Height="18" HorizontalAlignment="Left" Width="136"/>
+            </StackPanel>
 
-                <StackPanel Width="239" >
-                    <StackPanel  Margin="0,8,0,0" Orientation="Horizontal">
-                        <Label x:Name="UserName" Content="{Binding UesrName}" Padding="0" Foreground="#FFDA0029" Height="18" HorizontalAlignment="Left" Width="136"/>
-                    </StackPanel>
 
-                    <StackPanel  Margin="0,5,0,0" Orientation="Horizontal" Height="20">
+            <Label Grid.Column="1" x:Name="UserIDLabel" Content="{Binding UserID}" Padding="0" Foreground="#acacac" Height="18" Margin="10,24,0,23"/>
 
-                        <Button x:Name="acceptRequest" Width="60" Tag="{Binding UserID}" VerticalAlignment="Bottom" Style="{DynamicResource RedButtonStyle}" Height="20" HorizontalAlignment="Right" Content="Accept" Cursor="Hand" Padding="0" FontSize="11" Click="onOptionClick">
-                          
-                        </Button>
+            <StackPanel Grid.Column="2" Margin="0,5,0,0" Orientation="Horizontal" Height="30">
 
-                        <Button x:Name="declineRequest" Tag="{Binding UserID}" Style="{DynamicResource TransBorderedButton}" Content="Decline" Margin="10,0,0,0" Foreground="#FFB2B2B2" HorizontalAlignment="Left" Width="60" Height="20" VerticalAlignment="Bottom" FontSize="11" Click="onOptionClick">
-                            <Button.Background>
-                                <SolidColorBrush Color="Black" Opacity="0.345"/>
-                            </Button.Background>
-                            <Button.BorderBrush>
-                                <SolidColorBrush Color="White" Opacity="0.2"/>
-                            </Button.BorderBrush>
-                        </Button>
-
-                    </StackPanel>
-
-                </StackPanel>
-
+                <cControls:HeaderButton x:Name="acceptRequest" Icon="Check" Tag="{Binding UserID}"  ToolTip="{DynamicResource strAccept}" Width="30" Height="30" BackgroundColor="#FF19B200" Margin="20,0,10,0" Click="onOptionClick"/>
+                <cControls:HeaderButton x:Name="declineRequest" Icon="Close" Tag="{Binding UserID}"  ToolTip="{DynamicResource strDecline}" Width="30" Height="30" BackgroundColor="#FF242424" Margin="0,0,10,0" Click="onOptionClick"></cControls:HeaderButton>
+                <cControls:HeaderButton x:Name="blockRequest" Icon="BlockHelper" Tag="{Binding UserID}"  ToolTip="{DynamicResource FriendBlockUser}" Width="30" Height="30" BackgroundColor="#FFDA0029" Margin="0,0,10,0" Click="onOptionClick"></cControls:HeaderButton>
 
             </StackPanel>
 
-        </Border>
+        </Grid>
 
-
-        <Button x:Name="UserMenuBtn" FontFamily="{DynamicResource IconsFont}" Content="&#xE6E2;" BorderThickness="0" FontSize="12" Style="{DynamicResource TransButtonStyle}" Panel.ZIndex="20" Margin="0,17,26,0" Height="10" VerticalAlignment="Top" Click="UserMenuBtn_Click" HorizontalAlignment="Right" Width="14"/>
 
 
     </Grid>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Name="ListElement" x:Class="LauncherApp.Styles.Controls.ChatMemeberList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
+             mc:Ignorable="d" d:DesignWidth="545"  BorderThickness="0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+
+    <Grid x:Name="ElementGird" VerticalAlignment="Top" Margin="0,0,0,-2" Height="{Binding ActualHeight, ElementName=ListElement}" Width="{Binding ActualWidth, ElementName=ListElement}">
+
+        <Grid Height="30" Margin="10,10,10,0" VerticalAlignment="Top">
+            <DockPanel Height="2">
+                <DockPanel.Background>
+                    <SolidColorBrush Color="White" Opacity="0.2"/>
+                </DockPanel.Background>
+            </DockPanel>
+            <Label Foreground="#FFEAEAEA" Content="PARTICIPANTS" FontSize="12" FontWeight="Bold" VerticalContentAlignment="Center" Padding="5,0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Background="#FF202020"></Label>
+        </Grid>
+
+        <ScrollViewer x:Name="ViewScroller" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="0,40,0,0" VerticalAlignment="Top"  >
+            <StackPanel  Orientation="Vertical" VerticalAlignment="Top" >
+                <StackPanel x:Name="MemeberListPanel" Orientation="Vertical" Margin="0"  VerticalAlignment="Top" >
+
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

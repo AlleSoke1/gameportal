@@ -23,7 +23,8 @@ namespace LauncherApp.Game_Data
 
         // voice chat system
         public static bool CallCenterIsBusy { get; set; }
-        public static int CallCenterCannelID { get; set; }
+        public static long CallCenterChannelID { get; set; }
+        public static string CallCenterHostIp { get; set; }
 
     }
 

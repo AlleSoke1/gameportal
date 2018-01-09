@@ -1,0 +1,180 @@
+﻿<Window x:Class="LauncherApp.MainApp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls"
+        xmlns:cPages = "clr-namespace:LauncherApp.Styles.Pages"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        x:Name="AppWindow"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="{DynamicResource AppFontPath}"
+        Title="Main" Height="550" Width="940" MinHeight="550"  MinWidth="940" Background="{x:Null}">
+
+    <Window.Resources>
+        <ContextMenu x:Key="LogoMenu" Width="215">
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuAccounts_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="Account" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuAccounts}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+                <iconPacks:PackIconMaterial Kind="Launch" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="5,0,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuSupport_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="Help" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuSupport}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+                <iconPacks:PackIconMaterial Kind="Launch" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="5,0,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuSettings_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="Settings" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuSettings}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+                <iconPacks:PackIconMaterial Kind="Launch" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="5,0,0,0" />
+            </StackPanel>
+            <Separator  Style="{DynamicResource SeparatorStyle}" />
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuForums_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="Forum" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuForums}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+                <iconPacks:PackIconMaterial Kind="Launch" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="5,0,0,0" />
+            </StackPanel>
+            <Separator  Style="{DynamicResource SeparatorStyle}" />
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="MenwuLogout_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="LogoutVariant" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuLogout}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+                <iconPacks:PackIconMaterial Kind="Launch" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="5,0,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuExit_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="Power" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuExit}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+                <iconPacks:PackIconMaterial Kind="Launch" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="5,0,0,0" />
+            </StackPanel>
+        </ContextMenu>
+
+        <ContextMenu x:Key="UserMenu" Width="200">
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuStatusOnline_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="CheckboxBlankCircle" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="Lime" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource UserStatusOnline}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuStatusAway_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="CheckboxBlankCircle" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="Orange" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource UserStatusAway}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="menuStatusBusy_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="CheckboxBlankCircle" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="Red" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource UserStatusBusy}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+            </StackPanel>
+            <Separator  Style="{DynamicResource SeparatorStyle}" />
+            <StackPanel Orientation="Horizontal" Height="12" MouseLeftButtonDown="MenwuLogout_MouseDown">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <iconPacks:PackIconMaterial Kind="LogoutVariant" VerticalAlignment="Top" HorizontalAlignment="Center" Height="12" Width="12" Foreground="#FFDC163B" Margin="0,0,5,0" />
+                <Label Content="{DynamicResource LogoMenuLogout}" Height="12" Padding="0" Margin="0" Foreground="Silver"/>
+            </StackPanel>
+        </ContextMenu>
+    </Window.Resources>
+
+    <Grid x:Name="MainGrid" Margin="10" Background="#FF383838">
+        <Grid.Effect>
+            <DropShadowEffect ShadowDepth="0" BlurRadius="14" Opacity="0.51"/>
+        </Grid.Effect>
+
+        <Grid x:Name="MainBar" Height="25" Margin="0" VerticalAlignment="Top" MouseDown="MainBar_MouseDown" Panel.ZIndex="20" Background="#FF242424">
+
+
+            <StackPanel x:Name="AppLogo" ToolTip="{DynamicResource wndApps}"  HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseLeftButtonDown="AppLogo_MouseDown" Margin="25,0,0,0">
+                <StackPanel.Background>
+                    <SolidColorBrush Color="Black" Opacity="0"/>
+                </StackPanel.Background>
+                <Label x:Name="AppTitle" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0" >ARCAN APP</Label>
+                <iconPacks:PackIconMaterial  x:Name="MenuIcon"  Kind="ChevronDown" Height="6" Width="6" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="3,2,0,0"/>
+            </StackPanel>
+
+
+            <WrapPanel HorizontalAlignment="Right" Width="84" Height="25" VerticalAlignment="Top">
+
+                <cControls:HeaderButton x:Name="MinieBtn" Width="28" Height="25" Icon="Minus" BackgroundColor="#FF2D2D2D"  Click="tMinieBtn_Click" FontSize="10"/>
+                <cControls:HeaderButton x:Name="tFullBtn" Width="28" Height="25" Icon="WindowMaximize" BackgroundColor="#FF2D2D2D" Click="tFullBtn_Click" FontSize="10"/>
+                <cControls:HeaderButton x:Name="CloseBtn" Width="28" Height="25" Icon="Close" BackgroundColor="#FFDA0029"  Click="tCloseBtn_Click" FontSize="10"/>
+
+            </WrapPanel>
+
+            <cControls:QuickUserStatus x:Name="MainUserNickname"  Nickname="NickNameHere"  Status="Available"  MenuFlag="True"  Height="22"  Margin="0,2,104,0" VerticalAlignment="Top" HorizontalAlignment="Right" Click="MainUserNickname_Click"/>
+
+        </Grid>
+
+        <Grid x:Name="SideBar" HorizontalAlignment="Left" Width="50" Margin="0,25,0,0" Panel.ZIndex="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.28"/>
+            </Grid.Background>
+
+            <cControls:HeaderButton x:Name="sbarHome" ToolTip="{DynamicResource SideBarHome}" Tag="Home" Icon="Home"  isActive="True" BackgroundColor="#FF2D2D2D" Grid.Row="0" FontSize="25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Click="SwitchPageButton_Click"/>
+            <cControls:HeaderButton x:Name="sbarMyGames" ToolTip="{DynamicResource SideBarGames}" Tag="MyGames" Icon="GamepadVariant" BackgroundColor="#FF2D2D2D" Grid.Row="1" FontSize="25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Click="SwitchPageButton_Click"/>
+            <cControls:HeaderButton x:Name="sbarShop" ToolTip="{DynamicResource SideBarShop}" Tag="Shop" Icon="Cart" BackgroundColor="#FF2D2D2D" Grid.Row="2" FontSize="25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Click="SwitchPageButton_Click"/>
+            <cControls:HeaderButton x:Name="sbarSocial" ToolTip="{DynamicResource SideBarSocial}" Tag="Social" Icon="MessageText" BackgroundColor="#FF2D2D2D" Grid.Row="3" FontSize="25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Click="SwitchPageButton_Click"/>
+            <cControls:HeaderButton x:Name="sbarSettings" ToolTip="{DynamicResource SideBarSettings}" Tag="Settings" Icon="Settings" BackgroundColor="#FF2D2D2D" Grid.Row="4" FontSize="25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Click="SwitchPageButton_Click"/>
+
+
+
+        </Grid>
+
+
+        <Grid x:Name="BodyGrid" Margin="50,25,0,0">
+
+            <cPages:Home x:Name="HomePage" Width="Auto" Height="Auto">
+
+            </cPages:Home>
+
+            <cPages:MyGames  x:Name="MyGamesPage" Width="Auto" Height="Auto" Visibility="Hidden">
+
+            </cPages:MyGames>
+
+            <cPages:TheShop  x:Name="ShopPage" Width="Auto" Height="Auto" Visibility="Hidden">
+
+            </cPages:TheShop>
+
+            <cPages:Social x:Name="SocialPage" Width="Auto" Height="Auto" Visibility="Hidden" >
+
+            </cPages:Social>
+
+            <cPages:TheSettings x:Name="SettingsPage" Width="Auto" Height="Auto" Visibility="Hidden" >
+
+            </cPages:TheSettings>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

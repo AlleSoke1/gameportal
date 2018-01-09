@@ -1,0 +1,9 @@
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\bin\Debug\LauncherResources.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\LauncherResources.g.resources
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\LauncherResources.csprojResolveAssemblyReference.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\resources\uistring\ar.baml
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\resources\uistring\en.baml
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\LauncherResources_MarkupCompile.cache
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\bin\Debug\LauncherResources.pdb
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\LauncherResources.dll
+C:\Users\Hossam\Documents\GitHub\gameportal\LauncherResources\obj\Debug\LauncherResources.pdb

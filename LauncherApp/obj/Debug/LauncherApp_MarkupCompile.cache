@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-40-1245356467
+482019814724
 
-441620266842
-26-1721130605
-App.xaml;AppsWindow.xaml;ChannelInvite.xaml;ChannelWindow.xaml;ChatWindow.xaml;ChannelCreate.xaml;FriendAddWindow.xaml;FriendsWindow.xaml;ScanGames.xaml;LoginWindow.xaml;NicknameWindow.xaml;resources\uistring\ar.xaml;resources\uistring\en.xaml;InstallGame.xaml;SettingsWindow.xaml;StartupWindow.xaml;Styles\Controls\chat\ChannelUserItem.xaml;Styles\Controls\chat\ChannelListItem.xaml;Styles\Controls\chat\ChannelList.xaml;Styles\Controls\Slider.xaml;Styles\Controls\QuickUserStatus.xaml;Styles\Controls\LoadingDots.xaml;Styles\Controls\ComboBox.xaml;Styles\Controls\ContextMenu.xaml;Styles\Controls\chat\ChatMessageItem.xaml;Styles\Controls\CheckBox.xaml;Styles\Controls\Notifications\NotifyBoxItem.xaml;Styles\Controls\friend\FriendRequestListitem.xaml;Styles\Controls\friend\FriendRequestList.xaml;Styles\Controls\friend\FriendListItem.xaml;Styles\Controls\GameListItem.xaml;Styles\Controls\friend\FriendList.xaml;Styles\Controls\DropMenu.xaml;Styles\Controls\FastMessage.xaml;Styles\Controls\HeaderButton.xaml;Styles\Controls\ScanListItem.xaml;NotifyBox.xaml;Styles\Style.xaml;Styles\Controls\ScrollBar.xaml;Styles\Controls\ScrollViewer.xaml;
+541105530266
+291438514582
+App.xaml;MainApp.xaml;LoginWindow.xaml;NicknameWindow.xaml;StartupWindow.xaml;Styles\Controls\buttons\SpecialButton.xaml;Styles\Controls\chat\CallUserIcon.xaml;Styles\Controls\chat\ChatMessageItem.xaml;Styles\Controls\friend\AddFriend.xaml;Styles\Controls\chat\CreateChannel.xaml;Styles\Controls\chat\InviteChannel.xaml;Styles\Controls\chat\ChatMemeberListItem.xaml;Styles\Controls\chat\ChatMemeberList.xaml;Styles\Controls\chat\EmojiPickerBox.xaml;Styles\Controls\chat\ChatMessageList.xaml;Styles\Controls\chat\ChatControl.xaml;Styles\Controls\chat\ChannelUserItem.xaml;Styles\Controls\chat\ChannelListItem.xaml;Styles\Controls\chat\ChannelList.xaml;Styles\Controls\friend\FriendRequestControl.xaml;Styles\Controls\Games\MyGamesItem.xaml;Styles\Controls\other\LoadingIcon.xaml;Styles\Controls\other\sTextBox.xaml;Styles\Pages\GameInstall.xaml;Styles\Pages\TheSettings.xaml;Styles\Pages\GameScan.xaml;Styles\Pages\Social.xaml;Styles\Pages\TheShop.xaml;Styles\Pages\MyGames.xaml;Styles\Pages\Home.xaml;Styles\Controls\other\Slider.xaml;Styles\Controls\other\QuickUserStatus.xaml;Styles\Controls\other\LoadingDots.xaml;Styles\Controls\other\ComboBox.xaml;Styles\Controls\other\ContextMenu.xaml;Styles\Controls\other\CheckBox.xaml;Styles\Controls\Notifications\NotifyBoxItem.xaml;Styles\Controls\friend\FriendRequestListitem.xaml;Styles\Controls\friend\FriendListItem.xaml;Styles\Controls\Games\GameListItem.xaml;Styles\Controls\friend\FriendList.xaml;Styles\Controls\other\FastMessage.xaml;Styles\Controls\buttons\HeaderButton.xaml;Styles\Controls\Games\ScanListItem.xaml;NotifyBox.xaml;Styles\Style.xaml;Styles\Controls\other\ScrollBar.xaml;Styles\Controls\other\ScrollViewer.xaml;
 
 False
 

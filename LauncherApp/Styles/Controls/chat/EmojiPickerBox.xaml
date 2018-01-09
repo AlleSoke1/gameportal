@@ -1,0 +1,25 @@
+﻿<UserControl x:Name="ListElement" x:Class="LauncherApp.Styles.Controls.EmojiPickerBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:cControls = "clr-namespace:LauncherApp.Styles.Controls" 
+             mc:Ignorable="d" d:DesignWidth="545" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Width="225" Height="225">
+
+    <Grid x:Name="ElementGird" Width="{Binding ActualWidth, ElementName=ListElement}" Height="{Binding ActualHeight, ElementName=ListElement}" VerticalAlignment="Top" >
+
+        <Border Background="White" BorderBrush="#FFDFDFDF" BorderThickness="1" CornerRadius="5" Margin="0,0,0,5">
+            <ScrollViewer x:Name="FilesListScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="10" VerticalAlignment="Top">
+
+                <WrapPanel x:Name="GridListPanel" >
+
+
+                </WrapPanel>
+            </ScrollViewer>
+        </Border>
+
+        <Polygon Points="6,5 0,0, 10,0" Fill="#FFDFDFDF" Height="5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="10" Margin="0,0,7,0" />
+
+    </Grid>
+</UserControl>

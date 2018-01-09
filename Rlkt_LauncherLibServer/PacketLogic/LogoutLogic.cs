@@ -25,21 +25,31 @@ namespace Rlkt_LauncherLibServer.PacketLogic
             // Send Logout Notfiy to Friends
             guid = gID;
             Rlkt_LauncherLibServer.Clients.ClientInfo cInfo = Program.clients.findClientByGuID(guid);
-            userID = cInfo.userId;
 
-            Console.WriteLine(string.Format("User [(0)] Has Logout.", cInfo.username));
+            if (cInfo != null)
+            {
+                if (cInfo.state == Clients.ClientState.Authed)
+                {
 
-            SqlCommand cmd = new SqlCommand("SPR_LogOut");
+                    userID = cInfo.userId;
 
-            // 2. set the command object so it knows to execute a stored procedure
-            cmd.CommandType = CommandType.StoredProcedure;
+                    Console.WriteLine(string.Format("User [(0)] Has Logout.", cInfo.username));
 
-            // 3. add parameter to command, which will be passed to the stored procedure
+                    SqlCommand cmd = new SqlCommand("SPR_LogOut");
 
-            cmd.Parameters.Add(new SqlParameter("@USERID", this.userID));
-            cmd.Parameters.Add("@RET", SqlDbType.TinyInt).Direction = ParameterDirection.Output;
+                    // 2. set the command object so it knows to execute a stored procedure
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-            Program.sql.Execute(cmd, this);
+                    // 3. add parameter to command, which will be passed to the stored procedure
+
+                    cmd.Parameters.Add(new SqlParameter("@USERID", this.userID));
+                    cmd.Parameters.Add("@RET", SqlDbType.TinyInt).Direction = ParameterDirection.Output;
+
+                    Program.sql.Execute(cmd, this);
+
+                }
+            }
+
 
         }
 

@@ -55,9 +55,13 @@ namespace Rlkt_LauncherLibServer.PacketLogic
 
             rdr.Close();
 
+            long[] returnPacket = new long[2];
             Enums.Channel.InviteChannelReply result = (Enums.Channel.InviteChannelReply)Convert.ToInt32(cmd.Parameters["@RET"].Value);
 
-            Server.Server.server.DispatchTo(guid, new NetObject("ChannelInviteRep", (object)result));
+            returnPacket[0] = (int)result;
+            returnPacket[1] = this.chatID;
+
+            Server.Server.server.DispatchTo(guid, new NetObject("ChannelInviteRep", (object)returnPacket));
 
             //If SP has been success send notify to channel useres
             if (result == Enums.Channel.InviteChannelReply.Successfull)

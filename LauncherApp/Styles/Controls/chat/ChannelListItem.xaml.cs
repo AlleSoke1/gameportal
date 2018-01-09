@@ -22,9 +22,6 @@ namespace LauncherApp.Styles.Controls
     public partial class ChannelListItem : UserControl
     {
 
-
-        public event MouseButtonEventHandler MenuClick;
-
         #region IsSelected DP
         public bool IsSelected
         {
@@ -89,7 +86,6 @@ namespace LauncherApp.Styles.Controls
             if (!IsSelected)
             {
                 TittlePanel.Background.Opacity = 0.10;
-                PanelBorder.BorderBrush.Opacity = 1;
             }
             
         }
@@ -99,7 +95,6 @@ namespace LauncherApp.Styles.Controls
             if (!IsSelected)
             {
                 TittlePanel.Background.Opacity = 0;
-                PanelBorder.BorderBrush.Opacity = 0;
             }
             
         }
@@ -112,19 +107,13 @@ namespace LauncherApp.Styles.Controls
 
         private void SwithSelectedStatus(bool value)
         {
-            if (value)
+            if (value || IsSelected)
             {
-                PanelBorder.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDC163B");
-                TittlePanel.Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFDC163B");
-                TittlePanel.Background.Opacity = 0.10;
-                PanelBorder.BorderBrush.Opacity = 1;
+                TittlePanel.Background.Opacity = 0.15;
                 return;
             }
 
-            PanelBorder.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF68394B");
-            TittlePanel.Background = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFFFFFFF");
             TittlePanel.Background.Opacity = 0;
-            PanelBorder.BorderBrush.Opacity = 0;
 
         }
         
@@ -138,12 +127,8 @@ namespace LauncherApp.Styles.Controls
 
         private void onMenuClick(object sender, MouseButtonEventArgs e)
         {
-            if (this.MenuClick != null)
-            {
-                menuOrder = ((StackPanel)sender).Name.ToString();
-                this.MenuClick(this, e);
-                
-            }
+            this.menuOrder = ((StackPanel)sender).Name.ToString();
+            LauncherFactory.getAppClass().SocialPage.onChannelMenuClick(this, e);
         }
 
 

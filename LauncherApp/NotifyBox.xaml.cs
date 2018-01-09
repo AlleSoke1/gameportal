@@ -71,9 +71,5 @@ namespace LauncherApp
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddItem("testing title!", "testing message texts is here to see the box", 5);
-        }
     }
 }
